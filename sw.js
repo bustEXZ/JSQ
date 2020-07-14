@@ -5,6 +5,7 @@ const FILES = [
     './style.css',
     './script.js',
     './assets.js',
+    './server.js',
     './icons/icon-64.png',
     './icons/icon-128.png',
     './icons/icon-256.png',
