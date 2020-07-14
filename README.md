@@ -8,3 +8,4 @@ https://codepen.io/harryheman/pen/pogaawv
 https://jsq.netlify.app/
 
 # PWA Store
+https://progressiveapp.store/pwa/JSQ
