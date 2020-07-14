@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    text-align: center;
+    letter-spacing: 1.25px;
+    line-height: 1.5em;
+    color: #111;
+    user-select: none;
+}
+
+@media (max-width: 512px) {
+    * {
+        font-size: .95em;
+    }
+}
+
+html {
+    position: relative;
+}
+
+body {
+    padding: 1em;
+    min-height: 100vh;
+    background: radial-gradient(circle, skyblue, steelblue);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+h1 {
+    margin: .25em;
+    font-size: 1.15em;
+}
+
+output {
+    margin: .25em;
+}
+
+.score {
+    font-size: 1.25em;
+}
+
+form {
+    text-align: left;
+}
+
+form p {
+    text-align: left;
+    white-space: pre;
+}
+
+form button {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+button {
+    margin: 2em 0;
+    padding: .4em .8em;
+    outline: none;
+    border: none;
+    background: linear-gradient(lightgreen, darkgreen);
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .4);
+    font-size: .95em;
+    cursor: pointer;
+    transition: .2s;
+}
+
+button:hover {
+    color: #eee;
+}
+
+label,
+input {
+    cursor: pointer;
+}
+
+input {
+    margin-right: .5em;
+}
+
+details {
+    font-size: .95em;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    background: #eee;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+h3 {
+    margin: .75em;
+    font-size: .95em;
+}
+
+details p {
+    margin: .75em 1.5em;
+    text-align: justify;
+    text-indent: 1.5em;
+}
+
+details pre {
+    text-align: left;
+    padding: .4em;
+    font-size: .9em;
+}
+
+.right {
+    color: green;
+}
+
+.wrong {
+    color: red;
+}
