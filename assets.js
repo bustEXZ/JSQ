@@ -182,6 +182,7 @@ explanation: `
 // 9
 {
 question: `
+// код выполняется в нестрогом режиме
 let greeting;
 greetign = {}; // Опечатка!
 console.log(greetign);
