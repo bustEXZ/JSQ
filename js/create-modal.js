@@ -5,7 +5,7 @@ const createModal = () => {
     const template = `
     <p>MasterCard: 5368 2900 5024 0466</p>
     <p>Яндекс.Деньги: 4100 1815 4810 268</p>
-    <p>WebMoney: </p>
+    <p>WebMoney: P 9354 1901 0217</p>
     <p>Спасибо!</p>
     <button>Закрыть</button>
     `
