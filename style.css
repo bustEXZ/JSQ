@@ -46,7 +46,7 @@ details {
 
 main > details:first-child,
 main > details:last-child {
-    width: 95%;
+    width: 90%;
     margin: 1em auto;
     padding: .5em;
     border-radius: 4px;
@@ -175,5 +175,9 @@ output:first-child {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    font-size: .9em;
+    font-size: .8em;
+}
+
+.modal-box p {
+    line-height: 1.75em;
 }

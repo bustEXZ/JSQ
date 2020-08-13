@@ -1,7 +1,7 @@
 {
   "name": "JSQ",
   "version": "1.0.0",
-  "description": "",
+  "description": "JavaScript: 250+ практических вопросов",
   "private": true,
   "scripts": {},
   "repository": {
@@ -9,7 +9,7 @@
     "url": "git+https://github.com/harryheman/JSQ.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Igor Agapov",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/harryheman/JSQ/issues"

@@ -1,5 +1,5 @@
 # JSQ
-JavaScript: 250+ практических вопроса!
+JavaScript: 250+ практических вопросов!
 
 # Codepen
 https://codepen.io/harryheman/pen/pogaawv
