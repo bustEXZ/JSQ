@@ -1,0 +1,21 @@
+{
+  "name": "JSQ",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harryheman/JSQ.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harryheman/JSQ/issues"
+  },
+  "homepage": "https://github.com/harryheman/JSQ#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

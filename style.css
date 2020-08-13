@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+}
+
+@media (max-width: 600px) {
+    * {
+        font-size: .95em;
+    }
+}
+
+body {
+    background: radial-gradient(circle, skyblue, steelblue) fixed;
+    color: #222;
+}
+
+section,
+div {
+    margin: 1.25em auto;
+    max-width: 768px;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+article {
+    text-align: justify;
+}
+
+div div {
+    width: 100%;
+    margin: 0;
+}
+
+details {
+    margin-top: 1em;
+    width: 100%;
+}
+
+main > details:first-child,
+main > details:last-child {
+    width: 95%;
+    margin: 1em auto;
+    padding: .5em;
+    border-radius: 4px;
+    background: rgba(255,255,255,.5);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .5);
+    max-width: 768px;
+}
+
+summary {
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.5em;
+    margin: 1em 0 .5em;
+}
+
+h3 {
+    margin: 1em 0 .5em;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+p {
+    letter-spacing: 1.25px;
+    line-height: 1.25em;
+}
+
+footer p {
+    text-align: center;
+    font-size: .9em;
+    margin: .5em 0;
+}
+
+code {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 1em 1em;
+    margin: 1em 0;
+    background: rgba(0, 0, 0, .5);
+    border-radius: 4px;
+    color: lightgreen;
+    letter-spacing: 1.25px;
+    line-height: 1.25em;
+    white-space: pre-wrap;
+}
+
+ul {
+    list-style: none;
+    letter-spacing: 1.25px;
+}
+
+li {
+    margin: .25em 0;
+}
+
+hr {
+    max-width: 768px;
+    width: 80%;
+    margin: 0 auto;
+    height: 1.5px;
+    background: rgba(0, 0, 0, .3);
+    border: none;
+}
+
+button {
+    padding: .5em;
+    border: 1px solid #222;
+    outline: none;
+    background: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 1em 0 .5em;
+    font-size: .95em;
+}
+
+header button {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+output:first-child {
+    margin-bottom: 1em;
+}
+
+.answer {
+    user-select: none;
+    cursor: pointer;
+}
+
+.answer::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 2px #111;
+    background: #eee;
+    display: inline-block;
+    margin-right: 1em;
+}
+
+.answer.checked::before {
+    background: lightgreen;
+}
+
+.right {
+    color: green;
+}
+
+.wrong {
+    color: red;
+}
+
+.modal-box {
+    width: 60%;
+    background: #eee;
+    padding: 1em 1.5em;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .5);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: .9em;
+}
