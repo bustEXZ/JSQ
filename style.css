@@ -167,7 +167,7 @@ output:first-child {
 }
 
 .modal-box {
-    width: 60%;
+    max-width: 512px;
     background: #eee;
     padding: 1em 1.5em;
     border-radius: 4px;
