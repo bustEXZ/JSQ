@@ -16,9 +16,8 @@ const FILES = [
 
 self.addEventListener("install", ev => {
     ev.waitUntil(
-        caches.open(NAME).then(cache => {
-            return cache.addAll(FILES)
-        })
+        caches.open(NAME)
+            .then(cache => cache.addAll(FILES))
     )
     self.skipWaiting()
 })
@@ -41,13 +40,14 @@ self.addEventListener("activate", ev => {
 self.addEventListener('fetch', ev => {
     ev.respondWith(
         fetch(ev.request)
-        .then(res => {
-            const cacheClone = res.clone()
-            caches.open(NAME).then(cache => {
-                cache.put(ev.request, cacheClone)
+            .then(res => {
+                let cacheClone = res.clone()
+                caches.open(NAME).then(cache => {
+                    cache.put(ev.request, cacheClone)
+                        .catch(er => er)
+                })
+                return res
             })
-            return res
-        })
-        .catch(() => caches.match(ev.request).then(res => res))
+            .catch(() => caches.match('./index.html'))
     )
 })

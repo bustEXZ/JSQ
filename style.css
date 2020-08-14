@@ -181,3 +181,8 @@ output:first-child {
 .modal-box p {
     line-height: 1.75em;
 }
+
+/* need to fix */
+#too-long code {
+    word-break: break-all;
+}

@@ -41,6 +41,11 @@ const createQuestions = () => {
 
         main.insertAdjacentHTML('beforeend', template)
     })
+
+    // need to fix
+    main.getElementsByClassName('152')[0].id = 'too-long'
+    main.getElementsByClassName('153')[0].id = 'too-long'
+
 }
 
 const findLastQuestion = () => {

@@ -1,3 +1,7 @@
+// need to fix
+// numbers of questions
+// br br
+
 const assets = [
 // https://github.com/lydiahallie/javascript-questions
 // 1
@@ -2022,8 +2026,10 @@ explanation: `
 // 100
 {
 question: `
-const output = \`&#36;{[] && 'Не'}вероятно!
-Вам &#36;{'' && 'не'}следует обратиться (обращаться) к врачу после такого количества JavaScript lol\`
+console.log(
+    \`&#36;{[] && 'Не'}вероятно!
+    Вам &#36;{'' && 'не'}следует обратиться (обращаться) к врачу после такого количества JavaScript lol\`
+)
 `,
 answers: `
 A: вероятно! Вам следует обратиться к врачу после такого количества JavaScript lol
