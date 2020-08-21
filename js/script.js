@@ -1,11 +1,21 @@
-import assets from './assets.js'
-import createGame from './create-game.js'
-import createModal from './create-modal.js'
+import {tasks} from './tasks.js'
+import * as bonus from './bonus.js'
+import {createGame} from './create-game.js'
+import {createModal} from './create-modal.js'
+import {hljs} from './hl.js'
 
 const main = document.querySelector('main')
 
+const gameTemplate = `
+<details class="game-box">
+    <summary class="game-button">Викторина</summary>
+</details>
+`
+
+main.insertAdjacentHTML('beforeend', gameTemplate)
+
 const createQuestions = () => {
-    assets.map(i => {
+    tasks.map(i => {
         const {
             question,
             rightAnswer,
@@ -17,19 +27,19 @@ const createQuestions = () => {
             .slice(1, -1)
             .map(i => i.trim())
 
-        const num = assets.indexOf(i) + 1
+        const num = tasks.indexOf(i) + 1
 
         const template = `
         <section class="${num}">
             <h3>Вопрос № ${num}:</h3>
-            <code>${question}</code>
+            <pre><code class="lang-js">${question}</code></pre>
 
             <ul>
                 ${answers.reduce((html, i) => html += `<li>${i}</li>`, '')}
             </ul>
-    
+
             <details>
-                <summary>Показать правильный ответ</summary>
+                <summary>Ответ</summary>
                 <article>
                     <h3>Правильный ответ: ${rightAnswer}</h3>
                     <p>${explanation}</p>
@@ -42,10 +52,9 @@ const createQuestions = () => {
         main.insertAdjacentHTML('beforeend', template)
     })
 
-    // need to fix
-    main.getElementsByClassName('152')[0].id = 'too-long'
-    main.getElementsByClassName('153')[0].id = 'too-long'
+    main.insertAdjacentHTML('beforeend', bonus.default)
 
+    hljs(window)
 }
 
 const findLastQuestion = () => {
@@ -84,22 +93,13 @@ main.querySelector('.game-button')
         const set = new Set()
 
         while (set.size < 30) {
-            const i = Math.floor(1 + Math.random() * (assets.length + 1 - 1))
+            const i = Math.floor(1 + Math.random() * (tasks.length + 1 - 1))
 
-            set.add(assets[i])
+            set.add(tasks[i])
         }
 
         createGame(Array.from(set))
     })
-
-const template = `
-<details>
-        <summary class="bonus-button">Бонус</summary>
-        <p>В разработке...</p>
-</details>
-`
-
-main.insertAdjacentHTML('beforeend', template)
 
 document.querySelector('.modal-button')
     .addEventListener('click', () => {

@@ -1,13 +1,14 @@
-const NAME = 'cache-v2'
+const NAME = 'cache-v3'
 
 const FILES = [
     './index.html',
     './style.css',
     './js/script.js',
-    './js/assets.js',
+    './js/tasks.js',
     './js/create-game.js',
     './js/create-modal.js',
-    './server.js',
+    './js/hl.js',
+    './js/bonus.js',
     './icons/icon-64.png',
     './icons/icon-128.png',
     './icons/icon-256.png',

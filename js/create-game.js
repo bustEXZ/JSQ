@@ -1,10 +1,11 @@
-const createGame = array => {
-    if (document.querySelector('.game-box') !== null) {
-        document.querySelector('.game-box').remove()
+import {hljs} from './hl.js'
+
+export const createGame = array => {
+    if (document.querySelector('div') !== null) {
+        document.querySelector('div').remove()
     }
 
     const gameBox = document.createElement('div')
-    gameBox.className = 'game-box'
     document.querySelector('details').append(gameBox)
 
     const score = document.createElement('output')
@@ -48,14 +49,14 @@ const createGame = array => {
             .map(i => i.trim())
 
         const template = `
-            <code>${question}</code>
-    
+            <pre><code class="lang-js">${question}</code></pre>
+
             <ul>
                 ${answers.reduce((html, i) => html += `<li class="answer">${i}</li>`, '')}
             </ul>
-    
+
             <button>Ответить</button>
-    
+
             <details>
                 <summary>Показать правильный ответ</summary>
                 <article>
@@ -73,7 +74,7 @@ const createGame = array => {
             if (e.target.className === 'answer') {
                 questionBox.querySelectorAll('.answer')
                     .forEach(a => a.classList.remove('checked'))
-                
+
                 e.target.classList.add('checked')
             } else return
         })
@@ -92,6 +93,8 @@ const createGame = array => {
         }, {
             once: true
         })
+
+        hljs(window)
     }
 
     function checkAnswer(userAnswerEl, rightAnswerEl, userAnswer, rightAnswer, button) {
@@ -148,5 +151,3 @@ const createGame = array => {
         `
     }
 }
-
-export default createGame

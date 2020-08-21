@@ -1,12 +1,10 @@
-const createModal = () => {
+export const createModal = () => {
     const modalBox = document.createElement('div')
     modalBox.className = 'modal-box'
 
     const template = `
-    <p>MasterCard: 5368 2900 5024 0466</p>
-    <p>Яндекс.Деньги: 4100 1815 4810 268</p>
-    <p>WebMoney: P 9354 1901 0217</p>
-    <p>Спасибо!</p>
+    <a href="https://harryheman.github.io/WTFJS" target="_blank">Что за черт, JavaScript?</a>
+    <a href="https://nodejs-guide.netlify.app" target="_blank">Руководство по Node.js</a>
     <button>Закрыть</button>
     `
 
@@ -20,5 +18,3 @@ const createModal = () => {
             once: true
         })
 }
-
-export default createModal
