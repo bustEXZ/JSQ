@@ -1,4 +1,4 @@
-const NAME = 'cache-v3'
+const NAME = 'cache-v4.0.0'
 
 const FILES = [
     './index.html',

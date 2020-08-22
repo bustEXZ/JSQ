@@ -309,6 +309,7 @@ function foo () {
         console.log(product)
     }
 }
+
 foo()
 </code>
 </pre>
@@ -1114,29 +1115,29 @@ f1.bind(f2)()
 <pre>
 <code class="lang-js">
 function f1 (par1, par2) {
-    console.log(f1.length)
+    console.log(arguments.length)
     console.log(arguments)
 }
 function f2 (...rest) {
-    console.log(f2.length)
+    console.log(rest.length)
     console.log(rest)
 }
 
 f1()
-f1(1,2)
-f1(1,2,3,4)
+f1(1, 2)
+f1(1, 2, 3, 4)
 
 f2()
-f2(1,2)
-f2(1,2,3,4)
+f2(1, 2)
+f2(1, 2, 3, 4)
 </code>
 </pre>
 
 <details>
 <summary>Ответ</summary>
 <p>
-2 [] 2 [1,2] 2 [1,2,3,4] <br>
-0 [] 0 [1,2] 0 [1,2,3,4]
+2 [] 2 [1, 2] 2 [1, 2, 3, 4] <br>
+0 [] 0 [1, 2] 0 [1, 2, 3, 4]
 </p>
 </details>
 </section>

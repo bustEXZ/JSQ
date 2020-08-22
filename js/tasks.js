@@ -3381,12 +3381,15 @@ x = window.y
 // 3
 {
 question: `
-function main(){
-    console.log('A');
-    setTimeout(function print(){ console.log('B'); }, 0);
-    console.log('C');
-    }
-    main();
+function main() {
+    console.log('A')
+    setTimeout(function print() {
+        console.log('B')
+    }, 0)
+    console.log('C')
+}
+
+main()
 `,
 answers: `
 A: A B C
@@ -3954,7 +3957,12 @@ async function processArray (array) {
 {
 question: `
 var set = new Set();
-set.add("+0").add("-0").add(NaN).add(undefined).add(NaN);;
+set.add("+0")
+    .add("-0")
+        .add(NaN)
+            .add(undefined)
+                .add(NaN);
+
 console.log(set);
 `,
 answers: `
@@ -4935,7 +4943,9 @@ var languages = {
     feature: "awesome",
 };
 
-let flag = languages.hasOwnProperty(Object.values(languages)[0][4].name);
+let flag = languages.hasOwnProperty(
+    Object.values(languages)[0][4].name
+);
 
 (() => {
     if (flag !== false) {
@@ -4983,11 +4993,14 @@ function score(greeting, year) {
     );
 }
 
-window.window.window.score.call(window.window.window.player, "Kiora", 2019);
+window.window.window.score.call(
+    window.window.window.player, "Kiora", 2019
+);
 
 score.apply(player, ["Kiora", 2009]);
 
-const helloRonaldo = window.score.bind(window.player, "Kiora", 2029);
+const helloRonaldo = window.score
+    .bind(window.player, "Kiora", 2029);
 
 helloRonaldo();
 `,

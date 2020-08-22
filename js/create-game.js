@@ -1,5 +1,3 @@
-import {hljs} from './hl.js'
-
 export const createGame = array => {
     if (document.querySelector('div') !== null) {
         document.querySelector('div').remove()
@@ -93,8 +91,6 @@ export const createGame = array => {
         }, {
             once: true
         })
-
-        hljs(window)
     }
 
     function checkAnswer(userAnswerEl, rightAnswerEl, userAnswer, rightAnswer, button) {
