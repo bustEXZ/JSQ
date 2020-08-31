@@ -8,7 +8,7 @@ export const createGame = () => {
     const template = `
     <section class="game-box">
         <button class="close">Закрыть</button>
-        <h3>Что будет выведено в консоль?</h3>
+        <h3 class="game-title">Что будет выведено в консоль?</h3>
         <output class="score"></output>
         <output class="progress"></output>
         <div class="question-box"></div>
@@ -161,14 +161,16 @@ export const createGame = () => {
             result = `Похоже, вы только начали изучать JavaScript. Удачи!`
         }
 
-        gameBox.innerHTML = `
+        main.querySelector('.game-title').remove()
+        score.remove()
+        progress.remove()
+
+        questionBox.innerHTML = `
         <h3>Ваш результат</h3>
-        <div>
-            <p>Правильных ответов: <span class="right">${rightAnswers}</span></p>
-            <p>Неправильных ответов: <span class="wrong">${wrongAnswers}</span></p>
-            <p>Процент правильных ответов: ${percentage}</p>
-            <p>${result}</p>
-        </div>
+        <p>Правильных ответов: <span class="right">${rightAnswers}</span></p>
+        <p>Неправильных ответов: <span class="wrong">${wrongAnswers}</span></p>
+        <p>Процент правильных ответов: ${percentage}</p>
+        <p>${result}</p>
         `
     }
 }
