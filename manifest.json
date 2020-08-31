@@ -1,12 +1,12 @@
 {
-    "name": "Вопросы по JavaScript",
+    "name": "Вопросы по JavaScript: теория и практика",
     "short_name": "JSQ",
     "start_url": "./",
     "display": "standalone",
     "orientation": "portrait",
     "background_color": "#eee",
     "theme_color": "#111",
-    "description": "JavaScript: 300+ практических вопросов",
+    "description": "Большая коллекция теоретических и практических вопросов по JavaScript",
     "categories": "education",
     "icons": [{
         "src": "./icons/icon-64.png",

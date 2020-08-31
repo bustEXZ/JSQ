@@ -1,18 +1,29 @@
-const NAME = 'cache-v4.0.0'
+const NAME = 'cache-v1.0.0'
 
 const FILES = [
     './index.html',
     './style.css',
-    './js/script.js',
-    './js/tasks.js',
+    './script.js',
+    './server.js',
+
+    './js/assets.js',
     './js/create-game.js',
-    './js/create-modal.js',
-    './js/hl.js',
-    './js/bonus.js',
+    './js/create-observer.js',
+    './js/find-last-question.js',
+    './js/generate-page.js',
+    './js/init-handlers.js',
+    './js/practice-template.js',
+    './js/theory-template.js',
+    './js/toggle-class.js',
+
     './icons/icon-64.png',
     './icons/icon-128.png',
     './icons/icon-256.png',
-    './icons/icon-512.png'
+    './icons/icon-512.png',
+
+    './img/1.png',
+    './img/2.png',
+    './img/3.png'
 ]
 
 self.addEventListener("install", ev => {

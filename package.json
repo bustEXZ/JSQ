@@ -1,20 +1,20 @@
 {
-  "name": "JSQ",
+  "name": "Вопросы по JavaScript: теория и практика",
   "version": "1.0.0",
-  "description": "JavaScript: 300+ практических вопросов",
+  "description": "Большая коллекция теоретических и практических вопросов по JavaScript",
   "private": true,
   "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/harryheman/JSQ.git"
   },
-  "keywords": [],
+  "keywords": ["javascript", "js", "theory", "practice", "question", "task", "code"],
   "author": "Igor Agapov",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/harryheman/JSQ/issues"
   },
-  "homepage": "https://github.com/harryheman/JSQ#readme",
+  "homepage": "https://jsq.netlify.app",
   "dependencies": {
     "express": "^4.17.1"
   }

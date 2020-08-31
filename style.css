@@ -11,7 +11,7 @@
 
 @media (max-width: 600px) {
     * {
-        font-size: .95em;
+        font-size: .96em;
     }
 }
 
@@ -20,38 +20,18 @@ body {
     color: #222;
 }
 
-section,
-div {
-    margin: 1.25em auto;
+section {
+    margin: .75em auto;
     max-width: 768px;
-    width: 85%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-article {
-    text-align: justify;
-}
-
-div div {
-    width: 100%;
-    margin: 0;
-}
-
 details {
-    margin-top: 1em;
+    margin: .5em 0;
     width: 100%;
-}
-
-.game-box,
-.bonus-box {
-    width: 90%;
-    margin: 1em auto;
-    padding: .5em;
-    border: 1px dashed #222;
-    border-radius: 4px;
-    max-width: 768px;
 }
 
 summary {
@@ -64,27 +44,44 @@ summary {
 h1 {
     text-align: center;
     font-size: 1.5em;
-    margin: 1em 0 .5em;
+    margin: .5em 0;
 }
 
 h3 {
-    margin: 1em 0 .5em;
+    margin: .5em 0;
     font-size: 1.1em;
     text-align: center;
+}
+
+h5 {
+    margin: .5em 0;
 }
 
 p {
     letter-spacing: 1.25px;
     line-height: 1.25em;
+    text-align: justify;
+    margin: .5em 0;
+}
+
+
+details>p {
+    text-align: center;
 }
 
 a {
-    margin: .5em;
-    display: block;
-    text-align: center;
     text-decoration: none;
-    color: #cd5c5c;
-    font-size: 1.1em;
+    margin: .75em;
+    display: block;
+    color: orangered;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+section>a,
+p>a {
+    display: inline;
+    margin: 0;
 }
 
 footer p {
@@ -96,10 +93,10 @@ footer p {
 pre {
     width: 100%;
     padding: 0 1em 1em;
-    margin: 1em 0;
+    margin: .5em 0;
     display: flex;
     justify-content: center;
-    background: rgba(255, 255, 255, .7);
+    background: rgba(255, 255, 255, .75);
     border-radius: 4px;
     letter-spacing: 1.25px;
     line-height: 1.25em;
@@ -107,42 +104,83 @@ pre {
 }
 
 ul {
-    list-style: none;
+    list-style: circle;
     letter-spacing: 1.25px;
+    margin: .5em;
+    text-align: justify;
 }
 
 li {
     margin: .25em 0;
 }
 
-hr {
-    max-width: 768px;
-    width: 80%;
-    margin: 0 auto;
-    height: 1.5px;
-    background: rgba(0, 0, 0, .3);
-    border: none;
+.button-box {
+    display: flex;
+    justify-content: center;
 }
 
 button {
     padding: .5em;
-    border: 1px solid #222;
+    border: 1px dashed #222;
     outline: none;
     background: none;
     border-radius: 4px;
     cursor: pointer;
-    margin: 1em 0 .5em;
-    font-size: .95em;
+    margin: .75em;
 }
 
-header button {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+button.active {
+    border: 1px solid #222;
 }
 
-output:first-child {
-    margin-bottom: 1em;
+img {
+    display: block;
+    margin: .5em 0;
+    width: 100%;
+}
+
+table {
+    margin: .5em 0;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px dashed #222;
+    padding: .5em;
+}
+
+.top {
+    position: fixed;
+    right: .5em;
+    bottom: .5em;
+    margin: 0;
+    padding: .5em;
+    background: rgba(255, 255, 255, .75);
+    border-radius: 4px;
+}
+
+
+/* game */
+
+.game-box {
+    border: 1px solid #222;
+    border-radius: 4px;
+}
+
+.question-box {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.question-box ul {
+    list-style: none;
+}
+
+output {
+    margin: .5em;
 }
 
 .answer {
@@ -173,21 +211,24 @@ output:first-child {
     color: red;
 }
 
+
+/* modal */
+
 .modal-box {
-    max-width: 512px;
+    text-align: center;
     background: #eee;
-    padding: 1em 1.5em;
+    padding: 1em 5em .5em;
     border-radius: 4px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, .5);
     position: absolute;
+    top: -1em;
     left: 50%;
     transform: translateX(-50%);
-    font-size: .8em;
+    font-size: .9em;
 }
 
-.modal-box p {
-    line-height: 1.75em;
-}
+
+/* code */
 
 .code.cdata,
 .code.comment,

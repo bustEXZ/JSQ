@@ -1,19 +1,43 @@
-export const createGame = array => {
-    if (document.querySelector('div') !== null) {
-        document.querySelector('div').remove()
+import assets from './assets.js'
+
+export const createGame = () => {
+    if (main.querySelector('.game-box') !== null) {
+        main.querySelector('.game-box').remove()
     }
 
-    const gameBox = document.createElement('div')
-    document.querySelector('details').append(gameBox)
+    const template = `
+    <section class="game-box">
+        <button class="close">Закрыть</button>
+        <h3>Что будет выведено в консоль?</h3>
+        <output class="score"></output>
+        <output class="progress"></output>
+        <div class="question-box"></div>
+    </section>
+    `
 
-    const score = document.createElement('output')
-    gameBox.append(score)
+    main.insertAdjacentHTML('afterbegin', template)
 
-    const progress = document.createElement('output')
-    gameBox.append(progress)
+    main.querySelector('.close').addEventListener('click', ev => ev.target.parentElement.remove(), {
+        once: true
+    })
 
-    const questionBox = document.createElement('div')
-    gameBox.append(questionBox)
+    const set = new Set()
+
+    while (set.size < 20) {
+        const i = Math.floor(Math.random() * (assets.length + 1))
+
+        if (i > assets.length) {
+            i = 0
+        }
+
+        set.add(assets[i])
+    }
+
+    const array = Array.from(set)
+
+    const questionBox = document.querySelector('.question-box')
+    const score = document.querySelector('.score')
+    const progress = document.querySelector('.progress')
 
     let rightAnswers = 0
     let wrongAnswers = 0
@@ -22,9 +46,10 @@ export const createGame = array => {
     updateScoreAndProgress()
 
     function updateScoreAndProgress() {
-        score.innerHTML = `<span class="right">${rightAnswers}</span> - <span class="wrong">${wrongAnswers}</span>`
+        score.innerHTML =
+            `<span class="right">${rightAnswers}</span> - <span class="wrong">${wrongAnswers}</span>`
 
-        progress.innerHTML = `${i + 1} / ${array.length}`
+        progress.textContent = `${i + 1} / ${array.length}`
     }
 
     createQuestion()
@@ -47,34 +72,34 @@ export const createGame = array => {
             .map(i => i.trim())
 
         const template = `
-            <pre><code class="lang-js">${question}</code></pre>
-
-            <ul>
-                ${answers.reduce((html, i) => html += `<li class="answer">${i}</li>`, '')}
-            </ul>
-
-            <button>Ответить</button>
-
-            <details>
-                <summary>Показать правильный ответ</summary>
-                <article>
-                    <h3>Правильный ответ: ${rightAnswer}</h3>
-                    <p>${explanation}</p>
-                </article>
-            </details>
+        <pre><code class="lang-js">${question}</code></pre>
+        <ul>
+        ${answers.reduce((html, i) => html += `<li class="answer">${i}</li>`, '')}
+        </ul>
+        <button>Ответить</button>
+        <details>
+        <summary>Показать правильный ответ</summary>
+        <article>
+            <h3>Правильный ответ: ${rightAnswer}</h3>
+            <p>${explanation}</p>
+        </article>
+        </details>
         `
 
         questionBox.innerHTML = template
 
         questionBox.querySelector('.answer').classList.add('checked')
 
-        questionBox.addEventListener('click', e => {
-            if (e.target.className === 'answer') {
-                questionBox.querySelectorAll('.answer')
-                    .forEach(a => a.classList.remove('checked'))
+        questionBox.addEventListener('click', ev => {
+            if (ev.target.className === 'answer') {
+                if (ev.target.classList.contains('checked')) {
+                    return
+                }
 
-                e.target.classList.add('checked')
-            } else return
+                questionBox.querySelector('.checked').classList.remove('checked')
+
+                ev.target.classList.add('checked')
+            }
         })
 
         const button = questionBox.querySelector('button')
@@ -82,8 +107,8 @@ export const createGame = array => {
         button.addEventListener('click', () => {
             const answers = Array.from(questionBox.querySelectorAll('.answer'))
 
-            const userAnswerEl = answers.find(a => a.classList.contains('checked'))
-            const rightAnswerEl = answers.find(a => a.textContent[0] === rightAnswer)
+            const userAnswerEl = answers.find(ans => ans.classList.contains('checked'))
+            const rightAnswerEl = answers.find(ans => ans.textContent[0] === rightAnswer)
 
             const userAnswer = userAnswerEl.textContent.substr(0, 1)
 
@@ -124,26 +149,26 @@ export const createGame = array => {
     }
 
     function showResult() {
-        const per = (rightAnswers / array.length * 100).toFixed()
+        const percentage = (rightAnswers / array.length * 100).toFixed()
 
         let result
 
-        if (per >= 80) {
+        if (percentage >= 80) {
             result = `Отличный результат! Вы прекрасно знаете JavaScript.`
-        } else if (per > 50) {
+        } else if (percentage > 50) {
             result = `Неплохой результат, но есть к чему стремиться. Дерзайте!`
         } else {
-            result = `Вероятно, вы только начали изучать JavaScript. Удачи!`
+            result = `Похоже, вы только начали изучать JavaScript. Удачи!`
         }
 
         gameBox.innerHTML = `
-            <h3>Ваш результат</h3>
-            <div>
-                <p>Правильных ответов: <span class="right">${rightAnswers}</span></p>
-                <p>Неправильных ответов: <span class="wrong">${wrongAnswers}</span></p>
-                <p>Процент правильных ответов: ${percent}</p>
-                <p>${result}</p>
-            </div>
+        <h3>Ваш результат</h3>
+        <div>
+            <p>Правильных ответов: <span class="right">${rightAnswers}</span></p>
+            <p>Неправильных ответов: <span class="wrong">${wrongAnswers}</span></p>
+            <p>Процент правильных ответов: ${percentage}</p>
+            <p>${result}</p>
+        </div>
         `
     }
 }
