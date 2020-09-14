@@ -11,7 +11,7 @@
 
 @media (max-width: 600px) {
     * {
-        font-size: .95em;
+        font-size: .98em;
     }
 }
 
@@ -212,11 +212,11 @@ output {
 
 .answer::before {
     content: '✔';
+    font-size: 1.1em;
     color: green;
     width: 12px;
     height: 12px;
     opacity: 0;
-    text-shadow: 1px 1px rgba(0,0,0,.6);
     display: inline-block;
     margin-right: .8em;
 }
