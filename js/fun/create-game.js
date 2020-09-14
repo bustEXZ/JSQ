@@ -1,4 +1,6 @@
-import assets from './assets.js'
+import { generatePage } from '../fun/generate-page.js'
+import assets from '../assets.js'
+import { hljs } from '../hl.js'
 
 export const createGame = () => {
     if (main.querySelector('.game-box') !== null) {
@@ -15,9 +17,12 @@ export const createGame = () => {
     </section>
     `
 
-    main.insertAdjacentHTML('afterbegin', template)
+    main.innerHTML = template
 
-    main.querySelector('.close').addEventListener('click', ev => ev.target.parentElement.remove(), {
+    main.querySelector('.close').addEventListener('click', ev => {
+        ev.target.parentElement.remove()
+        generatePage('practice')
+    }, {
         once: true
     })
 
@@ -33,7 +38,7 @@ export const createGame = () => {
         set.add(assets[i])
     }
 
-    const array = Array.from(set)
+    const array = [...set]
 
     const questionBox = document.querySelector('.question-box')
     const score = document.querySelector('.score')
@@ -88,6 +93,8 @@ export const createGame = () => {
 
         questionBox.innerHTML = template
 
+        hljs(globalThis)
+
         questionBox.querySelector('.answer').classList.add('checked')
 
         questionBox.addEventListener('click', ev => {
@@ -134,7 +141,7 @@ export const createGame = () => {
             userAnswerEl.classList.add('wrong')
             rightAnswerEl.click()
             rightAnswerEl.classList.add('right')
-            questionBox.querySelector('details').open = true
+            questionBox.querySelector('summary').click()
         }
 
         button.textContent = 'Дальше'

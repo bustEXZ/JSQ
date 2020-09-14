@@ -1,28 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1em;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.02em;
 }
 
 @media (max-width: 600px) {
     * {
-        font-size: .96em;
+        font-size: .95em;
     }
 }
 
 body {
     background: radial-gradient(circle, skyblue, steelblue) fixed;
     color: #222;
+    max-width: 768px;
+    margin: 0 auto;
 }
 
 section {
     margin: .75em auto;
-    max-width: 768px;
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -32,6 +33,18 @@ section {
 details {
     margin: .5em 0;
     width: 100%;
+}
+
+details > *:not(summary) {
+    display: none;
+}
+
+details.active > *:not(summary) {
+    display: block;
+}
+
+details > p {
+    text-align: center;
 }
 
 summary {
@@ -53,20 +66,10 @@ h3 {
     text-align: center;
 }
 
-h5 {
-    margin: .5em 0;
-}
-
 p {
     letter-spacing: 1.25px;
     line-height: 1.25em;
-    text-align: justify;
     margin: .5em 0;
-}
-
-
-details>p {
-    text-align: center;
 }
 
 a {
@@ -78,16 +81,31 @@ a {
     text-align: center;
 }
 
-section>a,
-p>a {
+section > a,
+p > a {
     display: inline;
     margin: 0;
 }
 
-footer p {
+.copy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.copy p {
     text-align: center;
     font-size: .9em;
     margin: .5em 0;
+}
+
+.copy img {
+    width: 20px;
+}
+
+.info {
+    padding: .5em;
+    font-size: .75em;
 }
 
 pre {
@@ -98,6 +116,7 @@ pre {
     justify-content: center;
     background: rgba(255, 255, 255, .75);
     border-radius: 4px;
+    font-size: .94em;
     letter-spacing: 1.25px;
     line-height: 1.25em;
     white-space: pre-wrap;
@@ -106,15 +125,15 @@ pre {
 ul {
     list-style: circle;
     letter-spacing: 1.25px;
-    margin: .5em;
-    text-align: justify;
+    margin: 0 .5em 0 .75em;
+    font-size: .96em;
 }
 
 li {
     margin: .25em 0;
 }
 
-.button-box {
+.btn-box {
     display: flex;
     justify-content: center;
 }
@@ -140,6 +159,9 @@ img {
 }
 
 table {
+    width: 100%;
+    font-size: .96em;
+    word-break: break-all;
     margin: .5em 0;
     border-collapse: collapse;
 }
@@ -189,18 +211,18 @@ output {
 }
 
 .answer::before {
-    content: '';
+    content: '✔';
+    color: green;
     width: 12px;
     height: 12px;
-    border-radius: 50%;
-    box-shadow: inset 0 0 2px #111;
-    background: #eee;
+    opacity: 0;
+    text-shadow: 1px 1px rgba(0,0,0,.6);
     display: inline-block;
-    margin-right: 1em;
+    margin-right: .8em;
 }
 
 .answer.checked::before {
-    background: lightgreen;
+    opacity: 1;
 }
 
 .right {
@@ -209,22 +231,6 @@ output {
 
 .wrong {
     color: red;
-}
-
-
-/* modal */
-
-.modal-box {
-    text-align: center;
-    background: #eee;
-    padding: 1em 5em .5em;
-    border-radius: 4px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, .5);
-    position: absolute;
-    top: -1em;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: .9em;
 }
 
 

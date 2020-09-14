@@ -1,25 +1,22 @@
 import {
     generatePage
-} from './js/generate-page.js'
+} from './js/fun/generate-page.js'
 import {
     findLastQuestion
-} from './js/find-last-question.js'
-import {
-    createObserver
-} from './js/create-observer.js'
+} from './js/fun/find-last-question.js'
 import {
     initHandlers
-} from './js/init-handlers.js'
+} from './js/fun/init-handlers.js'
 
 ;(async () => {
     window.header = document.querySelector('header')
     window.main = document.querySelector('main')
+
     const name = localStorage.getItem('pageName') || 'theory'
     header.querySelector(`button[data-name="${name}"]`).classList.add('active')
 
     await generatePage(name)
     findLastQuestion()
-    createObserver()
     initHandlers()
 })()
 

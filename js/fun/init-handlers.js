@@ -9,8 +9,8 @@ import {
 } from './create-game.js'
 
 export const initHandlers = () => {
-    header.addEventListener('click', ev => {
-        if (ev.target.tagName === 'BUTTON') {
+    document.addEventListener('click', ev => {
+        if (ev.target.dataset.name) {
             if (ev.target.classList.contains('active')) {
                 return
             }
@@ -24,9 +24,16 @@ export const initHandlers = () => {
 
             generatePage(name)
 
-            localStorage.setItem('pageName', name)
-
             toggleClass(name)
+        } else if (ev.target.tagName === 'SUMMARY') {
+            const details = ev.target.parentElement
+            details.addEventListener('toggle', () => {
+                details.className === 'active' ?
+                    details.classList.remove('active') :
+                    details.classList.add('active')
+            }, {
+                once: true
+            })
         }
     })
 }

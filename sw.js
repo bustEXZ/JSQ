@@ -1,4 +1,4 @@
-const NAME = 'cache-v1.0.0'
+const NAME = 'mycache-1'
 
 const FILES = [
     './index.html',
@@ -7,14 +7,15 @@ const FILES = [
     './server.js',
 
     './js/assets.js',
-    './js/create-game.js',
-    './js/create-observer.js',
-    './js/find-last-question.js',
-    './js/generate-page.js',
-    './js/init-handlers.js',
-    './js/practice-template.js',
-    './js/theory-template.js',
-    './js/toggle-class.js',
+    './js/hl.js',
+    './js/fun/create-game.js',
+    './js/fun/create-observer.js',
+    './js/fun/find-last-question.js',
+    './js/fun/generate-page.js',
+    './js/fun/init-handlers.js',
+    './js/fun/toggle-class.js',
+    './js/temp/practice.min.js',
+    './js/temp/theory.min.js',
 
     './icons/icon-64.png',
     './icons/icon-128.png',
@@ -23,43 +24,39 @@ const FILES = [
 
     './img/1.png',
     './img/2.png',
-    './img/3.png'
+    './img/3.png',
+    './img/4.png',
+    './img/github.png',
 ]
 
-self.addEventListener("install", ev => {
-    ev.waitUntil(
+self.addEventListener("install", e => {
+    e.waitUntil(
         caches.open(NAME)
             .then(cache => cache.addAll(FILES))
     )
     self.skipWaiting()
 })
 
-self.addEventListener("activate", ev => {
-    ev.waitUntil(
-        caches.keys().then(keyList => {
-            return Promise.all(
-                keyList.map(key => {
+self.addEventListener("activate", e => {
+    e.waitUntil(
+        caches.keys().then(keys => Promise.all(
+                keys.map(key => {
                     if (key !== NAME) {
                         return caches.delete(key)
                     }
-                })
-            )
-        })
-    )
+                }))))
     self.clients.claim()
 })
 
-self.addEventListener('fetch', ev => {
-    ev.respondWith(
-        fetch(ev.request)
-            .then(res => {
-                let cacheClone = res.clone()
-                caches.open(NAME).then(cache => {
-                    cache.put(ev.request, cacheClone)
-                        .catch(er => er)
-                })
-                return res
-            })
-            .catch(() => caches.match(ev.request).then(res => res))
+self.addEventListener('fetch', e => {
+    e.respondWith(
+        fetch(e.request)
+            .then(response => response || fetch(e.request)
+            .then(response => caches.open(NAME)
+            .then(cache => {
+                cache.put(e.request, response.clone())
+                return response
+            })))
+            .catch(() => caches.match('./404.html'))
     )
 })
