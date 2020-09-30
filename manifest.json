@@ -1,5 +1,5 @@
 {
-    "name": "Вопросы по JavaScript: теория и практика",
+    "name": "JavaScript: теория и практика",
     "short_name": "JSQ",
     "start_url": "./",
     "display": "standalone",
@@ -7,7 +7,6 @@
     "background_color": "#eee",
     "theme_color": "#111",
     "description": "Большая коллекция теоретических и практических вопросов по JavaScript",
-    "categories": "education",
     "icons": [{
         "src": "./icons/icon-64.png",
         "sizes": "64x64",

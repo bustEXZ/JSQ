@@ -211,7 +211,7 @@ output {
 }
 
 .answer::before {
-    content: '✔';
+    content: '😊';
     font-size: 1.1em;
     color: #222;
     width: 12px;
