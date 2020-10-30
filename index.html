@@ -1,105 +1,153 @@
 <!DOCTYPE html>
-<html lang="ru" dir="ltr" prefix="og: http://ogp.me/ns#">
+<html lang="ru" dir="ltr" itemscope itemtype="https://schema.org/WebPage" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript Практика</title>
 
-<head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CNQ7TJD46H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
+    <meta name="referrer" content="origin" />
+    <link rel="canonical" href="https://javascript-practice.ru/" />
+    <link rel="icon" type="image/png" href="./icons/icon-64.png" />
+    <link rel="manifest" href="./manifest.json" />
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
+    <!-- security -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
 
-        gtag('config', 'G-CNQ7TJD46H');
-    </script>
+    <meta name="author" content="Igor Agapov" />
+    <meta name="description" content="Сборник практических вопросов по JavaScript" />
+    <meta name="keywords" content="javascript, js, practice, question, task, problem, практика, вопрос, задача, проблема" />
 
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-        (function (m, e, t, r, i, k, a) {
-            m[i] = m[i] || function () {
-                (m[i].a = m[i].a || []).push(arguments)
-            };
-            m[i].l = 1 * new Date();
-            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode
-                .insertBefore(k, a)
-        })
-        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    <meta itemprop="name" content="JavaScript Практика" />
+    <meta itemprop="description" content="Сборник практических вопросов по JavaScript" />
+    <meta itemprop="image" content="./icons/icon-128.png" />
 
-        ym(66445966, "init", {
-            clickmap: true,
-            trackLinks: true,
-            accurateTrackBounce: true
-        });
-    </script>
-    <noscript>
-        <div><img src="https://mc.yandex.ru/watch/66445966" style="position:absolute; left:-9999px;" alt="" /></div>
-    </noscript>
-    <!-- /Yandex.Metrika counter -->
+    <!-- microsoft -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta http-equiv="cleartype" content="on" />
+    <meta name="application-name" content="JavaScript Практика" />
+    <meta name="msapplication-tooltip" content="JavaScript Практика" />
+    <meta name="msapplication-starturl" content="/" />
+    <meta name="msapplication-config" content="browserconfig.xml" />
+
+    <!-- facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://javascript-practice.ru/" />
+    <meta property="og:title" content="JavaScript Практика" />
+    <meta property="og:image" content="./icons/icon-256.png" />
+    <meta property="og:site_name" content="JavaScript Практика" />
+    <meta property="og:description" content="Сборник практических вопросов по JavaScript" />
+    <meta property="og:locale" content="ru_RU" />
+
+    <!-- twitter -->
+    <meta name="twitter:title" content="JavaScript Практика" />
+    <meta name="twitter:description" content="Сборник практических вопросов по JavaScript" />
+    <meta name="twitter:url" content="https://javascript-practice.ru/" />
+    <meta name="twitter:image" content="./icons/icon-128.png" />
+
+    <!-- ios -->
+    <meta name="apple-mobile-web-app-title" content="JavaScript Практика" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#222" />
+    <link rel="apple-touch-icon" href="./icons/icon-256.png" />
+
+    <!-- android -->
+    <meta name="theme-color" content="#eee" />
+    <meta name="mobile-web-app-capable" content="yes" />
 
     <meta name="google-site-verification" content="PcJAGAPEDvWC4rbrb0u-ZkSFoA4P4pzsJkwZdim24MU" />
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CNQ7TJD46H"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-CNQ7TJD46H");
+    </script>
+
     <meta name="yandex-verification" content="874f994344f82d1c" />
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JSQ</title>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+      (function (m, e, t, r, i, k, a) {
+        m[i] =
+          m[i] ||
+          function () {
+            (m[i].a = m[i].a || []).push(arguments);
+          };
+        m[i].l = 1 * new Date();
+        (k = e.createElement(t)), (a = e.getElementsByTagName(t)[0]), (k.async = 1), (k.src = r), a.parentNode.insertBefore(k, a);
+      })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-    <meta name="author" content="Igor Agapov">
-    <meta name="description" content="Большая коллекция теоретических и практических вопросов по JavaScript">
-    <meta name="keywords" content="javascript, js, вопросы, задания, задачи">
-    <meta name="theme-color" content="#eee">
+      ym(66445966, "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+      });
+    </script>
+    <noscript>
+      <div>
+        <img src="https://mc.yandex.ru/watch/66445966" style="position: absolute; left: -9999px" alt="" />
+      </div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
 
-    <!-- facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://thebestcode.ru">
-    <meta property="og:title" content="JavaScript: теория и практика">
-    <meta property="og:image" content="./icons/icon-256.png">
-    <meta property="og:description" content="Большая коллекция теоретических и практических вопросов по JavaScript">
-    <meta property="og:locale" content="ru_RU">
+    <!-- json-ld -->
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org/",
+        "@type": "Course",
+        "name": "JavaScript Практика",
+        "image": ["https://javascript-practice.ru/icons/icon-512.png"],
+        "provider": {
+          "@type": "Person",
+          "name": "Igor Agapov"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Igor Agapov"
+        },
+        "datePublished": "2020-10-30",
+        "description": "Сборник практических вопросов по JavaScript",
+        "keywords": "javascript, js, practice, question, task, problem, практика, вопрос, задача, проблема"
+      }
+    </script>
 
-    <!-- twitter -->
-    <meta name="twitter:title" content="JavaScript: теория и практика">
-    <meta name="twitter:description" content="Большая коллекция теоретических и практических вопросов по JavaScript">
-    <meta name="twitter:image" content="./icons/icon-128.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
 
-    <!-- apple -->
-    <meta name="apple-mobile-web-app-title" content="JavaScript: теория и практика">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#111">
-    <link rel="apple-touch-icon" href="./icons/icon-256.png">
+    <link rel="stylesheet" href="./style.css" />
 
-    <meta itemprop="name" content="Большая коллекция теоретических и практических вопросов по JavaScript">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="./icons/icon-128.png">
+    <script src="./script.js" type="module"></script>
+  </head>
 
-    <link rel="icon" href="./icons/icon-64.png">
-
-    <link rel="manifest" href="./manifest.json">
-
-    <link rel="stylesheet" href="style.css">
-
-    <script src="script.js" type="module"></script>
-</head>
-
-<body>
+  <body>
     <header>
-        <h1>JavaScript:<br>теория и практика</h1>
-        <div class="btn-box">
-            <button data-name="theory">Теория</button>
-            <button data-name="practice">Практика</button>
-        </div>
-        <a id="top"></a>
+      <h1 id="main_title">
+        JavaScript Практика
+      </h1>
+      <nav>
+        <ul id="nav_list">
+          <li class="list_item"><button id="game_btn">Игра</button></li>
+          <li class="list_item active"><a data-url="0" class="link">1 - 50</a></li>
+          <li class="list_item"><a data-url="50" class="link">51 - 100</a></li>
+          <li class="list_item"><a data-url="100" class="link">101 - 150</a></li>
+          <li class="list_item"><a data-url="150" class="link">151 - 200</a></li>
+          <li class="list_item"><a data-url="200" class="link">201 - 233</a></li>
+        </ul>
+      </nav>
+      <a name="top"></a>
     </header>
-    <main></main>
-    <footer>
-        <a class="top" href="#top">Наверх</a>
-        <div class="copy">
-            <p>&copy; 2020. Игорь Агапов</p>
-            <a href="https://github.com/harryheman" target="_blank"><img src="img/github.png" alt="github"></a>
-        </div>
-    </footer>
-</body>
 
+    <main id="main"></main>
+
+    <footer>
+        <p>&copy; 2020. Игорь Агапов</p>
+      </div>
+    </footer>
+  </body>
 </html>

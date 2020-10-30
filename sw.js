@@ -1,62 +1,40 @@
-const NAME = 'mycache-1'
+const NAME = "jsp-cache-v1";
 
-const FILES = [
-    './index.html',
-    './style.css',
-    './script.js',
-    './server.js',
+const FILES = ["./index.html", "./style.css", "./script.js", "./index.js", "./css/buttons.css", "./css/code.css", "./css/game.css", "./css/nav.css", "./js/assets.js", "./js/hl.js", "./js/helpers/create-game.js", "./js/helpers/create-observer.js", "./js/helpers/find-last-question.js", "./js/helpers/generate-page.js", "./js/helpers/init-handlers.js", "./js/helpers/toggle-class.js", "./icons/icon-64.png", "./icons/icon-128.png", "./icons/icon-150.png", "./icons/icon-256.png", "./icons/icon-512.png"];
 
-    './js/assets.js',
-    './js/hl.js',
-    './js/fun/create-game.js',
-    './js/fun/create-observer.js',
-    './js/fun/find-last-question.js',
-    './js/fun/generate-page.js',
-    './js/fun/init-handlers.js',
-    './js/fun/toggle-class.js',
-    './js/temp/practice.min.js',
-    './js/temp/theory.min.js',
+self.addEventListener("install", (e) => {
+  e.waitUntil(caches.open(NAME).then((cache) => cache.addAll(FILES)));
+  self.skipWaiting();
+});
 
-    './icons/icon-64.png',
-    './icons/icon-128.png',
-    './icons/icon-256.png',
-    './icons/icon-512.png',
-
-    './img/1.png',
-    './img/2.png',
-    './img/3.png',
-    './img/4.png',
-    './img/github.png',
-]
-
-self.addEventListener("install", e => {
-    e.waitUntil(
-        caches.open(NAME)
-            .then(cache => cache.addAll(FILES))
+self.addEventListener("activate", (e) => {
+  e.waitUntil(
+    caches.keys().then((keys) =>
+      Promise.all(
+        keys.map((key) => {
+          if (key !== NAME) {
+            return caches.delete(key);
+          }
+        })
+      )
     )
-    self.skipWaiting()
-})
+  );
+  self.clients.claim();
+});
 
-self.addEventListener("activate", e => {
-    e.waitUntil(
-        caches.keys().then(keys => Promise.all(
-                keys.map(key => {
-                    if (key !== NAME) {
-                        return caches.delete(key)
-                    }
-                }))))
-    self.clients.claim()
-})
-
-self.addEventListener('fetch', e => {
-    e.respondWith(
-        fetch(e.request)
-            .then(response => response || fetch(e.request)
-            .then(response => caches.open(NAME)
-            .then(cache => {
-                cache.put(e.request, response.clone())
-                return response
-            })))
-            .catch(() => caches.match('./404.html'))
-    )
-})
+self.addEventListener("fetch", (e) => {
+  e.respondWith(
+    fetch(e.request)
+      .then(
+        (response) =>
+          response ||
+          fetch(e.request).then((response) =>
+            caches.open(NAME).then((cache) => {
+              cache.put(e.request, response.clone());
+              return response;
+            })
+          )
+      )
+      .catch(() => caches.match("./index.html"))
+  );
+});

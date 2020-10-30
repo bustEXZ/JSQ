@@ -1,0 +1,74 @@
+pre {
+  width: 100%;
+  margin: 0 auto 1rem;
+  background: #eee;
+  display: flex;
+  justify-content: center;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+code {
+  white-space: pre-wrap;
+  font-size: 1.05rem;
+  letter-spacing: 0.75px;
+  line-height: 1.3rem;
+}
+
+code > * {
+  font-size: 1.05rem;
+}
+
+.code.cdata,
+.code.comment,
+.code.doctype,
+.code.prolog {
+  color: #888;
+}
+
+.code.punctuation {
+  color: #666;
+}
+
+.code.namespace {
+  opacity: 0.7;
+}
+
+.code.atrule,
+.code.attr-value,
+.code.boolean,
+.code.constant,
+.code.deleted,
+.code.keyword,
+.code.number,
+.code.property,
+.code.symbol,
+.code.tag {
+  color: #4682b4;
+}
+
+.code.attr-name,
+.code.builtin,
+.code.char,
+.code.inserted,
+.code.selector,
+.code.string {
+  color: #228b22;
+}
+
+.code.entity,
+.code.operator,
+.code.url {
+  color: #444;
+}
+
+.code.class-name,
+.code.function {
+  color: #cd5c5c;
+}
+
+.code.important,
+.code.regex,
+.code.variable {
+  color: #ff8c00;
+}

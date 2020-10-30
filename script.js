@@ -1,25 +1,15 @@
-import {
-    generatePage
-} from './js/fun/generate-page.js'
-import {
-    findLastQuestion
-} from './js/fun/find-last-question.js'
-import {
-    initHandlers
-} from './js/fun/init-handlers.js'
+import { generatePage } from "./js/helpers/generate-page.js";
+import { findLastQuestion } from "./js/helpers/find-last-question.js";
+import { initHandlers } from "./js/helpers/init-handlers.js";
 
-;(async () => {
-    window.header = document.querySelector('header')
-    window.main = document.querySelector('main')
+(() => {
+  const num = localStorage.getItem("pageNum") || 0;
 
-    const name = localStorage.getItem('pageName') || 'theory'
-    header.querySelector(`button[data-name="${name}"]`).classList.add('active')
+  generatePage(num);
 
-    await generatePage(name)
-    findLastQuestion()
-    initHandlers()
-})()
+  findLastQuestion();
 
-navigator.serviceWorker
-    .register('./sw.js')
-    .catch(e => console.error(e))
+  initHandlers();
+})();
+
+navigator.serviceWorker.register("./sw.js").catch((er) => console.error(er));

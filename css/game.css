@@ -1,0 +1,39 @@
+#game_title {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+output {
+  display: block;
+  margin: 0.6rem;
+  text-align: center;
+}
+
+#score {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.answer_item {
+  user-select: none;
+  cursor: pointer;
+}
+
+.answer_item::before {
+  content: "🐼";
+  font-size: 1.2rem;
+  margin-right: 0.6rem;
+  opacity: 0;
+}
+
+.answer_item.checked::before {
+  opacity: 1;
+}
+
+.right {
+  color: green;
+}
+
+.wrong {
+  color: red;
+}

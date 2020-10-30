@@ -1,34 +1,36 @@
 {
-    "name": "JavaScript: теория и практика",
-    "short_name": "JSQ",
-    "start_url": "./",
-    "display": "standalone",
-    "orientation": "portrait",
-    "background_color": "#eee",
-    "theme_color": "#111",
-    "description": "Большая коллекция теоретических и практических вопросов по JavaScript",
-    "icons": [{
-        "src": "./icons/icon-64.png",
-        "sizes": "64x64",
-        "type": "image/png"
-      },
-      {
-        "src": "./icons/icon-128.png",
-        "sizes": "128x128",
-        "type": "image/png"
-      },
-      {
-        "src": "./icons/icon-256.png",
-        "sizes": "256x256",
-        "type": "image/png",
-        "purpose": "any maskable"
-      },
-      {
-        "src": "./icons/icon-512.png",
-        "sizes": "512x512",
-        "type": "image/png"
-    }],
-    "serviceworker": {
-      "src": "./sw.js"
+  "name": "JavaScript Практика",
+  "short_name": "JSP",
+  "start_url": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#eee",
+  "theme_color": "#222",
+  "description": "Сборник практических вопросов по JavaScript",
+  "icons": [
+    {
+      "src": "./icons/icon-64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "./icons/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "./icons/icon-256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
+  ],
+  "serviceworker": {
+    "src": "./sw.js"
   }
+}

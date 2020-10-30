@@ -1,292 +1,166 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import "./css/nav.css";
+@import "./css/buttons.css";
+@import "./css/game.css";
+@import "./css/code.css";
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.02em;
-}
-
-@media (max-width: 600px) {
-    * {
-        font-size: .98em;
-    }
+  font-family: "Montserrat", sans-serif;
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background: radial-gradient(circle, skyblue, steelblue) fixed;
-    color: #222;
-    max-width: 768px;
-    margin: 0 auto;
+  max-width: 1024px;
+  margin: 0 auto;
+  color: #222;
+}
+
+#main_title {
+  text-align: center;
+  padding: 0.6em;
+  font-size: 1.6em;
+}
+
+#main_question {
+  font-size: 1.3em;
+  text-align: center;
+}
+
+header,
+footer {
+  padding: 1em;
+  background: linear-gradient(45deg, orange, yellow);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+header {
+  margin-bottom: 1em;
+}
+
+footer {
+  font-size: 0.96em;
+  background: linear-gradient(45deg, yellow, orange);
+  text-align: center;
 }
 
 section {
-    margin: .75em auto;
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 94%;
+  margin: 0 auto;
+}
+
+section + section {
+  border-top: 1px dashed #222;
+}
+
+.section_title {
+  width: 100%;
+  padding: 0.8em 0;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.answers_list {
+  list-style: none;
+}
+
+.answers_list li {
+  font-size: 1.05em;
+  line-height: 1.3em;
+  letter-spacing: 0.75px;
+}
+
+.answers_list li::first-letter {
+  font-weight: bold;
+  opacity: 0.9;
 }
 
 details {
-    margin: .5em 0;
-    width: 100%;
+  width: 100%;
+  margin: 0.8em;
+  text-align: center;
+  line-height: 1.3em;
+  letter-spacing: 0.75px;
 }
 
 details > *:not(summary) {
-    display: none;
+  display: none;
 }
 
-details.active > *:not(summary) {
-    display: block;
-}
-
-details > p {
-    text-align: center;
+details[open] > *:not(summary) {
+  display: block;
 }
 
 summary {
-    text-align: center;
-    cursor: pointer;
-    user-select: none;
-    outline: none;
+  outline: none;
+  user-select: none;
+  cursor: pointer;
 }
 
-h1 {
-    text-align: center;
-    font-size: 1.5em;
-    margin: .5em 0;
+h6 {
+  margin: 0.4em;
 }
 
-h3 {
-    margin: .5em 0;
+@media (max-width: 660px) {
+  * {
+    font-size: 0.98em;
+  }
+
+  code {
+    font-size: 1em;
+  }
+
+  code > * {
+    font-size: 1em;
+  }
+
+  details p {
+    font-size: 0.96em;
+  }
+
+  #game-title {
+    font-size: 0.98em;
+  }
+
+  #score {
     font-size: 1.1em;
-    text-align: center;
+  }
+
+  footer {
+    font-size: 0.86em;
+  }
 }
 
-p {
-    letter-spacing: 1.25px;
-    line-height: 1.25em;
-    margin: .5em 0;
-}
+@media (max-width: 370px) {
+  * {
+    font-size: 0.96em;
+  }
 
-a {
-    text-decoration: none;
-    margin: .75em;
-    display: block;
-    color: orangered;
-    letter-spacing: 1px;
-    text-align: center;
-}
+  code {
+    font-size: 0.96em;
+  }
 
-section > a,
-p > a {
-    display: inline;
-    margin: 0;
-}
+  code > * {
+    font-size: 0.96em;
+  }
 
-.copy {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+  #game-title {
+    font-size: 0.96em;
+  }
 
-.copy p {
-    text-align: center;
-    font-size: .9em;
-    margin: .5em 0;
-}
+  #score {
+    font-size: 1em;
+  }
 
-.copy img {
-    width: 20px;
-}
+  header {
+    font-size: 0.86em;
+  }
 
-.info {
-    padding: .5em;
-    font-size: .75em;
-}
-
-pre {
-    width: 100%;
-    padding: 0 1em 1em;
-    margin: .5em 0;
-    display: flex;
-    justify-content: center;
-    background: rgba(255, 255, 255, .75);
-    border-radius: 4px;
-    font-size: .94em;
-    letter-spacing: 1.25px;
-    line-height: 1.25em;
-    white-space: pre-wrap;
-}
-
-ul {
-    list-style: circle;
-    letter-spacing: 1.25px;
-    margin: 0 .5em 0 .75em;
-    font-size: .96em;
-}
-
-li {
-    margin: .25em 0;
-}
-
-.btn-box {
-    display: flex;
-    justify-content: center;
-}
-
-button {
-    padding: .5em;
-    border: 1px dashed #222;
-    outline: none;
-    background: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin: .75em;
-}
-
-button.active {
-    border: 1px solid #222;
-}
-
-img {
-    display: block;
-    margin: .5em 0;
-    width: 100%;
-}
-
-table {
-    width: 100%;
-    font-size: .96em;
-    word-break: break-all;
-    margin: .5em 0;
-    border-collapse: collapse;
-}
-
-th,
-td {
-    border: 1px dashed #222;
-    padding: .5em;
-}
-
-.top {
-    position: fixed;
-    right: .5em;
-    bottom: .5em;
-    margin: 0;
-    padding: .5em;
-    background: rgba(255, 255, 255, .75);
-    border-radius: 4px;
-}
-
-
-/* game */
-
-.game-box {
-    border: 1px solid #222;
-    border-radius: 4px;
-}
-
-.question-box {
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.question-box ul {
-    list-style: none;
-}
-
-output {
-    margin: .5em;
-}
-
-.answer {
-    user-select: none;
-    cursor: pointer;
-}
-
-.answer::before {
-    content: '😊';
-    font-size: 1.1em;
-    color: #222;
-    width: 12px;
-    height: 12px;
-    opacity: 0;
-    display: inline-block;
-    margin-right: .8em;
-}
-
-.answer.checked::before {
-    opacity: 1;
-    color: green;
-}
-
-.right {
-    color: green;
-}
-
-.wrong {
-    color: red;
-}
-
-
-/* code */
-
-.code.cdata,
-.code.comment,
-.code.doctype,
-.code.prolog {
-    color: #888
-}
-
-.code.punctuation {
-    color: #666
-}
-
-.code.namespace {
-    opacity: .7
-}
-
-.code.atrule,
-.code.attr-value,
-.code.boolean,
-.code.constant,
-.code.deleted,
-.code.keyword,
-.code.number,
-.code.property,
-.code.symbol,
-.code.tag {
-    color: #4682b4
-}
-
-.code.attr-name,
-.code.builtin,
-.code.char,
-.code.inserted,
-.code.selector,
-.code.string {
-    color: #228b22
-}
-
-.code.entity,
-.code.operator,
-.code.url {
-    color: #444
-}
-
-.code.class-name,
-.code.function {
-    color: #cd5c5c
-}
-
-.code.important,
-.code.regex,
-.code.variable {
-    color: #ff8c00
+  footer {
+    font-size: 0.76em;
+  }
 }
