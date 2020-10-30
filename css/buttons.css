@@ -25,7 +25,8 @@ button:active {
   opacity: 0.9;
 }
 
-#close_btn {
+#close_btn,
+#answer_btn {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
