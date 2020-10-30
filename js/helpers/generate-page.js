@@ -30,7 +30,7 @@ export const generatePage = (min) => {
       ${answersArray.reduce(
         (html, answer) =>
           (html += `
-              <li>${answer}</li>
+              <li class="answer_item">${answer}</li>
           `),
         ""
       )}

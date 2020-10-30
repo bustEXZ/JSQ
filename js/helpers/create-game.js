@@ -80,7 +80,7 @@ export const createGame = () => {
       </code>
     </pre>
     <ul class="answers_list">
-      ${answers.reduce((html, i) => (html += `<li class="answer_item">${i}</li>`), "")}
+      ${answers.reduce((html, i) => (html += `<li class="game_item">${i}</li>`), "")}
     </ul>
     <button id="answer_btn" class="answer_btn">Ответить</button>
     <details>
@@ -94,10 +94,10 @@ export const createGame = () => {
 
     hljs(globalThis);
 
-    question_box.querySelector(".answer_item").classList.add("checked");
+    question_box.querySelector(".game_item").classList.add("checked");
 
     question_box.addEventListener("click", (ev) => {
-      if (ev.target.className === "answer_item") {
+      if (ev.target.className === "game_item") {
         if (ev.target.classList.contains("checked")) {
           return;
         }
@@ -111,7 +111,7 @@ export const createGame = () => {
     answer_btn.addEventListener(
       "click",
       () => {
-        const answers = [...question_box.querySelectorAll(".answer_item")];
+        const answers = [...question_box.querySelectorAll(".game_item")];
 
         const userAnswerEl = answers.find((a) => a.classList.contains("checked"));
         const rightAnswerEl = answers.find((a) => a.textContent[0] === rightAnswer);
