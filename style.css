@@ -55,9 +55,6 @@ footer {
 }
 
 section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   width: 94%;
   margin: 0 auto;
 }
@@ -75,6 +72,9 @@ section + section {
 
 .answers_list {
   list-style: none;
+  width: 100%;
+  display: grid;
+  place-content: center;
 }
 
 .answers_list .answer_item {
@@ -130,7 +130,7 @@ h6 {
   }
 
   .answer_item {
-    font-size: 1em;
+    font-size: 0.98em;
   }
 
   details p {
@@ -164,7 +164,7 @@ h6 {
   }
 
   .answer_item {
-    font-size: 0.96em;
+    font-size: 0.92em;
   }
 
   #game-title {
