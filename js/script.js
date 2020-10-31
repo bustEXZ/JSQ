@@ -12,4 +12,4 @@ import { initHandlers } from "./helpers/init-handlers.js";
   initHandlers();
 })();
 
-navigator.serviceWorker.register("./sw.js").catch((er) => console.error(er));
+navigator.serviceWorker.register("../sw.js").catch((er) => console.error(er));
