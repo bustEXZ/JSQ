@@ -9,9 +9,9 @@ export const initHandlers = () => {
 
       toggleClass(ev.target);
     } else if (ev.target.className === "link") {
-      const { url: num } = ev.target.dataset;
+      const { url } = ev.target.dataset;
 
-      generatePage(num);
+      generatePage(url);
 
       toggleClass(ev.target);
     }

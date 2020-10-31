@@ -5,7 +5,7 @@ import { toggleClass } from "./toggle-class.js";
 
 export const createGame = () => {
   if (main.querySelector("section") !== null) {
-    game_box.remove();
+    main.querySelector("section").remove();
   }
 
   top_btn.style.display = "none";
