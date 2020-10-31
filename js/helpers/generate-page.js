@@ -11,7 +11,7 @@ export const generatePage = (min) => {
     max = min + 50;
   }
 
-  let html = "<h2 id='main_question'>Каким будет вывод?</h2>";
+  let html = "<h2>Каким будет вывод?</h2>";
 
   for (let i = min; i < max; i++) {
     const { question, answers, rightAnswer, explanation } = assets[i];
@@ -20,24 +20,24 @@ export const generatePage = (min) => {
 
     html += `
     <section id="${i + 1}">
-      <h3 class="section_title">Вопрос № ${i + 1}</h3>
+      <h3>Вопрос № ${i + 1}</h3>
       <pre>
         <code class="lang-js">
           ${question}
         </code>
       </pre>
-      <ul class="answers_list">
+      <ul>
       ${answersArray.reduce(
         (html, answer) =>
           (html += `
-              <li class="answer_item">${answer}</li>
+              <li>${answer}</li>
           `),
         ""
       )}
       </ul>
       <details>
         <summary>Ответ</summary>
-        <h6>Правильный ответ: ${rightAnswer}</h6>
+        <h4>Правильный ответ: ${rightAnswer}</h4>
         <p>${explanation}</p>
       </details>
     </section>

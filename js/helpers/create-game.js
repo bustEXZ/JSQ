@@ -1,23 +1,23 @@
 import assets from "../assets.js";
-import { generatePage } from "../helpers/generate-page.js";
 import { hljs } from "../hl.js";
+import { generatePage } from "./generate-page.js";
 import { toggleClass } from "./toggle-class.js";
 
 export const createGame = () => {
-  if (main.querySelector("#game_box") !== null) {
+  if (main.querySelector("section") !== null) {
     game_box.remove();
   }
 
   top_btn.style.display = "none";
 
   const template = `
-  <div id="game_box">
+  <section>
     <button id="close_btn">Закрыть</button>
-    <h3 id="game_title">Каким будет вывод?</h3>
+    <h3>Каким будет вывод?</h3>
     <output id="score"></output>
     <output id="progress"></output>
-    <section id="question_box"></section>
-  </div>
+    <div id="question_box"></div>
+  </section>
   `;
 
   main.innerHTML = template;
@@ -27,8 +27,8 @@ export const createGame = () => {
     (ev) => {
       ev.target.parentElement.remove();
       const num = localStorage.getItem("pageNum");
-      toggleClass(nav_list.querySelector(`[data-url="${num}"]`).parentElement);
       generatePage(num);
+      toggleClass(nav.querySelector(`[data-url="${num}"]`));
     },
     {
       once: true,
@@ -37,7 +37,7 @@ export const createGame = () => {
 
   const set = new Set();
 
-  while (set.size < 25) {
+  while (set.size < 20) {
     const i = Math.floor(Math.random() * (assets.length + 1));
 
     if (i > assets.length) {
@@ -79,13 +79,13 @@ export const createGame = () => {
         ${question}
       </code>
     </pre>
-    <ul class="answers_list">
-      ${answers.reduce((html, i) => (html += `<li class="game_item">${i}</li>`), "")}
+    <ul>
+      ${answers.reduce((html, i) => (html += `<li class="answer_item">${i}</li>`), "")}
     </ul>
-    <button id="answer_btn" class="answer_btn">Ответить</button>
+    <button id="answer_btn">Ответить</button>
     <details>
       <summary>Показать правильный ответ</summary>
-      <h6>Правильный ответ: ${rightAnswer}</h6>
+      <h4>Правильный ответ: ${rightAnswer}</h4>
       <p>${explanation}</p>
     </details>
     `;
@@ -94,10 +94,10 @@ export const createGame = () => {
 
     hljs(globalThis);
 
-    question_box.querySelector(".game_item").classList.add("checked");
+    question_box.querySelector("li").classList.add("checked");
 
     question_box.addEventListener("click", (ev) => {
-      if (ev.target.className === "game_item") {
+      if (ev.target.className === "answer_item") {
         if (ev.target.classList.contains("checked")) {
           return;
         }
@@ -111,7 +111,7 @@ export const createGame = () => {
     answer_btn.addEventListener(
       "click",
       () => {
-        const answers = [...question_box.querySelectorAll(".game_item")];
+        const answers = [...question_box.querySelectorAll("li")];
 
         const userAnswerEl = answers.find((a) => a.classList.contains("checked"));
         const rightAnswerEl = answers.find((a) => a.textContent[0] === rightAnswer);
@@ -173,7 +173,7 @@ export const createGame = () => {
       result = `Похоже, вы только начали изучать JavaScript. Удачи!`;
     }
 
-    game_title.remove();
+    main.querySelector("h3").remove();
     score.remove();
     progress.remove();
 

@@ -1,6 +1,7 @@
 pre {
   width: 100%;
-  margin: 0 auto 1rem;
+  margin: 0 auto 1em;
+  padding: 0 1em;
   background: #eee;
   display: flex;
   justify-content: center;
@@ -10,13 +11,13 @@ pre {
 
 code {
   white-space: pre-wrap;
-  font-size: 1.05rem;
+  font-size: 1.05em;
   letter-spacing: 0.75px;
-  line-height: 1.3rem;
+  line-height: 1.3em;
 }
 
 code > * {
-  font-size: 1.05rem;
+  font-size: 1.05em;
 }
 
 .code.cdata,

@@ -1,6 +1,6 @@
-import { generatePage } from "./js/helpers/generate-page.js";
-import { findLastQuestion } from "./js/helpers/find-last-question.js";
-import { initHandlers } from "./js/helpers/init-handlers.js";
+import { generatePage } from "./helpers/generate-page.js";
+import { findLastQuestion } from "./helpers/find-last-question.js";
+import { initHandlers } from "./helpers/init-handlers.js";
 
 (() => {
   const num = localStorage.getItem("pageNum") || 0;

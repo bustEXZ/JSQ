@@ -1,8 +1,3 @@
-#game_title {
-  font-size: 1.2rem;
-  text-align: center;
-}
-
 output {
   display: block;
   margin: 0.6rem;
@@ -11,22 +6,26 @@ output {
 
 #score {
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.05em;
 }
 
-.game_item {
+#progress {
+  font-size: 0.96;
+}
+
+.answer_item {
   user-select: none;
   cursor: pointer;
 }
 
-.game_item::before {
+.answer_item::before {
   content: "🐼";
-  font-size: 1.2rem;
+  font-size: 1.2em;
   margin-right: 0.6rem;
   opacity: 0;
 }
 
-.game_item.checked::before {
+.answer_item.checked::before {
   opacity: 1;
 }
 

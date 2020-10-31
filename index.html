@@ -120,23 +120,21 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
 
-    <script src="./script.js" type="module"></script>
+    <script src="./js/script.js" type="module"></script>
   </head>
 
   <body>
     <header>
-      <h1 id="main_title">JavaScript Практика</h1>
-      <nav>
-        <ul id="nav_list">
-          <li class="list_item"><button id="game_btn">Игра</button></li>
-          <li class="list_item active"><a data-url="0" class="link">1 - 50</a></li>
-          <li class="list_item"><a data-url="50" class="link">51 - 100</a></li>
-          <li class="list_item"><a data-url="100" class="link">101 - 150</a></li>
-          <li class="list_item"><a data-url="150" class="link">151 - 200</a></li>
-          <li class="list_item"><a data-url="200" class="link">201 - 233</a></li>
-        </ul>
+      <h1>JavaScript Практика</h1>
+      <nav id="nav">
+        <button id="game_btn" class="link">Игра</button>
+        <a data-url="0" class="link active">1 - 50</a>
+        <a data-url="50" class="link">51 - 100</a>
+        <a data-url="100" class="link">101 - 150</a>
+        <a data-url="150" class="link">151 - 200</a>
+        <a data-url="200" class="link">201 - 233</a>
       </nav>
       <a name="top"></a>
     </header>
@@ -144,7 +142,7 @@
     <main id="main"></main>
 
     <footer>
-      <p>Последнее обновление: 30.10.2020</p>
+      <p>Последнее обновление: 31.10.2020</p>
       <p>&copy; 2020. Игорь Агапов</p>
     </footer>
   </body>
