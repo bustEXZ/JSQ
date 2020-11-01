@@ -10,14 +10,16 @@ pre {
 }
 
 code {
+  font-family: "Source Code Pro", monospace;
   white-space: pre-wrap;
-  font-size: 1.05em;
+  font-size: 1.08em;
   letter-spacing: 0.75px;
   line-height: 1.3em;
 }
 
 code > * {
-  font-size: 1.05em;
+  font-family: "Source Code Pro", monospace;
+  font-size: 1.08em;
 }
 
 .code.cdata,

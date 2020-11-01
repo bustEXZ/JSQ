@@ -79,12 +79,13 @@ ul {
   width: 100%;
   display: grid;
   place-content: center;
+  font-size: 0.98em;
 }
 
 li {
-  width: 100%;
   line-height: 1.3em;
   letter-spacing: 0.75px;
+  word-break: keep-all;
   user-select: none;
 }
 
@@ -120,7 +121,7 @@ summary {
     font-size: 0.98em;
   }
 
-  li {
+  ul {
     font-size: 0.96em;
   }
 
@@ -150,7 +151,7 @@ summary {
     font-size: 0.96em;
   }
 
-  li {
+  ul {
     font-size: 0.94em;
   }
 
