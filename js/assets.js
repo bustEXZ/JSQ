@@ -198,7 +198,7 @@ bark.animal = "dog";
 console.log(bark.animal);
 `,
     answers: `
-A: "dog"
+A: dog
 B: error
 C: undefined
 D: ""
@@ -510,7 +510,7 @@ D: 1 3 4
   {
     question: `
 String.prototype.giveMePizza = () => {
-    return "Just give me pizza already!";
+    return "Дайте мне пиццу!";
 };
 
 const name = "John";
@@ -518,7 +518,7 @@ const name = "John";
 console.log(name.giveMePizza());
 `,
     answers: `
-A: "Just give me pizza already!"
+A: "Дайте мне пиццу!"
 B: error
 C: ""
 D: undefined
@@ -757,10 +757,10 @@ null - false. !null возвращает true. !true возвращает false.
 console.log([..."John"]);
 `,
     answers: `
-A: ["I", "g", "o", "r"]
+A: ["J", "o", "h", "n"]
 B: ["John"]
 C: [[], "John"]
-D: [["I", "g", "o", "r"]]
+D: [["J", "o", "h", "n"]]
 `,
     rightAnswer: `A`,
     explanation: `
@@ -807,10 +807,10 @@ const secondPromise = new Promise((res, rej) => {
 Promise.race([firstPromise, secondPromise]).then(res => console.log(res));
 `,
     answers: `
-A: "one"
-B: "two"
-C: "two" "one"
-D: "one" "two"
+A: one
+B: two
+C: two one
+D: one two
 `,
     rightAnswer: `B`,
     explanation: `
@@ -852,10 +852,10 @@ for (const item in person) {
 }
 `,
     answers: `
-A: { name: "John" }, { age: 30 }
-B: "name", "age"
-C: "John", 30
-D: ["name", "John"], ["age", 30]
+A: { name: "John" }  { age: 30 }
+B: name  age
+C: John  30
+D: ["name", "John"]  ["age", 30]
 `,
     rightAnswer: `B`,
     explanation: `
@@ -964,8 +964,8 @@ const myCar = new Car();
 console.log(myCar.make);
 `,
     answers: `
-A: "Lamborghini"
-B: "Maserati"
+A: Lamborghini
+B: Maserati
 C: error
 D: undefined
 `,
@@ -1136,7 +1136,7 @@ console.log(admin);
     answers: `
 A: { admin: true, user: { name: "John", age: 30 } }
 B: { admin: true, name: "John", age: 30 }
-C: { admin: true, user: ["John", 30] }
+C: { admin: true, user: [John, 30] }
 D: { admin: true }
 `,
     rightAnswer: `B`,
