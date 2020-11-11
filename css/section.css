@@ -19,7 +19,7 @@ ol {
 }
 
 li {
-  width: 100%;
+  white-space: pre-wrap;
   text-align: left;
   font-size: 0.95rem;
   letter-spacing: 0.75px;
