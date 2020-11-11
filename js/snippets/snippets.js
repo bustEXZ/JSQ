@@ -227,8 +227,7 @@ export default `
       req.send()
     }
 
-    const url = 'https://jsonplaceholder.typicode.com/
-    posts/1'
+    const url = 'https://jsonplaceholder.' + 'typicode.com/posts/1''
     httpGet(url, log)
     // { "userId": 1, "id": 1, "title": "some title", "body": "some text" }
 
@@ -262,7 +261,7 @@ export default `
       req.send(data)
     }
 
-    const url = 'https://jsonplaceholder.typicode.com/posts
+    const url = 'https://jsonplaceholder.' + 'typicode.com/posts'
     const newPost = {
       userId: 1234,
       title: 'foo',
@@ -612,7 +611,7 @@ export default `
       return responseSize
     }
 
-    const url = 'https://jsonplaceholder.typicode.com/photos'
+    const url = 'https://jsonplaceholder.' + '.typicode.com/photos'
 
     getResponseSize(url)
   </code></pre>
@@ -934,7 +933,7 @@ export default `
         _id: user._id,
         firstName: user.name.split(' ')[0],
         age: ~~((Date.now() - new Date(user.birthday).getTime()) / 365 / 24 / 60 / 60 / 1000),
-        city: await fetch(\`https://api.opencagedata.com/ geocode/v1/json?q=&#36; {user.location.lat}+&#36; {user.location.lng}&key=YOUR_API_KEY\`)
+        city: await fetch(\`https:// api.opencagedata.com/ geocode/v1/json?q= &#36;{user.location.lat}+ &#36;{user.location.lng} &key=YOUR_API_KEY\`)
           .then((res) => res.json())
           .then((data) => data.results[0].components.city),
       }))
@@ -987,7 +986,7 @@ export default `
     */
 
     const getCityAndWeather = (latitude, longitude) => {
-      const api = \`https://api.openweathermap.org/data/2.5/ weather?lat=&#36;{latitude} &lon=&#36;{longitude} &units=metric&appid=YOUR_API_ID\`
+      const api = \`https:// api.openweathermap.org/ data/2.5/weather ?lat=&#36;{latitude} &lon=&#36;{longitude} &units=metric&appid=YOUR_API_ID\`
 
       fetch(api)
         .then((response) => response.json())

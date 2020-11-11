@@ -1,35 +1,25 @@
 section {
   width: 95%;
   margin: 0.5rem auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#question_box {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 h3 {
-  width: 100%;
   font-size: 1.05rem;
-  margin: .5rem 0;
+  margin: 0.5rem 0;
 }
 
 ul {
+  display: grid;
+  place-content: center;
   list-style: none;
 }
 
 ol {
   padding-left: 2.5rem;
-  width: 100%;
 }
 
 li {
-  white-space: pre-wrap;
+  width: 100%;
   text-align: left;
   font-size: 0.95rem;
   letter-spacing: 0.75px;
