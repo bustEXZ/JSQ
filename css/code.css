@@ -1,6 +1,6 @@
 pre {
   width: 100%;
-  margin: 1rem auto;
+  margin: 1rem 0;
   padding: 0 1rem;
   background: #eee;
   display: flex;
@@ -12,13 +12,11 @@ pre {
 code {
   text-align: left;
   white-space: pre-wrap;
-  font-size: 1.05rem;
   letter-spacing: 0.75px;
-  line-height: 1.3rem;
 }
 
 code > * {
-  font-size: 1.05rem;
+  letter-spacing: 0.75px;
 }
 
 .code.cdata,

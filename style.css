@@ -17,7 +17,6 @@
 }
 
 body {
-  position: relative;
   max-width: 768px;
   min-height: 100vh;
   margin: 0 auto;
@@ -30,9 +29,9 @@ main {
   flex: 1;
 }
 
-main h2 {
-  margin: 0.5rem;
-  font-size: 1.25rem;
+h2 {
+  margin: 0.5rem 0;
+  font-size: 1.15rem;
 }
 
 @media (max-width: 648px) {

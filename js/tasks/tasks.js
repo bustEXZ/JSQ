@@ -112,8 +112,8 @@ export default `
         '2' > '12' // true
         undefined == null // true
         undefined === null // false
-        null == '\n0\n' // false
-        null === +'\n0\n' // false
+        null == '\\n0\\n' // false
+        null === +'\\n0\\n' // false
       </code></pre>
       <ol>
         <li>Очевидно, true.</li>

@@ -10,41 +10,41 @@ export default `
   </code></pre>
   <h3>Функция получения одного элемента по определенному селектору</h3>
   <pre><code class="lang-js">
-    const findOne = (parent, selector) => parent.querySelector(selector)
+    const findOne = (selector, parent = document) => parent.querySelector(selector)
 
     // ищем div внутри документа
-    findOne(document, 'div')
+    findOne('div')
   </code></pre>
   <h3>Функция получения всех элементов по определенному селектору</h3>
   <pre><code class="lang-js">
-    const findAll = (parent, selector) => [...parent.querySelectorAll(selector)]
+    const findAll = (selector, parent = document) => [...parent.querySelectorAll(selector)]
 
     // ищем все section в документе
-    findAll(document, 'section')
+    findAll('section')
 
     // ищем все p внутри section и добавляем им класс "section-text"
-    findAll(findOne(document, 'section'), 'p').forEach((p) => (p.className = 'section-text'))
+    findAll(findOne('section'), 'p').forEach((p) => (p.className = 'section-text'))
   </code></pre>
   <h3>Функция скрытия всех элементов на странице по определенному селектору</h3>
   <pre><code class="lang-js">
     const hide = (...els) => [...els].forEach((el) => (el.style.display = 'none'))
 
     // находим и скрываем все img на странице
-    hide(findAll(document, 'img'))
+    hide(findAll('img'))
   </code></pre>
   <h3>Функция определения наличия класса</h3>
   <pre><code class="lang-js">
     const hasClass = (el, className) => el.classList.contains(className)
 
     // определяем наличие класса "main" у div
-    hasClass(findOne(document, 'div'), 'main') // true
+    hasClass(findOne('div'), 'main') // true
   </code></pre>
   <h3>Функция переключения классов</h3>
   <pre><code class="lang-js">
     const toggleClass = (el, className) => el.classList.toggleClass(className)
 
     // удаляем класс "main" у div
-    toggleClass(findOne(document, 'div'), 'main')
+    toggleClass(findOne('div'), 'main')
   </code></pre>
   <h3>Функция определения величины прокрутки текущей страницы</h3>
   <pre><code class="lang-js">
@@ -72,9 +72,9 @@ export default `
     const elementContains = (parent, child) => parent !== child && parent.contains(child)
 
     // определяем вложенность title в head
-    elementContains(findOne(document, 'head'), findOne(document, 'title')) // true
+    elementContains(findOne('head'), findOne('title')) // true
     // определяем вложенность body в body
-    elementContains(findOne(document, 'body'), findOne(document, 'body')) // false
+    elementContains(findOne('body'), findOne('body')) // false
   </code></pre>
   <h3>Функция определения нахождения элемента в области просмотра</h3>
   <pre><code class="lang-js">
@@ -117,7 +117,7 @@ export default `
         {}
       )
 
-    formToObject(findOne(document, 'form')) // { name: 'John', email: "myemail@example.com" }
+    formToObject(findOne('form')) // { name: 'John', email: "myemail@example.com" }
   </code></pre>
   <h3>Функция извлечения определенных свойств объекта</h3>
   <pre><code class="lang-js">
@@ -288,8 +288,8 @@ export default `
         _step = (end - start) * step < 0 ? -step : step,
         timer = setInterval(() => {
           current += _step
-          findOne(document, selector).innerHTML = current
-          if (current >= end) findOne(document, selector).innerHTML = end
+          findOne(selector).innerHTML = current
+          if (current >= end) findOne(selector).innerHTML = end
           if (current >= end) clearInterval(timer)
         }, Math.abs(~~(duration / (end - start))))
       return timer

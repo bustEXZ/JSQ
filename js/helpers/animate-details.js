@@ -36,7 +36,7 @@ export const animateDetails = () => {
           height: [startHeight, endHeight],
         },
         {
-          duration: 300,
+          duration: 400,
           easing: 'ease-out',
         }
       )
@@ -54,7 +54,9 @@ export const animateDetails = () => {
     expand() {
       this.isExpanding = true
       const startHeight = `${this.el.offsetHeight}px`
-      const endHeight = `${this.summary.offsetHeight + this.content.offsetHeight}px`
+      const endHeight = `${
+        this.summary.offsetHeight + this.content.offsetHeight
+      }px`
 
       if (this.animation) {
         this.animation.cancel()
@@ -65,7 +67,7 @@ export const animateDetails = () => {
           height: [startHeight, endHeight],
         },
         {
-          duration: 300,
+          duration: 400,
           easing: 'ease-out',
         }
       )

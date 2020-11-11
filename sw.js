@@ -1,4 +1,4 @@
-const NAME = 'jsp-v3'
+const NAME = 'jsp-v4'
 
 const FILES = [
   './index.html',

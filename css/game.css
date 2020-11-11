@@ -1,16 +1,16 @@
 output {
   display: block;
-  margin: 0.6rem;
+  margin: 0.5rem 0;
   text-align: center;
 }
 
 #score {
   font-weight: bold;
-  font-size: 1.05em;
+  font-size: 1.05rem;
 }
 
 #progress {
-  font-size: 0.96;
+  font-size: 0.95rem;
 }
 
 .answer_item {
@@ -19,9 +19,9 @@ output {
 }
 
 .answer_item::before {
-  content: "🐼";
-  font-size: 1.2em;
-  margin-right: 0.6rem;
+  content: '🐼';
+  font-size: 1.25rem;
+  margin-right: 0.5rem;
   opacity: 0;
 }
 

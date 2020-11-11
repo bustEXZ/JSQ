@@ -1,60 +1,59 @@
 section {
   width: 95%;
   margin: 0.5rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-section h3 {
-  font-size: 1.15rem;
+h3 {
+  font-size: 1.05rem;
   margin: 1rem 0;
 }
 
-section ul {
+ul {
   list-style: none;
-  display: grid;
-  place-content: center;
 }
 
-section ol {
+ol {
   padding-left: 2.5rem;
+  width: 100%;
 }
 
-section li {
+li {
+  white-space: pre-line;
   text-align: left;
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   letter-spacing: 0.75px;
-  line-height: 1.3em;
+  line-height: 1.25em;
 }
 
-section details {
+details {
+  width: 100%;
   margin: 0.5rem 0;
 }
 
-section details > *:not(summary) {
+details > *:not(summary) {
   display: none;
 }
 
-section details[open] > * {
+details[open] > * {
   display: block;
 }
 
-section details summary {
-  font-size: 1.1rem;
+summary {
+  font-size: 1.05rem;
   outline: none;
   user-select: none;
   cursor: pointer;
 }
 
-section details ol {
-  padding-left: 2.5rem;
+h4 {
+  font-size: 1.05rem;
+  margin: 0.5rem 0;
 }
 
-section h4 {
-  font-size: 1.1rem;
-  margin: 0.25rem 0;
-}
-
-section p {
+p {
   padding: 0 0.5rem;
   text-align: left;
-  font-size: 1.03rem;
 }

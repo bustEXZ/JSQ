@@ -28,16 +28,13 @@ export const generatePage = (pageName) => {
 
   hljs(globalThis)
 
-  initHandlers()
-
   createObserver()
+
+  initHandlers()
 
   animateDetails()
 
   localStorage.setItem('pageName', pageName)
 
-  const timer = setTimeout(() => {
-    loader.hide()
-    clearTimeout(timer)
-  }, 2000)
+  loader.hide()
 }
