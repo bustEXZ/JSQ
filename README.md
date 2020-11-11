@@ -1,3 +1,3 @@
-# JavaScript Практика
-## Сборник практических вопросов по JavaScript
+# Практический JavaScript
+## Шаблоны, вопросы, задачи и сниппеты по JavaScript
 https://javascript-practice.ru/
