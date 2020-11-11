@@ -6,9 +6,17 @@ section {
   align-items: center;
 }
 
+#question_box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 h3 {
+  width: 100%;
   font-size: 1.05rem;
-  margin: 1rem 0;
+  margin: .5rem 0;
 }
 
 ul {
@@ -21,7 +29,7 @@ ol {
 }
 
 li {
-  white-space: pre-line;
+  white-space: pre-wrap;
   text-align: left;
   font-size: 0.95rem;
   letter-spacing: 0.75px;

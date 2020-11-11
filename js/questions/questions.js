@@ -2636,7 +2636,9 @@ D: 3
   // 117
   {
     question: `
-const myPromise = Promise.resolve(Promise.resolve('Promise!'))
+const myPromise = Promise.resolve(
+    Promise.resolve('Promise!')
+  )
 
 function funcOne() {
   myPromise.then(res => res).then(res => console.log(res))

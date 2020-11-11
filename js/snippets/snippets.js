@@ -90,7 +90,8 @@ export default `
   <h3>Функция получения всех изображений, находящихся в определенном элементе</h3>
   <pre><code class="lang-js">
     const getImages = (el, includeDuplicates = false) => {
-      const images = [...el.getElementsByTagName('img')].map((img) => img.getAttribute('src'))
+      const images = [...el.getElementsByTagName('img')]
+        .map((img) => img.getAttribute('src'))
       return includeDuplicates ? images : [...new Set(images)]
     }
 
@@ -192,13 +193,17 @@ export default `
   </code></pre>
   <h3>Функция получения стилей элемента</h3>
   <pre><code class="lang-js">
-    const getElementStyle = (element, property) => getComputedStyle(element).getPropertyValue(property)
+    const getElementStyle = (element, property) => getComputedStyle(element)
+      .getPropertyValue(property)
 
     const documentColor = getStyle(document.body, 'color')
   </code></pre>
   <h3>Функция получения типа объекта</h3>
   <pre><code class="lang-js">
-    const getRawType = (value) => Object.prototype.toString.call(value).slice(8, -1)
+    const getRawType = (value) => Object.prototype
+      .toString
+      .call(value)
+      .slice(8, -1)
 
     const obj = {}
     console.log(getRawType(obj)) // Object
@@ -222,7 +227,10 @@ export default `
       req.send()
     }
 
-    httpGet('https://jsonplaceholder.typicode.com/posts/1', log) // { "userId": 1, "id": 1, "title": "some title", "body": "some text" }
+    const url = 'https://jsonplaceholder.typicode.com/
+    posts/1'
+    httpGet(url, log)
+    // { "userId": 1, "id": 1, "title": "some title", "body": "some text" }
 
     // fetch
     const httpGet = (url, cb, err = console.error) =>
@@ -254,13 +262,15 @@ export default `
       req.send(data)
     }
 
+    const url = 'https://jsonplaceholder.typicode.com/posts
     const newPost = {
       userId: 1234,
       title: 'foo',
       body: 'bar baz qux',
     }
     const data = JSON.stringify(newPost)
-    httpPost('https://jsonplaceholder.typicode.com/posts', data, log) // { "id": 101, "userId": 1234, "title": "foo", "body": "bar baz qux" }
+    httpPost(url, data, log)
+    // { "id": 101, "userId": 1234, "title": "foo", "body": "bar baz qux" }
 
     // async/await
     const httpPost = async (url, data, cb, err = console.error) => {
@@ -279,7 +289,7 @@ export default `
       }
     }
 
-    httpPost('https://jsonplaceholder.typicode.com/posts', newPost, log)
+    httpPost(url, newPost, log)
   </code></pre>
   <h3>Функция создания счетчика с определенным диапазоном, шагом и продолжительностью</h3>
   <pre><code class="lang-js">
@@ -313,8 +323,10 @@ export default `
       document.execCommand('copy')
       el.remove()
       if (selected) {
-        document.getSelection().removeAllRanges()
-        document.getSelection().addRange(selected)
+        document.getSelection()
+          .removeAllRanges()
+        document.getSelection()
+          .addRange(selected)
       }
     }
 
@@ -600,7 +612,9 @@ export default `
       return responseSize
     }
 
-    getResponseSize('https://jsonplaceholder.typicode.com/photos')
+    const url = 'https://jsonplaceholder.typicode.com/photos'
+
+    getResponseSize(url)
   </code></pre>
 </section>
 
@@ -667,7 +681,8 @@ export default `
       },
     ]
 
-    document.body.insertAdjacentHTML('afterbegin', \`<ul>&#36;{users.reduce((html, item) => html + \`<li>&#36;{Object.values(item)[0].name}</li>\`, '')}</ul>\`)
+    document.body
+      .insertAdjacentHTML('afterbegin', \`<ul>&#36;{users.reduce((html, item) => html + \`<li>&#36;{Object.values(item)[0].name}</li>\`, '')}</ul>\`)
 
     /* 5 */
     const groupBy = (array, criteria) =>
@@ -855,7 +870,8 @@ export default `
 
       return finalString
     }
-    document.body.insertAdjacentHTML('beforeend', bold\`<p>String with &#36;{'abc'} and &#36;{123} inside</p>\`)
+    document.body
+      .insertAdjacentHTML('beforeend', bold\`<p>String with &#36;{'abc'} and &#36;{123} inside</p>\`)
   </code></pre>
 </section>
 
@@ -918,7 +934,7 @@ export default `
         _id: user._id,
         firstName: user.name.split(' ')[0],
         age: ~~((Date.now() - new Date(user.birthday).getTime()) / 365 / 24 / 60 / 60 / 1000),
-        city: await fetch(\`https://api.opencagedata.com/geocode/v1/json?q=&#36;{user.location.lat}+&#36;{user.location.lng}&key=YOUR_API_KEY\`)
+        city: await fetch(\`https://api.opencagedata.com/ geocode/v1/json?q=&#36; {user.location.lat}+&#36; {user.location.lng}&key=YOUR_API_KEY\`)
           .then((res) => res.json())
           .then((data) => data.results[0].components.city),
       }))
@@ -961,7 +977,8 @@ export default `
       getCityAndWeather(latitude, longitude)
     }
 
-    navigator.geolocation.getCurrentPosition(getPosition)
+    navigator.geolocation
+      .getCurrentPosition(getPosition)
     /*
       56.90
       60.63
@@ -970,7 +987,7 @@ export default `
     */
 
     const getCityAndWeather = (latitude, longitude) => {
-      const api = \`https://api.openweathermap.org/data/2.5/weather?lat=&#36;{latitude}&lon=&#36;{longitude}&units=metric&appid=YOUR_API_ID\`
+      const api = \`https://api.openweathermap.org/data/2.5/ weather?lat=&#36;{latitude} &lon=&#36;{longitude} &units=metric&appid=YOUR_API_ID\`
 
       fetch(api)
         .then((response) => response.json())
