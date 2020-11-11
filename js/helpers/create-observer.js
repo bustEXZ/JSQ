@@ -3,15 +3,15 @@ export const createObserver = () => {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          localStorage.setItem("sectionNum", entry.target.id);
+          localStorage.setItem('sectionNum', entry.target.id)
         }
-      });
+      })
     },
     {
       threshold: 0.1,
     }
-  );
+  )
 
-  const sections = main.querySelectorAll("section");
-  sections.forEach((s) => observer.observe(s));
-};
+  const sections = main.querySelectorAll('section')
+  sections.forEach((s) => observer.observe(s))
+}

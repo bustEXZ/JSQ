@@ -1,15 +1,14 @@
-import { generatePage } from "./js/helpers/generate-page.js";
-import { findLastQuestion } from "./js/helpers/find-last-question.js";
-import { initHandlers } from "./js/helpers/init-handlers.js";
+import { generatePage } from './js/helpers/generate-page.js'
+import { findLastSection } from './js/helpers/find-last-section.js'
+import { toggleClass } from './js/helpers/toggle-class.js'
+;(() => {
+  const pageName = localStorage.getItem('pageName') || 'questions'
 
-(() => {
-  const num = localStorage.getItem("pageNum") || 0;
+  generatePage(pageName)
 
-  generatePage(num);
+  findLastSection()
 
-  findLastQuestion();
+  toggleClass(nav.querySelector(`[data-link=${pageName}]`))
+})()
 
-  initHandlers();
-})();
-
-navigator.serviceWorker.register("./sw.js").catch((er) => console.error(er));
+navigator.serviceWorker.register('./sw.js').catch((er) => console.error(er))

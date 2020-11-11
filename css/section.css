@@ -1,0 +1,60 @@
+section {
+  width: 95%;
+  margin: 0.5rem auto;
+}
+
+section h3 {
+  font-size: 1.15rem;
+  margin: 1rem 0;
+}
+
+section ul {
+  list-style: none;
+  display: grid;
+  place-content: center;
+}
+
+section ol {
+  padding-left: 2.5rem;
+}
+
+section li {
+  text-align: left;
+  font-size: 1.05rem;
+  letter-spacing: 0.75px;
+  line-height: 1.3em;
+}
+
+section details {
+  margin: 0.5rem 0;
+}
+
+section details > *:not(summary) {
+  display: none;
+}
+
+section details[open] > * {
+  display: block;
+}
+
+section details summary {
+  font-size: 1.1rem;
+  outline: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+section details ol {
+  padding-left: 2.5rem;
+}
+
+section h4 {
+  font-size: 1.1rem;
+  margin: 0.25rem 0;
+}
+
+section p {
+  padding: 0 0.5rem;
+  text-align: left;
+  font-size: 1.03rem;
+}

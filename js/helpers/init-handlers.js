@@ -1,19 +1,16 @@
-import { generatePage } from "./generate-page.js";
-import { toggleClass } from "./toggle-class.js";
-import { createGame } from "./create-game.js";
+import { generatePage } from './generate-page.js'
+import { toggleClass } from './toggle-class.js'
 
 export const initHandlers = () => {
-  nav.addEventListener("click", (ev) => {
-    if (ev.target === game_btn) {
-      createGame();
+  nav.addEventListener('click', (ev) => {
+    ev.preventDefault()
 
-      toggleClass(ev.target);
-    } else if (ev.target.className === "link") {
-      const { url } = ev.target.dataset;
+    if (ev.target.tagName !== 'A') return
 
-      generatePage(url);
+    const { link } = ev.target.dataset
 
-      toggleClass(ev.target);
-    }
-  });
-};
+    generatePage(link)
+
+    toggleClass(ev.target)
+  })
+}

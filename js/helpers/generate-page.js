@@ -1,54 +1,43 @@
-import assets from "../assets.js";
-import { hljs } from "../hl.js";
-import { createObserver } from "./create-observer.js";
+import { createPatterns } from '../patterns/create-patterns.js'
+import { createQuestions } from '../questions/create-questions.js'
+import { createTasks } from '../tasks/create-tasks.js'
+import { createSnippets } from '../snippets/create-snippets.js'
+import { hljs } from '../hl.js'
+import { createObserver } from './create-observer.js'
+import { initHandlers } from './init-handlers.js'
+import { animateDetails } from './animate-details.js'
+import loader from '../loader.js'
 
-export const generatePage = (min) => {
-  min = +min;
-  let max = 0;
-  if (min === 200) {
-    max = 232;
-  } else {
-    max = min + 50;
+export const generatePage = (pageName) => {
+  loader.show()
+
+  switch (pageName) {
+    case 'patterns':
+      createPatterns()
+      break
+    case 'questions':
+      createQuestions()
+      break
+    case 'tasks':
+      createTasks()
+      break
+    case 'snippets':
+      createSnippets()
+      break
   }
 
-  let html = "<h2>Каким будет вывод?</h2>";
+  hljs(globalThis)
 
-  for (let i = min; i < max; i++) {
-    const { question, answers, rightAnswer, explanation } = assets[i];
+  initHandlers()
 
-    const answersArray = answers.trim().split("\n");
+  createObserver()
 
-    html += `
-    <section id="${i + 1}">
-      <h3>Вопрос № ${i + 1}</h3>
-      <pre>
-        <code class="lang-js">
-          ${question}
-        </code>
-      </pre>
-      <ul>
-      ${answersArray.reduce(
-        (html, answer) =>
-          (html += `
-              <li>${answer}</li>
-          `),
-        ""
-      )}
-      </ul>
-      <details>
-        <summary>Ответ</summary>
-        <h4>Правильный ответ: ${rightAnswer}</h4>
-        <p>${explanation}</p>
-      </details>
-    </section>
-    `;
-  }
+  animateDetails()
 
-  html += `<a href="#top"><button id="top_btn">Наверх</button></a>`;
+  localStorage.setItem('pageName', pageName)
 
-  main.innerHTML = html;
-
-  hljs(globalThis);
-  createObserver();
-  localStorage.setItem("pageNum", min);
-};
+  const timer = setTimeout(() => {
+    loader.hide()
+    clearTimeout(timer)
+  }, 2000)
+}
