@@ -10,7 +10,8 @@ h3 {
 
 ul {
   display: grid;
-  place-content: center;
+  justify-content: center;
+  grid-template-rows: max-content;
   list-style: none;
 }
 
@@ -19,7 +20,6 @@ ol {
 }
 
 li {
-  white-space: pre-wrap;
   text-align: left;
   font-size: 0.95rem;
   letter-spacing: 0.75px;
