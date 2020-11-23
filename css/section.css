@@ -1,6 +1,7 @@
 section {
   width: 95%;
   margin: 0.5rem auto;
+  content-visibility: auto;
 }
 
 h3 {
