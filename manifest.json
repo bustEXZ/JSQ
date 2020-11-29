@@ -1,31 +1,32 @@
 {
-  "name": "JavaScript Практика",
+  "name": "Практический JavaScript",
   "short_name": "JSP",
-  "start_url": "./",
+  "scope": "/",
+  "start_url": ".",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#eee",
   "theme_color": "#222",
-  "description": "Сборник практических вопросов по JavaScript",
+  "description": "Сборник вопросов и задач по JavaScript",
   "icons": [
     {
-      "src": "./icons/icon-64.png",
+      "src": "./public/icons/icon-64.png",
       "sizes": "64x64",
       "type": "image/png"
     },
     {
-      "src": "./icons/icon-128.png",
+      "src": "./public/icons/icon-128.png",
       "sizes": "128x128",
       "type": "image/png"
     },
     {
-      "src": "./icons/icon-256.png",
+      "src": "./public/icons/icon-256.png",
       "sizes": "256x256",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "./icons/icon-512.png",
+      "src": "./public/icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }

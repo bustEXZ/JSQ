@@ -1,10 +1,10 @@
-@import './css/buttons.css';
-@import './css/code.css';
-@import './css/footer.css';
-@import './css/game.css';
-@import './css/header.css';
-@import './css/loader.css';
-@import './css/section.css';
+@import './public/css/buttons.css';
+@import './public/css/code.css';
+@import './public/css/footer.css';
+@import './public/css/game.css';
+@import './public/css/header.css';
+@import './public/css/loader.css';
+@import './public/css/section.css';
 
 * {
   margin: 0;
@@ -27,11 +27,6 @@ body {
 
 main {
   flex: 1;
-}
-
-h2 {
-  margin: 0.5rem 0;
-  font-size: 1.15rem;
 }
 
 @media (max-width: 648px) {

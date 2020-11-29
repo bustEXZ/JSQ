@@ -1,3 +1,3 @@
 # Практический JavaScript
-## Шаблоны, вопросы, задачи и сниппеты по JavaScript
+## Вопросы и задачи по JavaScript
 https://javascript-practice.ru/
