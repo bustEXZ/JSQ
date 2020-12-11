@@ -16,7 +16,7 @@ const FILES = [
 
   './public/js/contact.js',
   './public/js/functions.js',
-  './public/js/methods.js',
+  './public/js/algorithms.js',
   './public/js/patterns.js',
   './public/js/projects.js',
   './public/js/tasks.js',
