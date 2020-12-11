@@ -1,5 +1,5 @@
 import questions from './questions.js'
-import { hljs } from '../hl.js'
+import { hljs } from '../helpers/hl.js'
 import { generatePage } from '../helpers/generate-page.js'
 import { toggleClass } from '../helpers/toggle-class.js'
 import { animateDetails } from '../helpers/animate-details.js'
@@ -28,7 +28,7 @@ export const createGame = () => {
       toggleClass(nav.querySelector(`[data-link="${pageName}"]`))
     },
     {
-      once: true,
+      once: true
     }
   )
 
@@ -77,7 +77,10 @@ export const createGame = () => {
       </code>
     </pre>
     <ul>
-      ${answers.reduce((html, i) => (html += `<li class="answer_item">${i}</li>`), '')}
+      ${answers.reduce(
+        (html, i) => (html += `<li class="answer_item">${i}</li>`),
+        ''
+      )}
     </ul>
     <button id="answer_btn">Ответить</button>
     <details>
@@ -114,20 +117,36 @@ export const createGame = () => {
       () => {
         const answers = [...question_box.querySelectorAll('li')]
 
-        const userAnswerEl = answers.find((a) => a.classList.contains('checked'))
-        const rightAnswerEl = answers.find((a) => a.textContent[0] === rightAnswer)
+        const userAnswerEl = answers.find((a) =>
+          a.classList.contains('checked')
+        )
+        const rightAnswerEl = answers.find(
+          (a) => a.textContent[0] === rightAnswer
+        )
 
         const userAnswer = userAnswerEl.textContent.substr(0, 1)
 
-        checkAnswer(userAnswerEl, rightAnswerEl, userAnswer, rightAnswer, answer_btn)
+        checkAnswer(
+          userAnswerEl,
+          rightAnswerEl,
+          userAnswer,
+          rightAnswer,
+          answer_btn
+        )
       },
       {
-        once: true,
+        once: true
       }
     )
   }
 
-  function checkAnswer(userAnswerEl, rightAnswerEl, userAnswer, rightAnswer, button) {
+  function checkAnswer(
+    userAnswerEl,
+    rightAnswerEl,
+    userAnswer,
+    rightAnswer,
+    button
+  ) {
     let isRight = true
 
     if (userAnswer === rightAnswer) {
@@ -156,7 +175,7 @@ export const createGame = () => {
         createQuestion()
       },
       {
-        once: true,
+        once: true
       }
     )
   }

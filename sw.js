@@ -1,9 +1,10 @@
-const NAME = 'jsp-v5'
+const NAME = 'jsp-v6'
 
 const FILES = [
   './index.html',
   './style.css',
   './script.js',
+  './404.html',
 
   './public/css/buttons.css',
   './public/css/code.css',
@@ -13,31 +14,32 @@ const FILES = [
   './public/css/loader.css',
   './public/css/section.css',
 
-  './public/js/loader.js',
-  './public/js/hl.js',
+  './public/js/contact.js',
+  './public/js/functions.js',
+  './public/js/methods.js',
+  './public/js/patterns.js',
+  './public/js/projects.js',
+  './public/js/tasks.js',
+  './public/js/theory.js',
 
   './public/js/helpers/animate-details.js',
-  './public/js/helpers/create-observer.js',
-  './public/js/helpers/find-last-section.js',
   './public/js/helpers/generate-page.js',
+  './public/js/helpers/hl.js',
   './public/js/helpers/init-handlers.js',
+  './public/js/helpers/loader.js',
   './public/js/helpers/toggle-class.js',
 
   './public/js/questions/create-game.js',
   './public/js/questions/create-questions.js',
   './public/js/questions/questions.js',
 
-  './public/js/tasks/create-tasks.js',
-  './public/js/tasks/tasks.js',
-
-  './public/js/links/links.js',
-  './public/js/links/create-links.js',
-
   './public/icons/icon-64.png',
   './public/icons/icon-128.png',
   './public/icons/icon-150.png',
   './public/icons/icon-256.png',
   './public/icons/icon-512.png',
+
+  './img/logo.png'
 ]
 
 self.addEventListener('install', (e) => {
@@ -76,6 +78,6 @@ self.addEventListener('fetch', (e) => {
             })
           )
       )
-      .catch(() => caches.match('./index.html'))
+      .catch(() => caches.match('./404.html'))
   )
 })

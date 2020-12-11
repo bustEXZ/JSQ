@@ -4,6 +4,11 @@ section {
   content-visibility: auto;
 }
 
+section.center p {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
 h2 {
   margin: 0.5rem 0;
   font-size: 1.15rem;
@@ -33,11 +38,11 @@ details {
   margin: 0.5rem 0;
 }
 
-details>*:not(summary) {
+details > *:not(summary) {
   display: none;
 }
 
-details[open]>* {
+details[open] > * {
   display: block;
 }
 
@@ -60,7 +65,23 @@ p {
 
 section a {
   display: block;
-  margin: 1rem 0;
+  margin: 0.5rem 0;
   text-decoration: none;
   color: blue;
+  padding: 0.5rem 0;
+}
+
+section h3 a {
+  margin: 0;
+  padding: 0;
+}
+
+section a:nth-child(even) {
+  background: #eee;
+  border-radius: 4px;
+}
+
+section h3 a:nth-child(even) {
+  background: none;
+  border-radius: none;
 }

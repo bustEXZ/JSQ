@@ -1,58 +1,87 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" itemscope itemtype="https://schema.org/WebPage" prefix="og: http://ogp.me/ns#">
+<html
+  lang="ru"
+  dir="ltr"
+  itemscope
+  itemtype="https://schema.org/WebPage"
+  prefix="og: http://ogp.me/ns#"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Практический JavaScript</title>
-  <meta name="referrer" content="origin" />
-  <link rel="canonical" href="https://javascript-practice.ru/" />
-  <link rel="icon" type="image/png" href="./public/icons/icon-64.png" />
-  <link rel="manifest" href="./manifest.json" />
-  <!-- Security -->
-  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-  <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
-  <meta name="author" content="Igor Agapov" />
-  <meta name="description" content="Сборник вопросов и задач по JavaScript" />
-  <meta name="keywords" content="modern, useful, html, html5, css, css3, javascript, js, template, boilerplate" />
-  <meta itemprop="name" content="Практический JavaScript" />
-  <meta itemprop="description" content="Сборник вопросов и задач по JavaScript" />
-  <meta itemprop="image" content="./public/icons/icon-128.png" />
-  <!-- Microsoft -->
-  <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <meta name="application-name" content="Практический JavaScript" />
-  <meta name="msapplication-tooltip" content="Сборник вопросов и задач по JavaScript" />
-  <meta name="msapplication-starturl" content="/" />
-  <meta name="msapplication-config" content="browserconfig.xml" />
-  <!-- Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://javascript-practice.ru/" />
-  <meta property="og:title" content="Практический JavaScript" />
-  <meta property="og:image" content="./public/icons/icon-256.png" />
-  <meta property="og:site_name" content="Практический JavaScript" />
-  <meta property="og:description" content="Сборник вопросов и задач по JavaScript" />
-  <meta property="og:locale" content="en_US" />
-  <!-- Twitter -->
-  <meta name="twitter:title" content="Практический JavaScript" />
-  <meta name="twitter:description" content="Сборник вопросов и задач по JavaScript" />
-  <meta name="twitter:url" content="https://javascript-practice.ru/" />
-  <meta name="twitter:image" content="./public/icons/icon-128.png" />
-  <!-- IOS -->
-  <meta name="apple-mobile-web-app-title" content="Практический JavaScript" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="#222" />
-  <link rel="apple-touch-icon" href="./public/icons/icon-128.png" />
-  <!-- Android -->
-  <meta name="theme-color" content="#eee" />
-  <meta name="mobile-web-app-capable" content="yes" />
-  <!-- Google -->
-  <meta name="google-site-verification" content="4b_cSoh-Uqgx6-T3PrZvObDFjJsGbGz_GWPEp_bfGLY" />
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script
+    <title>Практический JavaScript</title>
+
+    <link rel="canonical" href="https://javascript-practice.ru/" />
+    <link rel="icon" type="image/png" href="./public/icons/icon-64.png" />
+    <link rel="manifest" href="./manifest.json" />
+
+    <meta name="application-name" content="Практический JavaScript" />
+    <meta name="author" content="Igor Agapov" />
+    <meta
+      name="description"
+      content="Сборник теоретических и практических вопросов, задач, паттернов (шаблонов) проектирования, проектов и примеров использования Web API, методов и функций JavaScript"
+    />
+    <meta
+      name="keywords"
+      content="javascript, js, practice, question, task, problem, pattern, project, example, практика, вопрос, задача, проблема, паттерн, шаблон, проект, пример"
+    />
+    <meta name="referrer" content="strict-origin" />
+
+    <meta itemprop="name" content="Практический JavaScript" />
+    <meta
+      itemprop="description"
+      content="Сборник теоретических и практических вопросов, задач, паттернов (шаблонов) проектирования, проектов и примеров использования Web API, методов и функций JavaScript"
+    />
+    <meta itemprop="image" content="./public/icons/icon-128.png" />
+
+    <!-- Microsoft -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="msapplication-starturl" content="/" />
+    <meta
+      name="msapplication-tooltip"
+      content="Сборник теоретических и практических вопросов, задач, паттернов (шаблонов) проектирования, проектов и примеров использования Web API, методов и функций JavaScript"
+    />
+    <meta name="msapplication-TileColor" content=" #222" />
+    <meta name="msapplication-config" content="browserconfig.xml" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://javascript-practice.ru/" />
+    <meta property="og:title" content="Практический JavaScript" />
+    <meta
+      property="og:description"
+      content="Сборник теоретических и практических вопросов, задач, паттернов (шаблонов) проектирования, проектов и примеров использования Web API, методов и функций JavaScript"
+    />
+    <meta property="og:image" content="./public/icons/icon-256.png" />
+    <meta property="og:locale" content="ru_RU" />
+
+    <meta name="twitter:card" content="app" />
+    <meta name="twitter:title" content="Практический JavaScript" />
+    <meta
+      name="twitter:description"
+      content="Сборник теоретических и практических вопросов, задач, паттернов (шаблонов) проектирования, проектов и примеров использования Web API, методов и функций JavaScript"
+    />
+    <meta name="twitter:url" content="https://javascript-practice.ru/" />
+    <meta name="twitter:image" content="./public/icons/icon-256.png" />
+
+    <meta name="apple-mobile-web-app-title" content="Практический JavaScript" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#222" />
+    <link rel="apple-touch-icon" href="./public/icons/icon-256.png" />
+
+    <meta name="theme-color" content="#eee" />
+    <meta name="color-scheme" content="light" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <meta
+      name="google-site-verification"
+      content="4b_cSoh-Uqgx6-T3PrZvObDFjJsGbGz_GWPEp_bfGLY"
+    />
+    <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-CNQ7TJD46H"
     ></script>
-  <script>
+    <script>
       window.dataLayer = window.dataLayer || []
 
       function gtag() {
@@ -61,11 +90,10 @@
       gtag('js', new Date())
 
       gtag('config', 'G-CNQ7TJD46H')
-  </script>
-  <!-- Yandex -->
-  <meta name="yandex-verification" content="fd6b8267e096514d" />
-  <!-- Yandex.Metrika counter -->
-  <script type="text/javascript">
+    </script>
+
+    <meta name="yandex-verification" content="fd6b8267e096514d" />
+    <script type="text/javascript">
       ;(function (m, e, t, r, i, k, a) {
         m[i] =
           m[i] ||
@@ -89,78 +117,112 @@
       ym(66445966, 'init', {
         clickmap: true,
         trackLinks: true,
-        accurateTrackBounce: true,
+        accurateTrackBounce: true
       })
     </script>
-  <noscript>
-    <div>
-      <img src="https://mc.yandex.ru/watch/66445966" style="position: absolute; left: -9999px" alt="" />
-    </div>
-  </noscript>
-  <!-- Mail -->
-  <meta name="wmail-verification" content="1bf0a5dfec726c04d2fa19897858c768" />
-  <!-- JSON-LD -->
-  <script type="application/ld+json">
+    <noscript>
+      <div>
+        <img
+          src="https://mc.yandex.ru/watch/66445966"
+          style="position: absolute; left: -9999px"
+          alt=""
+        />
+      </div>
+    </noscript>
+
+    <meta
+      name="wmail-verification"
+      content="1bf0a5dfec726c04d2fa19897858c768"
+    />
+
+    <script type="application/ld+json">
       {
-        "@context": "http://schema.org/",
-        "@type": "Course",
+        "@context": "http://schema.org",
+        "@type": "Webpage",
+        "url": "https://javascript-practice.ru",
         "name": "Практический JavaScript",
-        "image": ["https://javascript-practice.ru/public/icons/icon-512.png"],
-        "provider": {
+        "headline": "Практический JavaScript",
+        "description": "Сборник теоретических и практических вопросов, задач, паттернов (шаблонов) проектирования, проектов и примеров использования Web API, методов и функций JavaScript",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://javascript-practice.ru"
+        },
+        "publisher": {
           "@type": "Person",
           "name": "Igor Agapov"
         },
-        "author": {
-          "@type": "Person",
-          "name": "Igor Agapov"
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://javascript-practice.ru/img/logo.png",
+          "width": 1200,
+          "height": 555
         },
-        "datePublished": "2020-10-30",
-        "description": "Сборник вопросов и задач по JavaScript",
-        "keywords": "javascript, js, practice, question, task, problem, практика, вопрос, задача, проблема"
+        "datePublished": "2020-12-11",
+        "keywords": "javascript, js, practice, question, task, problem, pattern, project, example, практика, вопрос, задача, проблема, паттерн, шаблон, проект, пример"
       }
     </script>
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./style.css" />
-</head>
 
-<body>
-  <header>
-    <h1>Практический JavaScript</h1>
-    <p>"Я не думаю, что кто-либо в мире может утверждать, что знает JS, по крайней мере, полностью". Кайл Симпсон</p>
-    <nav id="nav">
-      <a href="/questions" data-link="questions">Вопросы</a>
-      <a href="/tasks" data-link="tasks">Задачи</a>
-      <a href="/links" data-link="links">Ссылки</a>
-    </nav>
-    <a name="top"></a>
-  </header>
-  <main id="main"></main>
-  <footer>
-    <p>Последнее обновление: 30.11.2020</p>
-    <p>&copy; <a href="https://github.com/harryheman">Игорь Агапов</a></p>
-  </footer>
-  <div id="loader">
-    <div class="loader">
-      <span>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap"
+      as="style"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preload" href="./style.css" as="style" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <link rel="preload" href="./script.js" as="script" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Практический JavaScript</h1>
+      <p>
+        "Я не думаю, что кто-либо в мире может утверждать, что знает JS, по
+        крайней мере, полностью". Кайл Симпсон
+      </p>
+      <nav id="nav">
+        <a href="/theory" data-link="theory">Теория</a>
+        <a href="/methods" data-link="methods">Методы</a>
+        <a href="/questions" data-link="questions">Вопросы</a>
+        <a href="/tasks" data-link="tasks">Задачи</a>
+        <a href="/functions" data-link="functions">Функции</a>
+        <a href="/projects" data-link="projects">Проекты</a>
+        <a href="/patterns" data-link="patterns">Паттерны</a>
+        <a href="/contact" data-link="contact">Контакты</a>
+      </nav>
+      <a name="top"></a>
+    </header>
+    <main id="main"></main>
+    <footer>
+      <p>Последнее обновление: 11.12.2020</p>
+      <p>&copy; <a href="https://github.com/harryheman">Игорь Агапов</a></p>
+    </footer>
+    <div id="loader">
+      <div class="loader">
+        <span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <div class="base">
+          <span></span>
+          <div class="face"></div>
+        </div>
+      </div>
+      <div class="longfazers">
         <span></span>
         <span></span>
         <span></span>
         <span></span>
-      </span>
-      <div class="base">
-        <span></span>
-        <div class="face"></div>
       </div>
     </div>
-    <div class="longfazers">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
-  <script src="./script.js" type="module"></script>
-</body>
-
+    <script src="./script.js" type="module"></script>
+  </body>
 </html>

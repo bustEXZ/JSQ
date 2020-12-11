@@ -7,7 +7,7 @@
   "orientation": "portrait",
   "background_color": "#eee",
   "theme_color": "#222",
-  "description": "Сборник вопросов и задач по JavaScript",
+  "description": "Сборник теоретических и практических вопросов, задач, паттернов (шаблонов) проектирования, проектов и примеров использования Web API, методов и функций JavaScript",
   "icons": [
     {
       "src": "./public/icons/icon-64.png",

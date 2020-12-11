@@ -1,30 +1,21 @@
 import { createQuestions } from '../questions/create-questions.js'
-import { createTasks } from '../tasks/create-tasks.js'
-import { createLinks } from '../links/create-links.js'
-import { hljs } from '../hl.js'
-import { createObserver } from './create-observer.js'
+
+import { hljs } from './hl.js'
 import { initHandlers } from './init-handlers.js'
 import { animateDetails } from './animate-details.js'
-import loader from '../loader.js'
+import loader from './loader.js'
 
-export const generatePage = (pageName) => {
+export const generatePage = async (pageName) => {
   loader.show()
 
-  switch (pageName) {
-    case 'questions':
-      createQuestions()
-      break
-    case 'tasks':
-      createTasks()
-      break
-    case 'links':
-      createLinks()
-      break
+  if (pageName === 'questions') {
+    createQuestions()
+  } else {
+    const pageModule = await import(`../${pageName}.js`)
+    main.innerHTML = pageModule.default
   }
 
   hljs(globalThis)
-
-  createObserver()
 
   initHandlers()
 

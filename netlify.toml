@@ -1,0 +1,36 @@
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "sameorigin"
+    X-Content-Type-Options = "nosniff"
+    Content-Security-Policy = "frame-ancestors 'self'"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin"
+    Permissions-Policy = "camera=(), geolocation=(), microphone=()"
+    Cache-Control = "max-age=31536000"
+    Link = '''
+    </style.css>; rel=preload; as=style, \
+    </public/css/buttons.css>; rel=preload; as=style, \
+    </public/css/code.css>; rel=preload; as=style, \
+    </public/css/footer.css>; rel=preload; as=style, \
+    </public/css/game.css>; rel=preload; as=style, \
+    </public/css/header.css>; rel=preload; as=style, \
+    </public/css/loader.css>; rel=preload; as=style, \
+    </public/css/section.css>; rel=preload; as=style, \
+    </script.js>; rel=preload; as=script, \
+    </public/js/contact.js>; rel=preload; as=script, \
+    </public/js/functions.js>; rel=preload; as=script, \
+    </public/js/methods.js>; rel=preload; as=script, \
+    </public/js/patterns.js>; rel=preload; as=script, \
+    </public/js/projects.js>; rel=preload; as=script, \
+    </public/js/tasks.js>; rel=preload; as=script, \
+    </public/js/theory.js>; rel=preload; as=script, \
+    </public/js/helpers/animate-details.js>; rel=preload; as=script, \
+    </public/js/helpers/generate-page.js>; rel=preload; as=script, \
+    </public/js/helpers/hl.js>; rel=preload; as=script, \
+    </public/js/helpers/init-handlers.js>; rel=preload; as=script, \
+    </public/js/helpers/loader.js>; rel=preload; as=script, \
+    </public/js/helpers/toggle-class.js>; rel=preload; as=script, \
+    </public/js/questions/create-game.js>; rel=preload; as=script, \
+    </public/js/questions/create-questions.js>; rel=preload; as=script, \
+    </public/js/questions/questions.js>; rel=preload; as=script'''

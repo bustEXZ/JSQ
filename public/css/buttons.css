@@ -20,6 +20,7 @@ button:active {
   left: 50%;
   transform: translateX(-50%);
   opacity: 0.9;
+  z-index: 0;
 }
 
 #game_btn {
