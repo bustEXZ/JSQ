@@ -15,6 +15,5 @@ export default /*html*/ `
   <a target="_blank" rel="noopener" href="https://github.com/lydiahallie/javascript-questions">JavaScript Questions</a>
   <a target="_blank" rel="noopener" href="https://github.com/sadanandpai/javascript-code-challenges">JavaScript Modern Interview Code Challenges</a>
   <a target="_blank" rel="noopener" href="https://github.com/yeungon/In-JavaScript-we-trust">In JavaScript We Trust</a>
-  <a target="_blank" rel="noopener" href="https://edabit.com/challenges">Edabit</a>
 </section>
 `

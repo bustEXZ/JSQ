@@ -24,6 +24,9 @@ export default /*html*/ `
 <a href="#minmax">Минимальное и максимальное значения массива без Math</a>
 <a href="#cap">Капитализация слов</a>
 <a href="#trunc">Сокращение слов и предложений</a>
+<a href="#stair">Лестница</a>
+<a href="#pyramid">Пирамида</a>
+<a href="#spiral">Спиральная матрица</a>
 <a href="#caesar">Шифр Цезаря</a>
 <a href="#ransom">Возможность составления фразы из набора слов</a>
 <a href="#twosum">Сумма двух чисел</a>
@@ -42,8 +45,8 @@ export default /*html*/ `
 <a href="#curry">Каррирование</a>
 <a href="#throttle">Throttle</a>
 <a href="#debounce">Debounce</a>
-<a href="#get">GET-HTTP-запрос</a>
-<a href="#post">POST-HTTP-запрос</a>
+<a href="#get">GET HTTP-запрос</a>
+<a href="#post">POST HTTP-запрос</a>
 </div>
 </details>
 </section>
@@ -380,6 +383,146 @@ console.log(truncStr('JavaScript', 7)) // Java...
 const _truncStr = (str, num) => str.split(' ').slice(0, num).join(' ')
 
 console.log(_truncStr('JavaScript is awesome!', 1)) // JavaScript
+
+</code></pre>
+</section>
+<section>
+<h3><a name="stair"></a>Лестница</h3>
+<pre><code class="lang-js">
+const steps = (n) => {
+  let stairs = ''
+
+  for (let r = 0; r < n; r++) {
+    let stair = ''
+
+    for (let c = 0; c < n; c++) {
+      stair += c <= r ? '#' : ' '
+    }
+
+    stairs += stair + '\n'
+  }
+
+  return stairs
+}
+
+console.log(steps(5))
+/*
+  #
+  ##
+  ###
+  ####
+  #####
+*/
+
+const _steps = (n, r = 0, stair = '', stairs = '') => {
+  if (r === n) return stairs
+
+  if (stair.length === n) return _steps(n, r + 1, '', stairs + stair + '\n')
+
+  return _steps(n, r, stair + (stair.length <= r ? '#' : ' '), stairs)
+}
+
+</code></pre>
+</section>
+<section>
+<h3><a name="pyramid"></a>Пирамида</h3>
+<pre><code class="lang-js">
+const pyramid = (n) => {
+  let levels = ''
+  const mid = ~~((2 * n - 1) / 2)
+
+  for (let r = 0; r < n; r++) {
+    let level = ''
+
+    for (let c = 0; c < 2 * n - 1; c++) {
+      level += mid - r <= c && c <= mid + r ? '#' : ' '
+    }
+
+    levels += level + '\n'
+  }
+
+  return levels
+}
+
+console.log(pyramid(5))
+
+/*
+    #
+   ###
+  #####
+ #######
+#########
+*/
+
+const _pyramid = (n, r = 0, level = '', levels = '') => {
+  if (n === r) return levels
+
+  if (2 * n - 1 === level.length)
+    return _pyramid(n, r + 1, '', levels + level + '\n')
+
+  const mid = ~~((2 * n - 1) / 2)
+
+  return _pyramid(
+    n,
+    r,
+    level + (mid - r <= level.length && level.length <= mid + r ? '#' : ' '),
+    levels
+  )
+}
+
+</code></pre>
+</section>
+<section>
+<h3><a name="spiral"></a>Спиральная матрица</h3>
+<pre><code class="lang-js">
+const spiral = (n) => {
+  let counter = 1
+  let startR = 0,
+    endR = n - 1
+  let startC = 0,
+    endC = n - 1
+
+  const matrix = []
+
+  for (let i = 0; i < n; i++) matrix.push([])
+
+  while (startC <= endC && startR <= endR) {
+    for (let i = startC; i <= endC; i++) {
+      matrix[startR][i] = counter
+      counter++
+    }
+    startR++
+
+    for (let i = startR; i <= endR; i++) {
+      matrix[i][endC] = counter
+      counter++
+    }
+    endC--
+
+    for (let i = endC; i >= startC; i--) {
+      matrix[endR][i] = counter
+      counter++
+    }
+    endR--
+
+    for (let i = endR; i >= startR; i--) {
+      matrix[i][startC] = counter
+      counter++
+    }
+    startC++
+  }
+
+  return matrix
+}
+
+console.log(spiral(3))
+/*
+[
+  [1, 2, 3],
+  [8, 9, 4],
+  [7, 6, 5]
+]
+*/
 
 </code></pre>
 </section>
@@ -877,7 +1020,7 @@ debouncedLog(arr) // Args: 1, 2, 3 - только один раз и через 
 </code></pre>
 </section>
 <section>
-<h3><a name="get"></a>GET-HTTP-запрос</h3>
+<h3><a name="get"></a>GET HTTP-запрос</h3>
 <pre><code class="lang-js">
 // XMLHttpRequest
 const httpGet = (url, cb, err = console.error) => {
@@ -902,7 +1045,7 @@ const httpGet = async (url, cb, err = console.error) => {
 </code></pre>
 </section>
 <section>
-<h3><a name="post"></a>POST-HTTP-запрос</h3>
+<h3><a name="post"></a>POST HTTP-запрос</h3>
 <pre><code class="lang-js">
 // XMLHttpsRequest
 const httpPost = (url, data, cb, err = console.error) => {

@@ -15,7 +15,7 @@ export default /*html*/ `
   <a target="_blank" rel="noopener" href="https://codepen.io/harryheman/pen/jObGgqY">Игра "Камень, ножницы, бумага"</a>
   <a target="_blank" rel="noopener" href="https://codepen.io/harryheman/pen/oNjGKGX">Игра "Крестики-нолики"</a>
   <a target="_blank" rel="noopener" href="https://codepen.io/harryheman/pen/gOaXYQZ">Игра "Пинг-понг"</a>
-  <a target="_blank" rel="noopener" href="https://codepen.io/harryheman/pen/gOaXYQZ">Приложение для хранения списка задач с IndexedDB)</a>
+  <a target="_blank" rel="noopener" href="https://codepen.io/harryheman/pen/gOaXYQZ">Приложение для хранения списка задач (IndexedDB)</a>
   <a target="_blank" rel="noopener" href="https://codepen.io/harryheman/pen/LYpdJOB">Игра "Тетрис"</a>
   <a target="_blank" rel="noopener" href="https://codepen.io/harryheman/pen/YzyLEzW">Интересный эффект слежения за курсором (Canvas API)</a>
   <a target="_blank" rel="noopener" href="https://codepen.io/harryheman/pen/MWaGOYZ">Буквы, разрушающиеся при движении курсора (Canvas API)</a>
@@ -44,7 +44,7 @@ export default /*html*/ `
   <a target="_blank" rel="noopener" href="https://github.com/harryheman/JavaScript-Examples/tree/main/Server-Sent-Events">Пример использования Server-Sent Events</a>
   <a target="_blank" rel="noopener" href="https://github.com/harryheman/JavaScript-Examples/tree/main/Web-Cryptography">Пример использования Web Cryptography API</a>
   <a target="_blank" rel="noopener" href="https://github.com/harryheman/JavaScript-Examples/tree/main/Web-Storage">Примеры использования Web Storage API</a>
-  <a target="_blank" rel="noopener" href="https://github.com/harryheman/JavaScript-Examples/tree/main/Work-With-Files">Пример работы с файлами в JavaScript</a>
+  <a target="_blank" rel="noopener" href="https://github.com/harryheman/JavaScript-Examples/tree/main/Work-With-Files">Примеры работы с файлами в JavaScript</a>
   <a target="_blank" rel="noopener" href="https://github.com/harryheman/Webpack5-Boilerplate">Пример использования Webpack для сборки проекта</a>
   <a target="_blank" rel="noopener" href="https://github.com/harryheman/Client-Side-Rendering">Пример рендеринга страниц на стороне клиента</a>
   <a target="_blank" rel="noopener" href="https://habr.com/ru/post/525536/">Примеры использования наблюдателей в JavaScript</a>
