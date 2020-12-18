@@ -2,13 +2,13 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-![logo](https://javascript-practice.ru/img/logo.png)
+![logo](https://thebestcode.ru/img/logo.png)
 
 Сборник теоретических и практических вопросов, задач, алгоритмов и структур данных, паттернов (шаблонов) проектирования, учебных проектов и примеров использования Web API, методов и функций JavaScript
 
 ## Официальный сайт
 
-[https://javascript-practice.ru/](https://javascript-practice.ru/)
+[https://thebestcode.ru/](https://thebestcode.ru/)
 
 ## Автор
 
