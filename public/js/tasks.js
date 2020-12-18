@@ -1,6 +1,6 @@
 export default /*html*/ `
 <section>
-  <h2>50 задач</h2>
+  <h2>68 задач</h2>
   <h3>Решай и проверяй</h3>
 </section>
 <section>
@@ -1709,6 +1709,798 @@ askPassword(
       <p>Или же можно создать частично примененную функцию на основе "user.login", которая использует объект "user" в качестве контекста и получает соответствующий первый аргумент:</p>
       <pre><code class="lang-js">
 askPassword(user.login.bind(user, true), user.login.bind(user, false))
+      </code></pre>
+    </div>
+  </details>
+</section>
+<section>
+  <h2>Задача № 51</h2>
+  <p>
+    Объект rabbit наследует от объекта animal. Какой объект получит свойство full при вызове rabbit.eat(): animal или rabbit?
+  </p>
+  <pre><code class="lang-js">
+const animal = {
+  eat() {
+    this.full = true
+  }
+}
+
+const rabbit = {
+  __proto__: animal
+}
+
+rabbit.eat()
+  </code></pre>
+  <details>
+    <summary>Ответ</summary>
+    <div>
+      <p>Поскольку this – это объект, который стоит перед точкой, rabbit.eat() изменяет объект rabbit. Поиск свойства и исполнение кода – два разных процесса. Сначала осуществляется поиск метода rabbit.eat в прототипе, а затем этот метод выполняется с this=rabbit.</p>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>Задача № 52</h2>
+  <p>
+    У нас есть два хомяка: шустрый (speedy) и ленивый (lazy); оба наследуют от общего объекта hamster. Когда мы кормим одного хомяка, второй тоже наедается. Почему? Как это исправить?
+  </p>
+  <pre><code class="lang-js">
+const hamster = {
+  stomach: [],
+
+  eat(food) {
+    this.stomach.push(food)
+  }
+}
+
+const speedy = {
+  __proto__: hamster
+}
+
+const lazy = {
+  __proto__: hamster
+}
+
+speedy.eat("apple")
+console.log( speedy.stomach ) // apple
+
+console.log( lazy.stomach ) // apple
+  </code></pre>
+  <details>
+    <summary>Ответ</summary>
+    <div>
+      <p>Давайте внимательно посмотрим, что происходит при вызове speedy.eat("apple").</p>
+      <ol>
+        <li>Сначала в прототипе (=hamster) находится метод speedy.eat, а затем он выполняется с this=speedy (объект перед точкой).</li>
+        <li>Затем в this.stomach.push() нужно найти свойство stomach и вызвать для него push. Движок ищет stomach в this (=speedy), но ничего не находит.</li>
+        <li>Он идёт по цепочке прототипов и находит stomach в hamster.</li>
+        <li>И вызывает для него push, добавляя еду в живот прототипа.</li>
+      </ol>
+      <p>Получается, что у хомяков один живот на двоих! И при lazy.stomach.push(...) и при speedy.stomach.push(), свойство stomach берётся из прототипа (так как его нет в самом объекте), затем в него добавляются данные. Обратите внимание, что этого не происходит при простом присваивании this.stomach=:</p>
+      <pre><code class="lang-js">
+const hamster = {
+  stomach: [],
+
+  eat(food) {
+    this.stomach = [food]
+  }
+}
+
+const speedy = {
+  __proto__: hamster
+}
+
+const lazy = {
+  __proto__: hamster
+}
+
+speedy.eat("apple")
+console.log( speedy.stomach ) // apple
+
+console.log( lazy.stomach ) // пусто
+      </code></pre>
+      <p>Теперь всё работает правильно, потому что this.stomach= не ищет свойство stomach. Значение записывается непосредственно в объект this. Также мы можем полностью избежать проблемы, если у каждого хомяка будет собственный живот:</p>
+      <pre><code class="lang-js">
+const hamster = {
+  stomach: [],
+
+  eat(food) {
+    this.stomach.push(food)
+  }
+}
+
+const speedy = {
+  __proto__: hamster,
+  stomach: []
+}
+
+const lazy = {
+  __proto__: hamster,
+  stomach: []
+}
+
+speedy.eat("apple")
+console.log( speedy.stomach ) // apple
+
+console.log( lazy.stomach ) // пусто
+      </code></pre>
+      <p>Все свойства, описывающие состояние объекта (как свойство stomach в примере выше), рекомендуется записывать в сам этот объект. Это позволяет избежать подобных проблем.</p>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>Задача № 53</h2>
+  <p>
+    Представьте, что у нас имеется некий объект obj, созданный функцией-конструктором – мы не знаем какой именно, но хотелось бы создать ещё один объект такого же типа. Можем ли мы сделать так?
+  </p>
+  <pre><code class="lang-js">
+const obj2 = new obj.constructor()
+  </code></pre>
+  <p>Приведите пример функции-конструктора для объекта obj, с которой такой вызов корректно сработает. И пример функции-конструктора, с которой такой код поведёт себя неправильно.</p>
+  <details>
+    <summary>Ответ</summary>
+    <div>
+      <p>Мы можем использовать такой способ, если мы уверены в том, что свойство "constructor" существующего объекта имеет корректное значение. Например, если мы не меняли "prototype", используемый по умолчанию, то код ниже, без сомнений, сработает:</p>
+      <pre><code class="lang-js">
+function User(name) {
+  this.name = name
+}
+
+const user = new User('John')
+const user2 = new user.constructor('Jane')
+
+console.log( user2.name ) // Jane
+      </code></pre>
+      <p>Всё получилось, потому что User.prototype.constructor == User. Но если кто-то перезапишет User.prototype и забудет заново назначить свойство "constructor", чтобы оно указывало на User, то ничего не выйдет. Например:</p>
+      <pre><code class="lang-js">
+function User(name) {
+  this.name = name
+}
+User.prototype = {} // (*)
+
+const user = new User('John')
+const user2 = new user.constructor('Jane')
+
+console.log( user2.name ) // undefined
+      </code></pre>
+      <p>Почему user2.name приняло значение undefined? Рассмотрим, как отработал вызов new user.constructor('Jane'):</p>
+      <ol>
+        <li>Сначала ищется свойство constructor в объекте user. Не нашлось.</li>
+        <li>Потом задействуется поиск по цепочке прототипов. Прототип объекта user – это User.prototype, и там тоже нет искомого свойства.</li>
+        <li>Значение User.prototype – это пустой объект {}, чей прототип – Object.prototype. Object.prototype.constructor === Object. Таким образом, свойство constructor всё-таки найдено.</li>
+      </ol>
+      <p>Наконец, срабатывает const user2 = new Object('Jane'), но конструктор Object игнорирует аргументы, он всегда создаёт пустой объект: const user2 = {} – это как раз то, чему равен user2 в итоге.</p>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>Задача № 54</h2>
+  <p>
+    Добавьте всем функциям в прототип метод defer(ms), который возвращает обёртку, откладывающую вызов функции на ms миллисекунд. Например, должно работать так:
+  </p>
+  <pre><code class="lang-js">
+function f(a, b) {
+  console.log( a + b )
+}
+
+f.defer(1000)(1, 2) // 3 через 1 секунду
+  </code></pre>
+  <p>Пожалуйста, заметьте, что аргументы должны корректно передаваться оригинальной функции.</p>
+  <details>
+    <summary>Возможное решение</summary>
+    <div>
+      <p>Мы можем использовать такой способ, если мы уверены в том, что свойство "constructor" существующего объекта имеет корректное значение. Например, если мы не меняли "prototype", используемый по умолчанию, то код ниже, без сомнений, сработает:</p>
+      <pre><code class="lang-js">
+Function.prototype.defer = function(ms) {
+  let f = this
+  return function(...args) {
+    setTimeout(() => f.apply(this, args), ms)
+  }
+}
+      </code></pre>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>Задача № 55</h2>
+  <p>
+    Имеется объект dictionary, созданный с помощью Object.create(null) для хранения любых пар ключ/значение. Добавьте ему метод dictionary.toString(), который должен возвращать список ключей, разделённых запятой. Ваш toString не должен выводиться при итерации объекта с помощью цикла for..in. Вот так это должно работать:
+  </p>
+  <pre><code class="lang-js">
+const dictionary = Object.create(null)
+
+// ...
+
+dictionary.apple = "apple"
+dictionary.banana = "banana"
+
+for(const key in dictionary) {
+  console.log(key) // apple banana
+}
+
+alert(dictionary) // apple,banana
+  </code></pre>
+  <details>
+    <summary>Возможное решение</summary>
+    <div>
+      <p>В методе можно получить все перечисляемые ключи с помощью Object.keys и вывести их список. Чтобы сделать toString неперечисляемым, давайте определим его, используя дескриптор свойства. Синтаксис Object.create позволяет нам добавить в объект дескрипторы свойств как второй аргумент.</p>
+      <pre><code class="lang-js">
+const dictionary = Object.create(null, {
+  toString: {
+    value() {
+      return Object.keys(this).join()
+    }
+  }
+})
+
+// или
+const dictionary = Object.create(null)
+
+Object.defineProperty(dictionary, 'toString', {
+    value: () => Object.keys(dictionary).join()
+})
+      </code></pre>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>Задача № 56</h2>
+  <p>
+    Класс Clock написан в функциональном стиле:
+  </p>
+  <pre><code class="lang-js">
+function Clock({ template }) {
+  let timer
+
+  function render() {
+    const date = new Date()
+
+    const hours = date.getHours()
+    if (hours < 10) hours = '0' + hours
+
+    const mins = date.getMinutes()
+    if (mins < 10) mins = '0' + mins
+
+    const secs = date.getSeconds()
+    if (secs < 10) secs = '0' + secs
+
+    const output = template
+      .replace('h', hours)
+      .replace('m', mins)
+      .replace('s', secs)
+
+    console.log(output)
+  }
+
+  this.stop = function () {
+    clearInterval(timer)
+  }
+
+  this.start = function () {
+    render()
+    timer = setInterval(render, 1000)
+  }
+}
+
+const clock = new Clock({ template: 'h:m:s' })
+clock.start()
+  </code></pre>
+  <p>Перепишите его, используя современный синтаксис классов.</p>
+  <details>
+    <summary>Возможное решение</summary>
+    <div>
+      <pre><code class="lang-js">
+class Clock {
+  constructor({ template }) {
+    this.template = template
+  }
+
+  render() {
+    const date = new Date()
+
+    const hours = date.getHours()
+    if (hours < 10) hours = '0' + hours
+
+    const mins = date.getMinutes()
+    if (mins < 10) mins = '0' + mins
+
+    const secs = date.getSeconds()
+    if (secs < 10) secs = '0' + secs
+
+    const output = this.template
+      .replace('h', hours)
+      .replace('m', mins)
+      .replace('s', secs)
+
+    console.log(output)
+  }
+
+  stop() {
+    clearInterval(this.timer)
+  }
+
+  start() {
+    this.render()
+    this.timer = setInterval(() => this.render(), 1000)
+  }
+}
+
+const clock = new Clock({ template: 'h:m:s' })
+clock.start()
+      </code></pre>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>Задача № 57</h2>
+  <p>
+    У нас есть класс Clock. Сейчас он выводит время каждую секунду:
+  </p>
+  <pre><code class="lang-js">
+class Clock {
+  constructor({ template }) {
+    this.template = template
+  }
+
+  render() {
+    const date = new Date()
+
+    const hours = date.getHours()
+    if (hours < 10) hours = '0' + hours
+
+    const mins = date.getMinutes()
+    if (mins < 10) mins = '0' + mins
+
+    const secs = date.getSeconds()
+    if (secs < 10) secs = '0' + secs
+
+    const output = this.template
+      .replace('h', hours)
+      .replace('m', mins)
+      .replace('s', secs)
+
+    console.log(output)
+  }
+
+  stop() {
+    clearInterval(this.timer)
+  }
+
+  start() {
+    this.render()
+    this.timer = setInterval(() => this.render(), 1000)
+  }
+}
+  </code></pre>
+  <p>Создайте новый класс ExtendedClock, который будет наследоваться от Clock и добавьте параметр precision – количество миллисекунд между «тиками». Установите значение в 1000 (1 секунда) по умолчанию. Не изменяйте класс Clock. Расширьте его</p>
+  <details>
+    <summary>Возможное решение</summary>
+    <div>
+      <pre><code class="lang-js">
+class ExtendedClock extends Clock {
+  constructor(options) {
+    super(options)
+    const { precision = 1000 } = options
+    this.precision = precision
+  }
+
+  start() {
+    this.render()
+    this.timer = setInterval(() => this.render(), this.precision)
+  }
+}
+      </code></pre>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>Задача № 58</h2>
+  <p>
+    Почему instanceof в примере ниже возвращает true? Мы же видим, что a не создан с помощью B().
+  </p>
+  <pre><code class="lang-js">
+function A() {}
+function B() {}
+
+A.prototype = B.prototype = {}
+
+const a = new A()
+
+console.log( a instanceof B ) // true
+clock.start()
+  </code></pre>
+  <details>
+    <summary>Ответ</summary>
+    <div>
+      <p>
+        Да, действительно, выглядит странно. Но instanceof не учитывает саму функцию при проверке, а только prototype, который проверяется на совпадения в прототипной цепочке. И в данном примере a.__proto__ == B.prototype, так что instanceof возвращает true. Таким образом, по логике instanceof, именно prototype в действительности определяет тип, а не функция-конструктор.
+      </p>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>Задача № 59</h2>
+  <p>
+    Создайте класс FormatError, который наследует от встроенного класса SyntaxError. Класс должен поддерживать свойства message, name и stack. Пример использования:
+  </p>
+  <pre><code class="lang-js">
+const err = new FormatError("ошибка форматирования")
+
+console.log( err.message ) // ошибка форматирования
+console.log( err.name ) // FormatError
+console.log( err.stack ) // stack
+
+console.log( err instanceof FormatError ) // true
+console.log( err instanceof SyntaxError ) // true
+  </code></pre>
+  <details>
+    <summary>Возможное решение</summary>
+    <div>
+      <pre><code class="lang-js">
+class FormatError extends SyntaxError {
+  constructor(message) {
+    super(message)
+    this.name = "FormatError"
+  }
+}
+      </code></pre>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>Задача № 60</h2>
+  <p>
+    Что выведет код ниже?
+  </p>
+  <pre><code class="lang-js">
+const promise = new Promise(function(resolve, reject) {
+  resolve(1)
+
+  setTimeout(() => resolve(2), 1000)
+})
+
+promise.then(console.log)
+  </code></pre>
+  <details>
+    <summary>Ответ</summary>
+    <div>
+      <p>
+        Вывод будет: 1. Второй вызов resolve будет проигнорирован, поскольку учитывается только первый вызов reject/resolve. Все последующие вызовы – игнорируются.
+      </p>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>Задача № 61</h2>
+  <p>
+    Встроенная функция setTimeout использует колбэк-функции. Создайте альтернативу, использующую промисы. Функция delay(ms) должна возвращать промис, который перейдёт в состояние «выполнен» через ms миллисекунд, так чтобы мы могли добавить к нему .then:
+  </p>
+  <pre><code class="lang-js">
+function delay(ms) {
+  // ...
+}
+
+delay(3000).then(() => console.log('выполнилось через 3 секунды'))
+  </code></pre>
+  <details>
+    <summary>Возможное решение</summary>
+    <div>
+      <pre><code class="lang-js">
+const delay = (ms) =>
+  new Promise(resolve => setTimeout(resolve, ms))
+      </code></pre>
+      <p>Заметьте, что resolve вызывается без аргументов. Мы не возвращаем из delay ничего, просто гарантируем задержку.</p>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>Задача № 62</h2>
+  <p>
+    Что вы думаете? Выполнится ли .catch? Поясните свой ответ.
+  </p>
+  <pre><code class="lang-js">
+new Promise(function(resolve, reject) {
+  setTimeout(() => {
+    throw new Error("Whoops!")
+  }, 1000)
+}).catch(console.log)
+  </code></pre>
+  <details>
+    <summary>Ответ</summary>
+    <div>
+      <p>Нет, не выполнится. Здесь присутствует "скрытый try..catch" вокруг кода функции. Поэтому обрабатываются все синхронные ошибки. В данном примере ошибка генерируется не по ходу выполнения кода, а позже. Поэтому промис не может обработать её.</p>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>Задача № 63</h2>
+  <p>
+    Перепишите пример, используя async/await:
+  </p>
+  <pre><code class="lang-js">
+function loadJson(url) {
+  return fetch(url)
+    .then(response => {
+      if (response.status == 200) {
+        return response.json()
+      } else {
+        throw new Error(response.status)
+      }
+    })
+}
+  </code></pre>
+  <details>
+    <summary>Возможное решение</summary>
+    <div>
+      <pre><code class="lang-js">
+async function loadJson(url) {
+  const response = await fetch(url)
+
+  const {status} = response
+
+  if (status === 200) {
+    const json = await response.json()
+    return json
+  }
+
+  throw new Error(status)
+}
+      </code></pre>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>Задача № 64</h2>
+  <p>
+    Перепишите пример, используя async/await:
+  </p>
+  <pre><code class="lang-js">
+class HttpError extends Error {
+  constructor(response) {
+    super(\`\${response.status} for \${response.url}\`)
+    this.name = 'HttpError'
+    this.response = response
+  }
+}
+
+function loadJson(url) {
+  return fetch(url)
+    .then(response => {
+      if (response.status == 200) {
+        return response.json()
+      } else {
+        throw new HttpError(response)
+      }
+    })
+}
+
+function demoGithubUser() {
+  let name = prompt("Введите логин?", "harryheman")
+
+  return loadJson(\`https://api.github.com/users/\${name}\`)
+    .then(user => {
+      alert(\`Полное имя: \${user.name}.\`)
+      return user
+    })
+    .catch(err => {
+      if (err instanceof HttpError && err.response.status == 404) {
+        alert("Такого пользователя не существует, пожалуйста, повторите ввод.")
+        return demoGithubUser()
+      } else {
+        throw err
+      }
+    })
+}
+
+demoGithubUser()
+  </code></pre>
+  <details>
+    <summary>Возможное решение</summary>
+    <div>
+      <pre><code class="lang-js">
+class HttpError extends Error {
+  constructor(response) {
+    super(\`\${response.status} for \${response.url}\`)
+    this.name = 'HttpError'
+    this.response = response
+  }
+}
+
+async function loadJson(url) {
+  let response = await fetch(url)
+  if (response.status == 200) {
+    return response.json()
+  } else {
+    throw new HttpError(response)
+  }
+}
+
+async function demoGithubUser() {
+  let user
+  while(true) {
+    const name = prompt("Введите логин?", "harryheman")
+
+    try {
+      user = await loadJson(\`https://api.github.com/users/\${name}\`)
+      break
+    } catch(err) {
+      if (err instanceof HttpError && err.response.status === 404) {
+        alert("Такого пользователя не существует, пожалуйста, повторите ввод.")
+      } else {
+        throw err
+      }
+    }
+  }
+
+  alert(\`Полное имя: \${user.name}.\`)
+  return user
+}
+
+demoGithubUser()
+      </code></pre>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>Задача № 65</h2>
+  <p>
+    Обычно при чтении несуществующего свойства из объекта возвращается undefined. Создайте прокси, который генерирует ошибку при попытке прочитать несуществующее свойство. Это может помочь обнаружить программные ошибки пораньше. Напишите функцию wrap(target), которая берёт объект target и возвращает прокси, добавляющий в него этот аспект функциональности. Вот как это должно работать:
+  </p>
+  <pre><code class="lang-js">
+const user = {
+  name: "John"
+}
+
+function wrap(target) {
+  return new Proxy(target, {
+      // ...
+  })
+}
+
+user = wrap(user)
+
+console.log(user.name) // John
+console.log(user.age) // Ошибка: такого свойства не существует
+  </code></pre>
+  <details>
+    <summary>Возможное решение</summary>
+    <div>
+      <pre><code class="lang-js">
+function wrap(target) {
+  return new Proxy(target, {
+    get(target, prop, receiver) {
+      if (prop in target) {
+        return Reflect.get(target, prop, receiver)
+      } else {
+        throw new ReferenceError(\`Свойства "\${prop}" не существует\`)
+      }
+    }
+  })
+}
+      </code></pre>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>Задача № 66</h2>
+  <p>
+    Создайте функцию makeObservable(target), которая делает объект «наблюдаемым», возвращая прокси. Вот как это должно работать:
+  </p>
+  <pre><code class="lang-js">
+function makeObservable(target) {
+  // ...
+}
+
+const user = {}
+user = makeObservable(user)
+
+user.observe((key, value) => {
+  console.log(\`SET \${key}=\${value}\`)
+})
+
+user.name = "John" // SET name=John
+  </code></pre>
+  <p>Другими словами, возвращаемый makeObservable объект аналогичен исходному, но также имеет метод observe(handler), который позволяет запускать handler при любом изменении свойств. При изменении любого свойства вызывается handler(key, value) с именем и значением свойства.</p>
+  <details>
+    <summary>Возможное решение</summary>
+    <div>
+      <p>Решение состоит из двух частей:</p>
+      <ol>
+        <li>При вызове .observe(handler) нам нужно где-то сохранить обработчик, чтобы вызвать его позже. Можно хранить обработчики прямо в объекте, создав в нём для этого свой символьный ключ.</li>
+        <li>Нам нужен прокси с ловушкой set, чтобы вызывать обработчики при изменении свойств.</li>
+      </ol>
+      <pre><code class="lang-js">
+const handlers = Symbol('handlers')
+
+function makeObservable(target) {
+  target[handlers] = []
+
+  target.observe = function(handler) {
+    this[handlers].push(handler)
+  }
+
+  return new Proxy(target, {
+    set(target, property, value) {
+      const success = Reflect.set(...arguments)
+      if (success) {
+        target[handlers].forEach(handler => handler(property, value))
+      }
+      return success
+    }
+  })
+}
+      </code></pre>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>Задача № 67</h2>
+  <p>
+    Создайте калькулятор, который запрашивает ввод какого-нибудь арифметического выражения и возвращает результат его вычисления.
+  </p>
+  <details>
+    <summary>Возможное решение</summary>
+    <div>
+      <pre><code class="lang-js">
+const expr = prompt("Введите арифметическое выражение:", '2*3/2')
+
+const calc = expr => {
+  if (!expr) return
+
+  ;[...expr].forEach(char => {
+    if (!char.match(/[\d\+\-*/]+/)) {
+      throw new Error('wrong symbol')
+    }
+  })
+
+  return eval(expr)
+}
+
+console.log(calc(expr))
+      </code></pre>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>Задача № 68</h2>
+  <p>
+    Используя Intl.Collator, отсортируйте массив:
+  </p>
+  <pre><code class="lang-js">
+const animals = ["тигр", "ёж", "енот", "ехидна", "АИСТ", "ЯК"]
+
+// ...
+
+console.log(animals)
+// ["АИСТ", "ёж", "енот", "ехидна", "тигр", "ЯК"]
+  </code></pre>
+  <p>В этом примере порядок сортировки не должен зависеть от регистра. Что касается буквы "ё", то мы следуем обычным правилам сортировки буквы ё, по которым «е» и «ё» считаются одной и той же буквой, за исключением случая, когда два слова отличаются только в позиции буквы «е» / «ё» – тогда слово с «е» ставится первым.</p>
+  <details>
+    <summary>Возможное решение</summary>
+    <div>
+      <pre><code class="lang-js">
+const collator = new Intl.Collator()
+
+animals.sort((a, b) => collator.compare(a, b))
+
+console.log(animals.sort())
+// // ["АИСТ", "ЯК", "енот", "ехидна", "тигр", "ёж"]
       </code></pre>
     </div>
   </details>

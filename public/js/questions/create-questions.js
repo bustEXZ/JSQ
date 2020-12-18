@@ -45,8 +45,5 @@ export const createQuestions = () => {
 
   html += `<a href="#top"><button id="top_btn">Наверх</button></a>`
 
-  main.innerHTML = html
-  main.classList.add('questions')
-
-  game_btn.onclick = () => createGame()
+  return html
 }

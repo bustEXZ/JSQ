@@ -1,6 +1,6 @@
 export default /*html*/ `
 <section>
-<h3>40 функций</h3>
+<h3>43 функции</h3>
 <details>
 <summary>Список</summary>
 <div>
@@ -399,7 +399,7 @@ const steps = (n) => {
       stair += c <= r ? '#' : ' '
     }
 
-    stairs += stair + '\n'
+    stairs += stair + '\\n'
   }
 
   return stairs
@@ -417,7 +417,7 @@ console.log(steps(5))
 const _steps = (n, r = 0, stair = '', stairs = '') => {
   if (r === n) return stairs
 
-  if (stair.length === n) return _steps(n, r + 1, '', stairs + stair + '\n')
+  if (stair.length === n) return _steps(n, r + 1, '', stairs + stair + '\\n')
 
   return _steps(n, r, stair + (stair.length <= r ? '#' : ' '), stairs)
 }
@@ -438,7 +438,7 @@ const pyramid = (n) => {
       level += mid - r <= c && c <= mid + r ? '#' : ' '
     }
 
-    levels += level + '\n'
+    levels += level + '\\n'
   }
 
   return levels
@@ -458,7 +458,7 @@ const _pyramid = (n, r = 0, level = '', levels = '') => {
   if (n === r) return levels
 
   if (2 * n - 1 === level.length)
-    return _pyramid(n, r + 1, '', levels + level + '\n')
+    return _pyramid(n, r + 1, '', levels + level + '\\n')
 
   const mid = ~~((2 * n - 1) / 2)
 
@@ -1076,4 +1076,5 @@ const httpPost = async (url, data, cb, err = console.error) => {
 
 </code></pre>
 </section>
+<a href="#top"><button id="top_btn">Наверх</button></a>
 `
