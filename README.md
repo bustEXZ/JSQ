@@ -10,6 +10,10 @@
 
 [https://thebestcode.ru/](https://thebestcode.ru/)
 
+### Последнее обновление
+
+18.12.2020
+
 ## Автор
 
 - [Игорь Агапов](https://github.com/harryheman)
