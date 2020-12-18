@@ -1,6 +1,7 @@
 export default /*html*/ `
 <section>
-<h3>43 функции</h3>
+<h2>43 функции</h2>
+<h3>Подготовься к собеседованию</h3>
 <details>
 <summary>Список</summary>
 <div>
