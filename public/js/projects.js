@@ -10,7 +10,7 @@ export default /*html*/ `
   <a target="_blank" rel="noopener" href="https://codepen.io/harryheman/pen/rNVEGya">Pixel Art Maker (Canvas API)</a>
   <a target="_blank" rel="noopener" href="https://codepen.io/harryheman/pen/wvKWGVL">Приложение для медитации</a>
   <a target="_blank" rel="noopener" href="https://codepen.io/harryheman/pen/oNjLLXd">Приложение для погоды</a>
-  <a target="_blank" rel="noopener" href="https://codepen.io/harryheman/pen/oNjLLXd">Виртуальная клавиатура</a>
+  <a target="_blank" rel="noopener" href="https://codepen.io/harryheman/pen/wvKeezJ">Виртуальная клавиатура</a>
   <a target="_blank" rel="noopener" href="https://codepen.io/harryheman/pen/wvKryPO">Простой калькулятор (Math.js)</a>
   <a target="_blank" rel="noopener" href="https://codepen.io/harryheman/pen/jObGgqY">Игра "Камень, ножницы, бумага"</a>
   <a target="_blank" rel="noopener" href="https://codepen.io/harryheman/pen/oNjGKGX">Игра "Крестики-нолики"</a>

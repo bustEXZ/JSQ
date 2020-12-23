@@ -1,7 +1,7 @@
 export default /*html*/ `
 <section>
   <h3>Проверенные источники</h3>
-  <a target="_blank" rel="noopener" href="../../books/definitive_guide.pdf">"JavaScript. Подробное руководство". Дэвид Флэнаган</a>
+  <a target="_blank" rel="noopener" href="https://thebestcode.ru/public/books/definitive_guide.pdf">"JavaScript. Подробное руководство". Дэвид Флэнаган</a>
   <a target="_blank" rel="noopener" href="https://github.com/azat-io/you-dont-know-js-ru">"Вы не знаете JS". Кайл Симпсон</a>
   <a target="_blank" rel="noopener" href="https://learn.javascript.ru/">"Современный учебник JavaScript". Илья Кантор</a>
   <a target="_blank" rel="noopener" href="https://developer.mozilla.org/ru/">MDN Web Docs</a>
