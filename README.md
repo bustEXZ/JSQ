@@ -1,4 +1,4 @@
-# Много JavaScript :metal:
+# Тотальный JavaScript :metal:
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
@@ -11,7 +11,7 @@
 ## Оглавление
 
 - :page_with_curl: [Вопросы](questions.md)
-- :page_with_curl: [Задачи](tasks.md)
+- :page_with_curl: [Задачи](./md/tasks.md)
 - :page_with_curl: [Сниппеты](snippets.md)
 
 ## Другие проекты
