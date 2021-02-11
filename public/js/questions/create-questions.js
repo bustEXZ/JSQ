@@ -1,10 +1,8 @@
 import questions from './questions.js'
-import { createGame } from './create-game.js'
 
 export const createQuestions = () => {
   let html = `
   <section>
-    <h2>230 вопросов</h2>
     <h3>Каким будет вывод?</h3>
     <button id="game_btn">Игра</button>
   </section>
