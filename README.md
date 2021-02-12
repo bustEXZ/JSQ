@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-Сборник практических вопросов, задач, сниппетов (функций-утилит), а также полезные ссылки по JavaScript
+Сборник практических вопросов, задач разного уровня сложности, сниппетов (функций-утилит), а также полезные ссылки по JavaScript
 
 ## Приложение
 
@@ -10,7 +10,7 @@
 
 ## Оглавление
 
-- :page_with_curl: Вопросы
+- :page_with_curl: [Вопросы](./assets/questions.md)
 - :page_with_curl: [Задачи](./assets/tasks.md)
 - :page_with_curl: Сниппеты
 - :page_with_curl: [Паттерны](./assets/patterns/README.md)
