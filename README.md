@@ -23,6 +23,10 @@
 - <a target="_blank" rel="noopener" href="https://htmltemplate.site/">Современный стартовый HTML-шаблон</a>
 - <a target="_blank" rel="noopener" href="https://github.com/harryheman/React-Total">Тотальный React</a>
 
+## Публикации
+
+- [Руководство по выражениям и операторам JavaScript](https://blog.logrocket.com/a-comprehensive-guide-to-javascript-expressions/)
+
 ## Источники
 
 ### Основные
