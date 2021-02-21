@@ -23,7 +23,7 @@ export const generatePage = async (pageName) => {
     main.innerHTML = pageModule.default
   }
 
-  // hljs(globalThis)
+  hljs(globalThis)
 
   initHandlers()
 

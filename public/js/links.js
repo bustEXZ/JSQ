@@ -1,11 +1,12 @@
 export default /*html*/ `
 <section>
   <h3>Другие проекты</h3>
-  <a target="_blank" rel="noopener" href="https://github.com/harryheman/JavaScript-Projects">Примеры клиентских и серверных (клиент-серверных) приложений на JavaScript</a>
-  <a target="_blank" rel="noopener" href="https://github.com/harryheman/JavaScript-Design-Patterns">Паттерны проектирования на JavaScript</a>
-  <a target="_blank" rel="noopener" href="https://nodejs-guide.ru">Руководство по Node.js для начинающих</a>
+  <a target="_blank" rel="noopener" href="https://github.com/harryheman/JavaScript-Design-Patterns">Сниппеты (утилиты, вспомогательные функции)</a>
+  <a target="_blank" rel="noopener" href="https://github.com/harryheman/JavaScript-Total/blob/master/assets/patterns/README.md">Паттерны проектирования</a>
+  <a target="_blank" rel="noopener" href="https://github.com/harryheman/JavaScript-Projects">Примеры клиентских и серверных (клиент-серверных) приложений</a>
   <a target="_blank" rel="noopener" href="https://github.com/harryheman/React-Total">Тотальный React</a>
   <a target="_blank" rel="noopener" href="https://htmltemplate.site/">Современный стартовый HTML-шаблон</a>
+  <a target="_blank" rel="noopener" href="https://nodejs-guide.ru">Руководство по Node.js для начинающих</a>
 </section>
 <section class="center">
   <h3>Контакты</h3>
@@ -28,6 +29,6 @@ export default /*html*/ `
   <a target="_blank" rel="noopener" href="https://github.com/lydiahallie/javascript-questions">JavaScript Questions</a>
   <a target="_blank" rel="noopener" href="https://github.com/sadanandpai/javascript-code-challenges">JavaScript Modern Interview Code Challenges</a>
   <a target="_blank" rel="noopener" href="https://github.com/yeungon/In-JavaScript-we-trust">In JavaScript We Trust</a>
-  <a target="_blank" rel="noopener" href="https://edabit.com/challenges">Edabit - практические задания по JavaScript</a>
+  <a target="_blank" rel="noopener" href="https://edabit.com/challenges">Edabit - Coding Practice Challenges</a>
 </section>
 `
