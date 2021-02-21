@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-Сборник практических вопросов, задач разного уровня сложности, сниппетов (функций-утилит), а также полезные ссылки по JavaScript
+Сборник практических вопросов, задач разного уровня сложности, сниппетов (утилит, вспомогательных функций), а также полезные ссылки по JavaScript
 
 ## Приложение
 
@@ -18,9 +18,9 @@
 
 ## Другие проекты
 
-- <a target="_blank" rel="noopener" href="https://github.com/harryheman/JavaScript-Projects">Примеры клиентских и серверных (клиент-серверных) приложений на JavaScript</a>
-- - <a target="_blank" rel="noopener" href="https://github.com/harryheman/React-Total">Тотальный React</a>
-- - <a target="_blank" rel="noopener" href="https://htmltemplate.site/">Современный стартовый HTML-шаблон</a>
+- <a target="_blank" rel="noopener" href="https://github.com/harryheman/JavaScript-Projects">Примеры клиентских и серверных (клиент-серверных) приложений</a>
+- <a target="_blank" rel="noopener" href="https://github.com/harryheman/React-Total">Тотальный React</a>
+- <a target="_blank" rel="noopener" href="https://htmltemplate.site/">Современный стартовый HTML-шаблон</a>
 - <a target="_blank" rel="noopener" href="https://nodejs-guide.ru">Руководство по Node.js для начинающих</a>
 
 ## Публикации
