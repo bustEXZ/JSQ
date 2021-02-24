@@ -3550,8 +3550,8 @@ D: -Infinity
   // 153
   {
     question: `
-console.log(10 === [10])
-console.log(10 === [[[[[[[10]]]]]]])
+console.log(10 == [10])
+console.log(10 == [[[[[[[10]]]]]]])
 `,
     answers: `
 A: true true
@@ -3562,7 +3562,7 @@ D: false true
     rightAnswer: `A`,
     explanation: `
 Согласно спецификации приведенные выражения будут преобразованы следующим образом: <br>
-10 === Number([10].valueOf().toString()) // 10 <br>
+10 == Number([10].valueOf().toString()) // 10 <br>
 Поэтому количество скобок не имеет значения.
 `
   },
