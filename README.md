@@ -20,7 +20,7 @@
 
 - <a target="_blank" rel="noopener" href="https://github.com/harryheman/JavaScript-Projects">Примеры клиентских и серверных (клиент-серверных) приложений</a>
 - <a target="_blank" rel="noopener" href="https://github.com/harryheman/React-Total">Тотальный React</a>
-- <a target="_blank" rel="noopener" href="https://htmltemplate.site/">Современный стартовый HTML-шаблон</a>
+- <a target="_blank" rel="noopener" href="https://moderntemplate.site/">Современный стартовый HTML-шаблон</a>
 - <a target="_blank" rel="noopener" href="https://nodejs-guide.ru">Руководство по Node.js для начинающих</a>
 
 ## Публикации

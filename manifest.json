@@ -1,6 +1,6 @@
 {
-  "name": "Много JavaScript",
-  "short_name": "JSP",
+  "name": "Тотальный JavaScript",
+  "short_name": "TJS",
   "scope": "/",
   "start_url": ".",
   "display": "standalone",
