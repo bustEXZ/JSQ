@@ -4056,7 +4056,7 @@ D: undefined
   {
     question: `
 function greet(greeting, name, message = greeting + ' ' + name) {
-  console.log([name, greeting, message])
+  console.log([greeting, name, message])
 }
 
 greet('Hello', 'John')
