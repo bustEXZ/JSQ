@@ -2,7 +2,7 @@
   "name": "Тотальный JavaScript",
   "short_name": "TJS",
   "scope": "/",
-  "start_url": ".",
+  "start_url": "./",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#eee",
