@@ -1,7 +1,7 @@
 export default /*html*/ `
 <section>
   <h3>Другие проекты</h3>
-  <a target="_blank" rel="noopener" href="https://github.com/harryheman/JavaScript-Design-Patterns">Сниппеты (утилиты, вспомогательные функции)</a>
+  <a target="_blank" rel="noopener" href="https://github.com/harryheman/JavaScript-Total/blob/master/assets/snippets.md">Сниппеты (утилиты, вспомогательные функции)</a>
   <a target="_blank" rel="noopener" href="https://github.com/harryheman/JavaScript-Total/blob/master/assets/patterns/README.md">Паттерны проектирования</a>
   <a target="_blank" rel="noopener" href="https://github.com/harryheman/JavaScript-Projects">Примеры клиентских и серверных (клиент-серверных) приложений</a>
   <a target="_blank" rel="noopener" href="https://github.com/harryheman/React-Total">Тотальный React</a>
