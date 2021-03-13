@@ -3,8 +3,7 @@ import questions from './questions.js'
 export const createQuestions = () => {
   let html = `
   <section>
-    <h3>Практические вопросы</h3>
-    <h4>Каким будет вывод?</h4>
+    <h3>Каким будет вывод?</h3>
     <button id="game_btn">Игра</button>
   </section>
   `

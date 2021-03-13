@@ -1,5 +1,5 @@
 {
-  "name": "Тотальный JavaScript",
+  "name": "Практические вопросы по JavaScript",
   "short_name": "TJS",
   "scope": "/",
   "start_url": "./",
@@ -7,7 +7,7 @@
   "orientation": "portrait",
   "background_color": "#eee",
   "theme_color": "#222",
-  "description": "Сборник теоретических и практических вопросов, задач, алгоритмов и структур данных, паттернов (шаблонов) проектирования, учебных проектов и примеров использования Web API, методов и функций JavaScript",
+  "description": "Практические вопросы по JavaScript",
   "icons": [
     {
       "src": "./public/icons/icon-64.png",

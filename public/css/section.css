@@ -9,56 +9,51 @@ section.center p {
   margin: 0.5rem 0;
 }
 
-h2 {
+section h2 {
   margin: 0.5rem 0;
   font-size: 1.15rem;
 }
 
-h3 {
+section h3 {
   margin: 0.5rem 0;
   font-size: 1.05rem;
 }
 
-ul {
+section ul {
   list-style: none;
   padding-left: 2rem;
 }
 
-ol {
+section ol {
   padding-left: 2.5rem;
 }
 
-li {
+section li {
   text-align: left;
   letter-spacing: 0.75px;
   line-height: 1.25em;
 }
 
-details {
+section details {
   margin: 0.5rem 0;
 }
 
-details > *:not(summary) {
+section details > *:not(summary) {
   display: none;
 }
 
-details[open] > * {
+section details[open] > * {
   display: block;
 }
 
-summary {
+section summary {
   font-size: 1.05rem;
   outline: none;
   user-select: none;
   cursor: pointer;
 }
 
-h4 {
-  font-size: 1.05rem;
-  margin: 0.5rem 0;
-}
-
-p {
+section p {
   padding: 0 0.5rem;
   text-align: left;
 }

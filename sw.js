@@ -1,4 +1,4 @@
-const NAME = 'jsp-v6'
+const NAME = 'jsp-v1'
 
 const FILES = [
   './index.html',
@@ -14,20 +14,10 @@ const FILES = [
   './public/css/loader.css',
   './public/css/section.css',
 
-  './public/js/contact.js',
-  './public/js/functions.js',
-  './public/js/algorithms.js',
-  './public/js/patterns.js',
-  './public/js/projects.js',
-  './public/js/tasks.js',
-  './public/js/theory.js',
-
   './public/js/helpers/animate-details.js',
   './public/js/helpers/generate-page.js',
   './public/js/helpers/hl.js',
-  './public/js/helpers/init-handlers.js',
   './public/js/helpers/loader.js',
-  './public/js/helpers/toggle-class.js',
 
   './public/js/questions/create-game.js',
   './public/js/questions/create-questions.js',

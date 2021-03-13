@@ -2,30 +2,28 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-Сборник практических вопросов, задач разного уровня сложности, сниппетов (утилит, вспомогательных функций), а также полезные ссылки по JavaScript
+Сборник практических вопросов, задач разного уровня сложности, сниппетов (утилит), паттернов проектирования, а также полезные ссылки по JavaScript
 
-## Приложение
+## Практические вопросы в форме приложения
 
 [https://thebestcode.ru/](https://thebestcode.ru/)
 
 ## Оглавление
 
-- :page_with_curl: [Сниппеты](./assets/snippets.md)
 - :page_with_curl: [Вопросы](./assets/questions.md)
+- - :page_with_curl: [Сниппеты](./assets/snippets.md)
 - :page_with_curl: [Задачи](./assets/tasks.md)
 - :page_with_curl: [Паттерны](./assets/patterns/README.md)
 - :page_with_curl: [Что за черт, JavaScript?](./assets/wtfjs.md)
 
 ## Другие проекты
 
-- <a target="_blank" rel="noopener" href="https://github.com/harryheman/JavaScript-Projects">Примеры клиентских и серверных (клиент-серверных) приложений</a>
 - <a target="_blank" rel="noopener" href="https://github.com/harryheman/React-Total">Тотальный React</a>
 - <a target="_blank" rel="noopener" href="https://moderntemplate.site/">Современный стартовый HTML-шаблон</a>
 - <a target="_blank" rel="noopener" href="https://nodejs-guide.ru">Руководство по Node.js для начинающих</a>
 
 ## Публикации
 
-- [Руководство по выражениям и операторам JavaScript](https://blog.logrocket.com/a-comprehensive-guide-to-javascript-expressions/)
 - [Будущее JavaScript: классы](https://habr.com/ru/post/538612/)
 - [Будущее JavaScript: декораторы](https://habr.com/ru/post/537106/)
 - [Детальный обзор Well-known Symbols](https://habr.com/ru/post/529560/)

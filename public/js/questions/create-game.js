@@ -1,7 +1,6 @@
 import questions from './questions.js'
 import { hljs } from '../helpers/hl.js'
 import { generatePage } from '../helpers/generate-page.js'
-import { toggleClass } from '../helpers/toggle-class.js'
 import { animateDetails } from '../helpers/animate-details.js'
 
 export const createGame = () => {
@@ -23,9 +22,7 @@ export const createGame = () => {
     'click',
     (ev) => {
       ev.target.parentElement.remove()
-      const pageName = localStorage.getItem('pageName')
-      generatePage(pageName)
-      toggleClass(nav.querySelector(`[data-link="${pageName}"]`))
+      generatePage()
     },
     {
       once: true
