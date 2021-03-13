@@ -11,7 +11,7 @@
 ## Оглавление
 
 - :page_with_curl: [Вопросы](./assets/questions.md)
-- - :page_with_curl: [Сниппеты](./assets/snippets.md)
+- :page_with_curl: [Сниппеты](./assets/snippets.md)
 - :page_with_curl: [Задачи](./assets/tasks.md)
 - :page_with_curl: [Паттерны](./assets/patterns/README.md)
 - :page_with_curl: [Что за черт, JavaScript?](./assets/wtfjs.md)
