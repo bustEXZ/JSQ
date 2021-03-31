@@ -10,10 +10,11 @@
 
 ## Оглавление
 
-- :page_with_curl: [Практические вопросы](./assets/questions.md)
-- :page_with_curl: [Сниппеты (утилиты)](./assets/snippets.md)
-- :page_with_curl: [Разные задачи](./assets/tasks.md)
-- :page_with_curl: [Паттерны проектирования](./assets/patterns/README.md)
+- :page_with_curl: [Вопросы](./assets/questions.md)
+- :page_with_curl: [Сниппеты](./assets/snippets.md)
+- :page_with_curl: [Задачи](./assets/tasks.md)
+- :page_with_curl: [Паттерны](./assets/patterns/README.md)
+- :page_with_curl: [Алгоритмы и структуры данных](./assets/algorithms.md)
 - :page_with_curl: [Что за черт, JavaScript?](./assets/wtfjs.md)
 
 ## Другие проекты
