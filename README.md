@@ -15,7 +15,7 @@
 - :page_with_curl: [Задачи](./assets/tasks.md)
 - :page_with_curl: [Паттерны](./assets/patterns/README.md)
 - :page_with_curl: [Алгоритмы и структуры данных](./assets/algorithms.md)
-- :page_with_curl: [Примеры использования Web API](./assets/webapi.md)
+- :page_with_curl: [Web API](./assets/webapi.md)
 - :page_with_curl: [Что за черт, JavaScript?](./assets/wtfjs.md)
 
 ## Другие проекты
