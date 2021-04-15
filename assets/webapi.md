@@ -277,80 +277,178 @@ pasteB.onclick = async () => {
 ## Fetch API <a name="fetch"></a>
 
 ```js
-const SERVER_URL = 'http://localhost:5000/todos'
+const cache = new Map()
 
-const POST = 'POST'
-const PUT = 'PUT'
-const DELETE = 'DELETE'
+const controller = new window.AbortController()
 
-export const client = async (method, payload, endpoint = SERVER_URL) => {
-  let config = {}
+export const cancel = () => controller.abort()
 
-  if (method) {
-    config = {
-      method,
-      headers: {
-        'Content-Type': 'application/json'
-      }
+export const _fetch = async (endpoint, options, handlers) => {
+  if (typeof handlers?.onAbort === 'function') {
+    signal.addEventListener('abort', handlers.onAbort)
+  }
+
+  let _options = {
+    method: options?.method || 'GET',
+    headers: options?.headers || {
+      'Content-Type': 'application/json'
+    },
+    cache: options?.cache || true,
+    signal: controller.signal
+  }
+
+  if (options?.body) {
+    if (_options.headers['Content-Type'] === 'application/json') {
+      _options.body = JSON.stringify(options.body)
+    } else {
+      _options.body = body
     }
+  }
 
-    if (method === POST || method === PUT) {
-      config.body = JSON.stringify(payload.body)
-    }
+  if (options?.params) {
+    endpoint = Object.entries(options.params).reduce((a, [k, v]) => {
+      a += `&${k}=${v}`
+      return a
+    }, endpoint)
+    endpoint = endpoint.replace('&', '?')
+  }
 
-    if (method === DELETE || method === PUT) {
-      endpoint = `${endpoint}/${payload.id}`
-    }
+  _options = {
+    ..._options,
+    ...options
   }
 
   try {
-    const response = await fetch(endpoint, config)
-    if (response.ok) {
-      let message
-
-      switch (method) {
-        case POST: {
-          message = 'Data has been added'
-          break
-        }
-        case DELETE: {
-          message = 'Data has been removed'
-          break
-        }
-        case PUT: {
-          message = 'Data has been updated'
-          break
-        }
-        default: {
-          message = 'Data has been received'
-        }
+    if (options.cache) {
+      if (cache.has(endpoint)) {
+        return cache.get(endpoint)
       }
-
-      console.log(message)
-
-      const result = await response.json()
-      return result
     }
-    throw new Error(response.statusText)
+
+    const response = await fetch(endpoint, _options)
+
+    const info = {
+      headers: [...response.headers.entries()].reduce((a, [k, v]) => {
+        a[k] = v
+        return a
+      }, {}),
+      status: response.status,
+      statusText: response.statusText,
+      type: response.type,
+      url: response.url
+    }
+
+    let data
+
+    if (response.headers.get('Content-Type').includes('json')) {
+      data = await response.json()
+    } else {
+      data = response
+    }
+
+    let result
+
+    if (response.ok) {
+      if (typeof handlers?.onSuccess === 'function') {
+        return handlers.onSuccess(data)
+      } else {
+        result = { data, error: null, ...info }
+        if (options.cache) {
+          cache.set(endpoint, result)
+        }
+        return result
+      }
+    }
+
+    result = {
+      data: null,
+      error: response.error || true,
+      ...info
+    }
+
+    return result
   } catch (err) {
-    console.error(err.message || err)
+    if (typeof handlers?.onError === 'function') {
+      return handlers.onError(err)
+    }
+    console.error(err)
   }
 }
 
-client.post = (payload, endpoint) => client(POST, payload, endpoint)
-
-client.put = (payload, endpoint) => client(PUT, payload, endpoint)
-
-client.delete = (payload, endpoint) => client(DELETE, payload, endpoint)
+_fetch.post = (endpoint, body, options, handlers) =>
+  _fetch(
+    endpoint,
+    {
+      method: 'POST',
+      body,
+      ...options
+    },
+    handlers
+  )
+_fetch.remove = (endpoint, options, handlers) =>
+  _fetch(
+    endpoint,
+    {
+      method: 'DELETE',
+      ...options
+    },
+    handlers
+  )
+_fetch.update = (endpoint, body, options, handlers) =>
+  _fetch(
+    endpoint,
+    {
+      method: 'PUT',
+      body,
+      ...options
+    },
+    handlers
+  )
 ```
 
 ## Storage API <a name="storage"></a>
 
 ```js
-export const storage = {
-  get: (key) => JSON.parse(window.localStorage.getItem(key)),
-  set: (key, value) => window.localStorage.setItem(key, JSON.stringify(value)),
-  remove: (key) => window.localStorage.removeItem(key),
-  clear: () => window.localStorage.clear()
+export const storage = ((_storage) => ({
+  set: (key, value) => _storage.setItem(key, JSON.stringify(value)),
+  get: (key) => JSON.parse(_storage.getItem(key)),
+  key: (n) => _storage.key(n),
+  remove: (key) => _storage.removeItem(key),
+  clear: () => _storage.clear()
+}))(window.localStorage)
+
+export const _storage = (session = false) => {
+  const _storage = session ? window.sessionStorage : window.localStorage
+
+  const set = (key, value) => _storage.setItem(key, JSON.stringify(value))
+  const get = (key) => JSON.parse(_storage.getItem(key))
+  const key = (n) => _storage.key(n)
+  const remove = (key) => _storage.removeItem(key)
+  const clear = () => _storage.clear()
+
+  return {
+    set,
+    get,
+    key,
+    remove,
+    clear
+  }
 }
+
+// usage
+import { storage, _storage } from './webapi.js'
+
+storage.set('username', 'John')
+console.log(storage.get('username')) // John
+console.log(storage.key(0)) // username
+storage.remove('username')
+storage.clear()
+
+const S = _storage(true) // session storage
+S.set('username', 'John')
+console.log(S.get('username')) // John
+console.log(S.key(0)) // username
+S.remove('name')
+S.clear()
+
 ```
