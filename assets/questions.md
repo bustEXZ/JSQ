@@ -1763,8 +1763,8 @@ console.log(data)
 ```
 
 - A: Я сделал это!
-- B: Promise {<resolved>: "Я сделал это!"}</resolved>
-- C: Promise {<pending>}</pending>
+- B: Promise {\<resolved\>: "Я сделал это!"}
+- C: Promise {\<pending\>}
 - D: undefined
 
 <details>
@@ -2604,8 +2604,8 @@ console.log(Promise.resolve(5))
 ```
 
 - A: 5
-- B: Promise {<pending>: 5}</pending>
-- C: Promise {<resolved>: 5}</resolved>
+- B: Promise {\<pending\>: 5}
+- C: Promise {\<resolved\>: 5}
 - D: Error
 
 <details>
@@ -3087,7 +3087,7 @@ async function* range(start, end) {
 ```
 
 - A: Promise {1} Promise {2} Promise {3}
-- B: Promise {<pending>} Promise {<pending>} Promise {<pending>}</pending></pending></pending>
+- B: Promise {\<pending\>} Promise {\<pending\>} Promise {\<pending\>}
 - C: 1 2 3
 - D: undefined undefined undefined
 
