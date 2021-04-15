@@ -6801,7 +6801,7 @@ console.log(checking ? (result ? (typeof converter).length : false) : false)
 <p>
 Оператор "..." является очень полезным. В функции "converted" нет ничего необычного, она использует преимущества "..." (оператор rest || оператор spread) для преобразования массива в объект.<br>
 Константа "checking" имеет значение "function" из "Number(false)", что дает 0, т.е. значением "checking" является элемент массива "content" с индексом 0.<br>
-Константа "result" имеет значение true, поскольку "typeof converter(content)" возвращает "function", как и "content[1]".<br>
+Константа "result" имеет значение true, поскольку "typeof converter(content)" возвращает "object", как и "content[1]".<br>
 Таким образом, мы имеем "checking = true" и "result = true", поэтому получаем "(typeof converter).length" или "function".length, или 8.<br>
 Главный вывод здесь такой: мы можем использовать оператор распространения (spread-оператор) для преобразования массива в объект. Например: const a = ['hello', 2]; const b = {...a}, получаем b = {0: 'hello', 1: 2}. Ключами объекта в данном случае являются индексы элементов в массиве.
 </p>
