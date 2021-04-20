@@ -467,7 +467,7 @@ D: true true true true
 `
   },
 
-  // 30
+  // 21
   {
     question: `
 const obj = { a: "one", b: "two", a: "three" }
@@ -921,7 +921,7 @@ D: [ 3 x empty ]
 `
   },
 
-  // 43
+  // 42
   {
     question: `
 function greeting() {
@@ -951,7 +951,7 @@ D: Ошибка: Всем привет!
 `
   },
 
-  // 44
+  // 43
   {
     question: `
 function Car() {
@@ -974,7 +974,7 @@ D: undefined
 `
   },
 
-  // 45
+  // 44
   {
     question: `
 (() => {
@@ -996,7 +996,7 @@ D: number и undefined
 `
   },
 
-  // 46
+  // 45
   {
     question: `
 class Dog {
@@ -1029,7 +1029,7 @@ D: "Woof I am Rex" и Error
 `
   },
 
-  // 47
+  // 46
   {
     question: `
 const set = new Set([1, 1, 2, 3, 4])
@@ -1048,7 +1048,7 @@ D: {1, 2, 3, 4}
 `
   },
 
-  // 48
+  // 47
   {
     question: `
 // counter.js
@@ -1074,7 +1074,7 @@ D: NaN
 `
   },
 
-  // 49
+  // 48
   {
     question: `
 const name = "John"
@@ -1095,7 +1095,7 @@ D: undefined и undefined
 `
   },
 
-  // 50
+  // 49
   {
     question: `
 const numbers = [1, 2, 3, 4, 5]
@@ -1119,7 +1119,7 @@ D: [1]
 `
   },
 
-  // 51
+  // 50
   {
     question: `
 const user = { name: "John", age: 30 }
@@ -1139,7 +1139,7 @@ D: { admin: true }
 `
   },
 
-  // 52
+  // 51
   {
     question: `
 const person = { name: "John" }
@@ -1161,7 +1161,7 @@ D: { name: "John"} и ["age"]
 `
   },
 
-  // 53
+  // 52
   {
     question: `
 const settings = {
@@ -1185,7 +1185,7 @@ D: {"username": "johnsmith", "level": 19, "health": 88}
 `
   },
 
-  // 54
+  // 53
   {
     question: `
 let num = 10
@@ -1211,7 +1211,7 @@ D: 11 и 12
 `
   },
 
-  // 55
+  // 54
   {
     question: `
 const value = { number: 10 }
@@ -1237,7 +1237,7 @@ D: NaN NaN 20 40
 `
   },
 
-  // 56
+  // 55
   {
     question: `
 [1, 2, 3, 4].reduce((x, y) => console.log(x, y))
@@ -1254,7 +1254,7 @@ D: 1 2  undefined 3  undefined 4
 `
   },
 
-  // 57
+  // 56
   {
     question: `
 // index.js
@@ -1278,7 +1278,7 @@ D: Выполнение index.js  undefined  Выполнение sum.js
 `
   },
 
-  // 58
+  // 57
   {
     question: `
 console.log(Number(2) === Number(2))
@@ -1297,7 +1297,7 @@ D: true  true  true
 `
   },
 
-  // 59
+  // 58
   {
     question: `
 const name = "John Smith"
@@ -1307,16 +1307,16 @@ console.log(name.padStart(2))
     answers: `
 A: "John Smith" и "John Smith"
 B: " John Smith" и " John Smith" ("[12x whitespace]John Smith"  "[2x whitespace]John Smith")
-C: " John Smith" и "John Smith" ("[1x whitespace]John Smith", "John Smith")
+C: " John Smith" и "John Smith" ("[2x whitespace]John Smith", "John Smith")
 D: "John Smith" и "Jo"
 `,
     rightAnswer: `C`,
     explanation: `
-С помощью метода "padStart" мы добавляем отступы в начало строки. Значение, передаваемое этому методу, представляет собой общую длину строки вместе с отступом. Строка "John Smith" имеет длину равную 11. name.padStart(12) вставляет 1 пробел в начало строки, потому что 11 + 1 равняется 12. Если аргумент, переданный методу "padStart", меньше длины строки, заполнение не выполняется.
+С помощью метода "padStart" мы добавляем отступы в начало строки. Значение, передаваемое этому методу, представляет собой общую длину строки вместе с отступом. Строка "John Smith" имеет длину равную 10. name.padStart(12) вставляет 2 пробела в начало строки, потому что 10 + 2 равняется 12. Если аргумент, переданный методу "padStart", меньше длины строки, заполнение не выполняется.
 `
   },
 
-  // 60
+  // 59
   {
     question: `
 console.log("📱" + "💻")
@@ -1333,7 +1333,7 @@ D: Error
 `
   },
 
-  // 61
+  // 60
   {
     question: `
 function* startGame() {
@@ -1360,7 +1360,7 @@ D: game.next.value() и game.next.value("Да")
 `
   },
 
-  // 62
+  // 61
   {
     question: `
 console.log(String.raw\`Hello\\nWorld!\`)
@@ -1382,7 +1382,7 @@ C:\\Documents\\Projects\\table.html
 `
   },
 
-  // 63
+  // 62
   {
     question: `
 async function getData() {
@@ -1394,8 +1394,8 @@ console.log(data)
 `,
     answers: `
 A: Я сделал это!
-B: Promise {<resolved>: "Я сделал это!"}
-C: Promise {<pending>}
+B: Promise {\\<resolved\\>: "Я сделал это!"}
+C: Promise {\\<pending\\>}
 D: undefined
 `,
     rightAnswer: `C`,
@@ -1404,7 +1404,7 @@ D: undefined
 `
   },
 
-  // 64
+  // 63
   {
     question: `
 function addToList(item, list) {
@@ -1426,7 +1426,7 @@ D: undefined
 `
   },
 
-  // 65
+  // 64
   {
     question: `
 const box = { x: 10, y: 20 }
@@ -1450,7 +1450,7 @@ D: Error
 `
   },
 
-  // 66
+  // 65
   {
     question: `
 const { name: myName } = { name: "John" }
@@ -1469,7 +1469,7 @@ D: Error
 `
   },
 
-  // 67
+  // 66
   {
     question: `
 const add = () => {
@@ -1502,7 +1502,7 @@ D: Вычислено! 20  Из кэша! 20  Error
 `
   },
 
-  // 68
+  // 67
   {
     question: `
 const myLifeSummedUp = ["☕", "💻", "🍷", "🍫"]
@@ -1529,7 +1529,7 @@ D: 0 1 2 3  {0: "☕", 1: "💻", 2: "🍷", 3: "🍫"}
 `
   },
 
-  // 69
+  // 68
   {
     question: `
 const list = [1 + 2, 1 * 2, 1 / 2]
@@ -1547,7 +1547,7 @@ D: [1, 1, 1]
 `
   },
 
-  // 70
+  // 69
   {
     question: `
 function sayHi(name) {
@@ -1570,7 +1570,7 @@ function sayHi(name = "John") { ... }<br>
 `
   },
 
-  // 71
+  // 70
   {
     question: `
 var status = "😎"
@@ -1601,7 +1601,7 @@ D: "😎"  "😎"
 `
   },
 
-  // 72
+  // 71
   {
     question: `
 const person = {
@@ -1626,7 +1626,7 @@ D: New York
 `
   },
 
-  // 73
+  // 72
   {
     question: `
 function checkAge(age) {
@@ -1652,7 +1652,7 @@ D: undefined
 `
   },
 
-  // 74
+  // 73
   {
     question: `
 function getName(name) {
@@ -1671,7 +1671,7 @@ D: name.length
 `
   },
 
-  // 75
+  // 74
   {
     question: `
 console.log("Я хочу пиццу!"[0])
@@ -1688,7 +1688,7 @@ D: undefined
 `
   },
 
-  // 76
+  // 75
   {
     question: `
 function sum(num1, num2 = num1) {
@@ -1709,7 +1709,7 @@ D: undefined
 `
   },
 
-  // 77
+  // 76
   {
     question: `
 // module.js
@@ -1733,7 +1733,7 @@ D: глобальный объект module.js
 `
   },
 
-  // 78
+  // 77
   {
     question: `
 class Person {
@@ -1759,7 +1759,7 @@ function Person() { this.name = name }<br>
 `
   },
 
-  // 79
+  // 78
   {
     question: `
 let newList = [1, 2, 3].push(4)
@@ -1778,7 +1778,7 @@ D: Error
 `
   },
 
-  // 80
+  // 79
   {
     question: `
 function giveMePizza() {
@@ -1802,7 +1802,7 @@ D: { constructor: ...} undefined
 `
   },
 
-  // 81
+  // 80
   {
     question: `
 const person = {
@@ -1828,7 +1828,7 @@ Object.entries(person) возвращает массив вложенных ма
 `
   },
 
-  // 82
+  // 81
   {
     question: `
 function getItems(fruitList, ...args, favoriteFruit) {
@@ -1854,7 +1854,7 @@ getItems(["banana", "apple"], "pear", "orange") <br>
 `
   },
 
-  // 83
+  // 82
   {
     question: `
 function nums(a, b) {
@@ -1884,7 +1884,7 @@ return; a + b <br>
 `
   },
 
-  // 84
+  // 83
   {
     question: `
 class Person {
@@ -1914,7 +1914,7 @@ D: undefined
 `
   },
 
-  // 85
+  // 84
   {
     question: `
 const info = {
@@ -1936,7 +1936,7 @@ Symbol не является перечисляемым. Метод "keys" во�
 `
   },
 
-  // 86
+  // 85
   {
     question: `
 const getList = ([x, ...y]) => [x, y]
@@ -1964,7 +1964,7 @@ const getUser = user => ({ name: user.name, age: user.age })<br>
 `
   },
 
-  // 87
+  // 86
   {
     question: `
 const name = "John"
@@ -1983,7 +1983,7 @@ D: undefined
 `
   },
 
-  // 89
+  // 87
   {
     question: `
 const one = (false || {} || null)
@@ -2004,7 +2004,7 @@ D: null null true
 `
   },
 
-  // 90
+  // 88
   {
     question: `
 const myPromise = () => Promise.resolve('I have resolved!')
@@ -2034,7 +2034,7 @@ D: first I have resolved! и I have resolved! second
 `
   },
 
-  // 91
+  // 89
   {
     question: `
 const set = new Set()
@@ -2059,15 +2059,15 @@ D: "12" John2 [object Object]2
 `
   },
 
-  // 92
+  // 90
   {
     question: `
 console.log(Promise.resolve(5))
 `,
     answers: `
 A: 5
-B: Promise {<pending>: 5}
-C: Promise {<resolved>: 5}
+B: Promise {\\<pending\\>: 5}
+C: Promise {\\<resolved\\>: 5}
 D: Error
 `,
     rightAnswer: `C`,
@@ -2076,7 +2076,7 @@ D: Error
 `
   },
 
-  // 93
+  // 91
   {
     question: `
 function compareMembers(person1, person2 = person) {
@@ -2103,7 +2103,7 @@ D: undefined
 `
   },
 
-  // 94
+  // 92
   {
     question: `
 const colorConfig = {
@@ -2130,7 +2130,7 @@ D: Error
 `
   },
 
-  // 95
+  // 93
   {
     question: `
 console.log('❤️' === '❤️')
@@ -2147,7 +2147,7 @@ D: Error
 `
   },
 
-  // 96
+  // 94
   {
     question: `
 const food = ['🍕', '🍫', '🍳', '🍔']
@@ -2169,7 +2169,7 @@ D: undefined
 `
   },
 
-  // 97
+  // 95
   {
     question: `
 let name = 'John'
@@ -2193,7 +2193,7 @@ D: Error
 `
   },
 
-  // 98
+  // 96
   {
     question: `
 function* generatorOne() {
@@ -2229,7 +2229,7 @@ console.log(two.next().value) // undefined <br>
 `
   },
 
-  // 99
+  // 97
   {
     question: `
 console.log(\`&#36;{(x => x)('Я люблю')} писать код\`)
@@ -2246,7 +2246,7 @@ D: Error
 `
   },
 
-  // 100
+  // 98
   {
     question: `
 const person = {
@@ -2277,7 +2277,7 @@ D: {name: "John", age: 31}
 `
   },
 
-  // 101
+  // 99
   {
     question: `
 function sumValues(x, y, z) {
@@ -2296,7 +2296,7 @@ D: sumValues([1, 2, 3])
 `
   },
 
-  // 102
+  // 100
   {
     question: `
 let num = 1
@@ -2316,7 +2316,7 @@ D: undefined
 `
   },
 
-  // 103
+  // 101
   {
     question: `
 const person = {
@@ -2347,7 +2347,7 @@ D: Error
 `
   },
 
-  // 104
+  // 102
   {
     question: `
 const groceries = ['банан', 'яблоко', 'апельсин']
@@ -2370,7 +2370,7 @@ D: 1
 `
   },
 
-  // 105
+  // 103
   {
     question: `
 const config = {
@@ -2394,7 +2394,7 @@ D: undefined
 `
   },
 
-  // 106
+  // 104
   {
     question: `
 const name = 'John Smith'
@@ -2414,7 +2414,7 @@ D: true true
 `
   },
 
-  // 107
+  // 105
   {
     question: `
 const add = x => y => z => {
@@ -2436,7 +2436,7 @@ D: undefined undefined 6
 `
   },
 
-  // 108
+  // 106
   {
     question: `
 async function* range(start, end) {
@@ -2454,7 +2454,7 @@ async function* range(start, end) {
 `,
     answers: `
 A: Promise {1} Promise {2} Promise {3}
-B: Promise {<pending>} Promise {<pending>} Promise {<pending>}
+B: Promise {\\<pending\\>} Promise {\\<pending\\>} Promise {\\<pending\\>}
 C: 1 2 3
 D: undefined undefined undefined
 `,
@@ -2464,7 +2464,7 @@ D: undefined undefined undefined
 `
   },
 
-  // 109
+  // 107
   {
     question: `
 const myFunc = ({ x, y, z }) => {
@@ -2485,7 +2485,7 @@ D: undefined undefined undefined
 `
   },
 
-  // 111
+  // 108
   {
     question: `
 const spookyItems = ['👻', '🎃', '👿']
@@ -2505,7 +2505,7 @@ D: ["👻", "🎃", "👿", "[object Object]"]
 `
   },
 
-  // 112
+  // 109
   {
     question: `
 const name = 'John Smith'
@@ -2529,7 +2529,7 @@ D: false true false true
 `
   },
 
-  // 113
+  // 110
   {
     question: `
 const randomValue = 30
@@ -2553,7 +2553,7 @@ D: Error
 `
   },
 
-  // 114
+  // 111
   {
     question: `
 const myPromise = Promise.resolve('Woah some cool data')
@@ -2580,7 +2580,7 @@ D: Oops didn't work и Oh finally
 `
   },
 
-  // 115
+  // 112
   {
     question: `
 const emojis = ['💫', ['✨', '✨', ['🍕', '🍕']]]
@@ -2599,7 +2599,7 @@ D: ['💫', '✨', '✨', '🍕', '🍕']
 `
   },
 
-  // 116
+  // 113
   {
     question: `
 class Counter {
@@ -2633,7 +2633,7 @@ D: 3
 `
   },
 
-  // 117
+  // 114
   {
     question: `
 const myPromise = Promise.resolve(
@@ -2670,7 +2670,7 @@ D: Last line! Promise! Promise! Last line! Timeout! Timeout!
 `
   },
 
-  // 118
+  // 115
   {
     question: `
 // sum.js
@@ -2707,7 +2707,7 @@ console.log(info)<br>
 `
   },
 
-  // 119
+  // 116
   {
     question: `
 const handler = {
@@ -2732,7 +2732,7 @@ D: Error
 `
   },
 
-  // 120
+  // 117
   {
     question: `
 const person = {
@@ -2758,7 +2758,7 @@ Object.freeze() "замораживает" объект. В такой объе�
 `
   },
 
-  // 121
+  // 118
   {
     question: `
 const add = x => x + x
@@ -2782,7 +2782,7 @@ D: 2 4 и 3 undefined
 `
   },
 
-  // 122
+  // 119
   {
     question: `
 class Counter {
@@ -2814,7 +2814,7 @@ D: Error
 `
   },
 
-  // 123
+  // 120
   {
     question: `
 const teams = [
@@ -2850,7 +2850,7 @@ D: return yield getMembers(teams[i].members)
 `
   },
 
-  // 124
+  // 121
   {
     question: `
 const person = {
@@ -2881,7 +2881,7 @@ D: ["coding", "running", "dancing", "baking"]
 `
   },
 
-  // 125
+  // 122
   {
     question: `
 class Bird {
@@ -2911,7 +2911,7 @@ D: undefined
 `
   },
 
-  // 126
+  // 123
   {
     question: `
 const person = {
@@ -2933,7 +2933,7 @@ D: *[Symbol.iterator]() { for (let x in this) yield this }
 `
   },
 
-  // 127
+  // 124
   {
     question: `
 let count = 0
@@ -2957,7 +2957,7 @@ D: 4
 `
   },
 
-  // 128
+  // 125
   {
     question: `
 function getFruit(fruits) {
@@ -2980,7 +2980,7 @@ D: undefined undefined 🍌
 `
   },
 
-  // 129
+  // 126
   {
     question: `
 class Calc {
@@ -3010,7 +3010,7 @@ D: Error
 `
   },
 
-  // 130
+  // 127
   {
     question: `
 const user = {
@@ -3046,7 +3046,7 @@ D: undefined
 `
   },
 
-  // 131
+  // 128
   {
     question: `
 const fruits = ['🍌', '🍊', '🍎']
@@ -3069,7 +3069,7 @@ D: ['🍇', '🍌', '🍊', '🍎']
 `
   },
 
-  // 132
+  // 129
   {
     question: `
 const animals = {}
@@ -3093,7 +3093,7 @@ D: Error
 `
   },
 
-  // 133
+  // 130
   {
     question: `
 const user = {
@@ -3118,7 +3118,7 @@ D: Error
 `
   },
 
-  // 134
+  // 131
   {
     question: `
 const promise1 = Promise.resolve('First')
@@ -3148,7 +3148,7 @@ D: 'Third'
 `
   },
 
-  // 135
+  // 132
   {
     question: `
 const keys = ["name", "age"]
@@ -3172,7 +3172,7 @@ D: forEach
 `
   },
 
-  // 136
+  // 133
   {
     question: `
 const createMember = ({ email, address = {}}) => {
@@ -3200,7 +3200,7 @@ D: { email: "my@email.com", address: undefined }
 `
   },
 
-  // 137
+  // 134
   {
     question: `
 let randomValue = { name: "John" }
@@ -3225,7 +3225,7 @@ D: undefined
   },
 
   // https://github.com/sudheerj/javascript-interview-questions
-  // 138
+  // 135
   {
     question: `
 var car = new Vehicle("Honda", "white", "2010", "UK")
@@ -3250,7 +3250,7 @@ D: { model: "Honda", color: "white", year: "2010", country: "UK" }
 `
   },
 
-  // 139
+  // 136
   {
     question: `
 function foo() {
@@ -3278,7 +3278,7 @@ x = window.y <br>
 `
   },
 
-  // 140
+  // 137
   {
     question: `
 function main() {
@@ -3311,7 +3311,7 @@ D: A C B
 `
   },
 
-  // 141
+  // 138
   {
     question: `
 console.log(0.1 + 0.2 === 0.3)
@@ -3328,7 +3328,7 @@ D: Error
 `
   },
 
-  // 142
+  // 139
   {
     question: `
 var y = 1
@@ -3349,7 +3349,7 @@ D: 1undefined
 `
   },
 
-  // 143
+  // 140
   {
     question: `
 function foo() {
@@ -3366,7 +3366,7 @@ B: Object { message: "Hello World" }
 C: undefined
 D: Error
 `,
-    rightAnswer: `D`,
+    rightAnswer: `C`,
     explanation: `
 Здесь мы имеем дело с автоматической расстановкой точек с запятой. В данном случае, точка с запятой автоматически вставляется после оператора "return". Поэтому функция возвращает undefined. <br>
 Если поставить "{" перед return, то функция будет работать, как ожидается: <br>
@@ -3375,7 +3375,7 @@ console.log(foo()) // { message: 'Hello World' }
 `
   },
 
-  // 144
+  // 141
   {
     question: `
 var myChars = ['a', 'b', 'c', 'd']
@@ -3396,7 +3396,7 @@ D: [null, 'b', 'c', 'd'] undefined 4
 `
   },
 
-  // 146
+  // 142
   {
     question: `
 const obj = {
@@ -3421,7 +3421,7 @@ ES6, среди прочего, представил новые способы �
 `
   },
 
-  // 147
+  // 143
   {
     question: `
 console.log(1 < 2 < 3)
@@ -3446,7 +3446,7 @@ console.log(1 > 1) // false <br>
 `
   },
 
-  // 148
+  // 144
   {
     question: `
 // код выполняется в нестрогом режиме
@@ -3467,7 +3467,7 @@ D: 1 2 1
 `
   },
 
-  // 149
+  // 145
   {
     question: `
 // код выполняется в нестрогом режиме
@@ -3488,7 +3488,7 @@ D: 1, 2, 1
 `
   },
 
-  // 150
+  // 146
   {
     question: `
 const f = () => arguments.length
@@ -3512,7 +3512,7 @@ console.log(f(1, 2, 3)) // 3 <br>
 `
   },
 
-  // 151
+  // 147
   {
     question: `
 console.log( String.prototype.trimLeft.name === 'trimLeft' )
@@ -3530,7 +3530,7 @@ D: null
 `
   },
 
-  // 152
+  // 148
   {
     question: `
 console.log(Math.max())
@@ -3547,7 +3547,7 @@ D: -Infinity
 `
   },
 
-  // 153
+  // 149
   {
     question: `
 console.log(10 == [10])
@@ -3567,7 +3567,7 @@ D: false true
 `
   },
 
-  // 154
+  // 150
   {
     question: `
 console.log(10 + '10')
@@ -3585,7 +3585,7 @@ D: NaN NaN
 `
   },
 
-  // 155
+  // 151
   {
     question: `
 console.log([1, 2] + [3, 4])
@@ -3602,7 +3602,7 @@ D: 1,23,4
 `
   },
 
-  // 156
+  // 152
   {
     question: `
 const numbers = new Set([1, 1, 2, 3, 4])
@@ -3623,7 +3623,7 @@ Set - это объект, представляющий собой коллек�
 `
   },
 
-  // 157
+  // 153
   {
     question: `
 console.log(NaN === NaN)
@@ -3640,7 +3640,7 @@ NaN согласно стандарту IEEE 754 не равен никаком�
 `
   },
 
-  // 158
+  // 154
   {
     question: `
 const numbers = [1, 2, 3, 4, NaN]
@@ -3661,7 +3661,7 @@ console.log(numbers.includes(Number.isNaN)) // true
 `
   },
 
-  // 159
+  // 155
   {
     question: `
 const [a, ...b,] = [1, 2, 3, 4, 5]
@@ -3681,7 +3681,7 @@ console.log(a, b) // 1, [2, 3, 4, 5]
 `
   },
 
-  // 160
+  // 156
   {
     question: `
 async function func() {
@@ -3702,7 +3702,7 @@ function func() { return Promise.resolve(10) }
 `
   },
 
-  // 161
+  // 157
   {
     question: `
 async function func() {
@@ -3723,7 +3723,7 @@ function func () { return Promise.resolve(10).then(() => undefined) }
 `
   },
 
-  // 162
+  // 158
   {
     question: `
 function delay() {
@@ -3755,7 +3755,7 @@ D: 4, 3, 2, 1
 `
   },
 
-  // 163
+  // 159
   {
     question: `
 function delay() {
@@ -3789,7 +3789,7 @@ async function processArray (array) { for (const item of array) { await delayedL
 `
   },
 
-  // 164
+  // 160
   {
     question: `
 var set = new Set()
@@ -3813,7 +3813,7 @@ D: Set(4) {"+0", NaN, undefined, NaN}
 `
   },
 
-  // 165
+  // 161
   {
     question: `
 const sym1 = Symbol('one')
@@ -3838,7 +3838,7 @@ D: false false
 `
   },
 
-  // 166
+  // 162
   {
     question: `
 const sym1 = new Symbol('one')
@@ -3856,7 +3856,7 @@ D: Symbol
 `
   },
 
-  // 167
+  // 163
   {
     question: `
 let myNumber = 100
@@ -3886,7 +3886,7 @@ D: It is a string! и It is a number!
 `
   },
 
-  // 168
+  // 164
   {
     question: `
 console.log(JSON.stringify({ myArray: ['one', undefined, function() {}, Symbol('')] }))
@@ -3904,7 +3904,7 @@ undefined, функции и символы не являются валидны
 `
   },
 
-  // 169
+  // 165
   {
     question: `
 class A {
@@ -3930,7 +3930,7 @@ D: Error
 `
   },
 
-  // 170
+  // 166
   {
     question: `
 const { a: x = 10, b: y = 20 } = { a: 30 }
@@ -3952,7 +3952,7 @@ D: 30 undefined
 `
   },
 
-  // 171
+  // 167
   {
     question: `
 function area({ length = 10, width = 20 }) {
@@ -3979,7 +3979,7 @@ area() // 200 <br>
 `
   },
 
-  // 172
+  // 168
   {
     question: `
 const props = [
@@ -4003,7 +4003,7 @@ D: John
 `
   },
 
-  // 173
+  // 169
   {
     question: `
 function checkType(num = 1) {
@@ -4029,7 +4029,7 @@ D: number number number number
 `
   },
 
-  // 174
+  // 170
   {
     question: `
 function add(item, items = []) {
@@ -4052,7 +4052,7 @@ D: undefined
 `
   },
 
-  // 175
+  // 171
   {
     question: `
 function greet(greeting, name, message = greeting + ' ' + name) {
@@ -4074,7 +4074,7 @@ D: undefined
 `
   },
 
-  // 176
+  // 172
   {
     question: `
 function outer(f = inner()) {
@@ -4101,7 +4101,7 @@ console.log(outer('Outer')) // Outer <br>
 `
   },
 
-  // 177
+  // 173
   {
     question: `
 function myFun(x, y, ...args) {
@@ -4123,7 +4123,7 @@ D: [3, 4, 5] и [undefined]
 `
   },
 
-  // 178
+  // 174
   {
     question: `
 const obj = {'key': 'value'}
@@ -4142,7 +4142,7 @@ D: ['key']
 `
   },
 
-  // 179
+  // 175
   {
     question: `
 function* myGenFunc() {
@@ -4165,7 +4165,7 @@ D: Error
 `
   },
 
-  // 180
+  // 176
   {
     question: `
 function* yieldAndReturn() {
@@ -4191,7 +4191,7 @@ D: { value: 1, done: false }  { value: 2, done: false }  { value: 3, done: true 
 `
   },
 
-  // 181
+  // 177
   {
     question: `
 const myGenerator = (function *(){
@@ -4221,7 +4221,7 @@ D: 1
 `
   },
 
-  // 182
+  // 178
   {
     question: `
 const squareObj = new Square(10)
@@ -4253,7 +4253,7 @@ D: undefined
 `
   },
 
-  // 183
+  // 179
   {
     question: `
 function Person() { }
@@ -4285,7 +4285,7 @@ D: Window Window
 `
   },
 
-  // 184
+  // 180
   {
     question: `
 class Vehicle {
@@ -4320,7 +4320,7 @@ D: BMW car started и BMW car started
 `
   },
 
-  // 185
+  // 181
   {
     question: `
 const user = {'age': 30}
@@ -4340,7 +4340,7 @@ D: undefined
   },
 
   // https://github.com/yeungon/In-JavaScript-we-trust
-  // 186
+  // 182
   {
     question: `
 function a(x) {
@@ -4372,7 +4372,7 @@ D: 1 2 3 и 3 3 3
 `
   },
 
-  // 187
+  // 183
   {
     question: `
 function Name(a, b) {
@@ -4396,7 +4396,7 @@ D: false
 `
   },
 
-  // 188
+  // 184
   {
     question: `
 const x = function (...x) {
@@ -4421,7 +4421,7 @@ spread-оператор "...x" позволяет получить параме�
 `
   },
 
-  // 189
+  // 185
   {
     question: `
 (function js(x) {
@@ -4450,7 +4450,7 @@ D: 12
 `
   },
 
-  // 190
+  // 186
   {
     question: `
 var tip = 100
@@ -4481,7 +4481,7 @@ D: I have $NaN
 `
   },
 
-  // 191
+  // 187
   {
     question: `
 const js = { language: "loosely type", label: "difficult" }
@@ -4506,7 +4506,7 @@ D: 5
 `
   },
 
-  // 192
+  // 188
   {
     question: `
 var candidate = {
@@ -4544,7 +4544,7 @@ D: 8
 `
   },
 
-  // 193
+  // 189
   {
     question: `
 var x = 1
@@ -4577,7 +4577,7 @@ D: 10
 `
   },
 
-  // 194
+  // 190
   {
     question: `
 let x = {}
@@ -4601,7 +4601,7 @@ D: false false true true
 `
   },
 
-  // 195
+  // 191
   {
     question: `
 console.log("hello")
@@ -4624,7 +4624,7 @@ D: hello hi hey world yo
 `
   },
 
-  // 196
+  // 192
   {
     question: `
 String.prototype.lengthy = () => {
@@ -4649,7 +4649,7 @@ D: Error
 `
   },
 
-  // 197
+  // 193
   {
     question: `
 let x = {}
@@ -4672,7 +4672,7 @@ D: NaN
 `
   },
 
-  // 198
+  // 194
   {
     question: `
 const array = (a) => {
@@ -4715,7 +4715,7 @@ D: 3 4 3
 `
   },
 
-  // 199
+  // 195
   {
     question: `
 var a = [1, 2, 3]
@@ -4743,7 +4743,7 @@ D: false true false
 `
   },
 
-  // 200
+  // 196
   {
     question: `
 var languages = {
@@ -4781,7 +4781,7 @@ D: 12
 `
   },
 
-  // 203
+  // 197
   {
     question: `
 var person = {}
@@ -4829,7 +4829,7 @@ D: 4
 `
   },
 
-  // 204
+  // 198
   {
     question: `
 const id = 10
@@ -4856,7 +4856,7 @@ D: function
 `
   },
 
-  // 205
+  // 199
   {
     question: `
 var book1 = {
@@ -4886,7 +4886,7 @@ D: Object object
 `
   },
 
-  // 206
+  // 200
   {
     question: `
 (() => {
@@ -4916,7 +4916,7 @@ D: 6
 `
   },
 
-  // 207
+  // 201
   {
     question: `
 let promise = new Promise((rs, rj) => {
@@ -4946,7 +4946,7 @@ D: 16 256 3 2
 `
   },
 
-  // 208
+  // 202
   {
     question: `
 async function f() {
@@ -4975,7 +4975,7 @@ D: timer done hello world
 `
   },
 
-  // 210
+  // 203
   {
     question: `
 class MySort {
@@ -5010,7 +5010,7 @@ D: December
 `
   },
 
-  // 211
+  // 204
   {
     question: `
 const flag = [] !== !!!!![]
@@ -5031,7 +5031,7 @@ D: 14
 `
   },
 
-  // 212
+  // 205
   {
     question: `
 (function (a, b, c) {
@@ -5051,7 +5051,7 @@ D: 7
 `
   },
 
-  // 213
+  // 206
   {
     question: `
 class Calculator {
@@ -5085,7 +5085,7 @@ D: number
 `
   },
 
-  // 214
+  // 207
   {
     question: `
 var name = "John"
@@ -5102,7 +5102,7 @@ let me = obj.callMe
 
 let she = obj.callMe.bind(obj)
 
-let result = me() === obj.callMe() ? she() : \`&#36{me()} &#36;{she()}\`
+let result = me() === obj.callMe() ? she() : \`&#36;{me()} &#36;{she()}\`
 
 console.log(result)
 `,
@@ -5118,7 +5118,7 @@ D: John Jane
 `
   },
 
-  // 216
+  // 208
   {
     question: `
 ((...a) => {
@@ -5141,7 +5141,7 @@ D: 20
 `
   },
 
-  // 217
+  // 209
   {
     question: `
 function F(name, ...career) {
@@ -5166,7 +5166,7 @@ D: false
 `
   },
 
-  // 218
+  // 210
   {
     question: `
 class Filter {
@@ -5207,7 +5207,7 @@ D: 14
 `
   },
 
-  // 219
+  // 211
   {
     question: `
 async function abc() {
@@ -5254,7 +5254,7 @@ D: 8  6  2  0  4  3  1
 `
   },
 
-  // 220
+  // 212
   {
     question: `
 const username = {
@@ -5271,20 +5271,20 @@ username.getMe()
 `,
     answers: `
 A: 20
-B: 30
+B: 21
 C: 22
 D: 23
 `,
     rightAnswer: `B`,
     explanation: `
-Мы получаем 30. Сначала "youtube.com/username" возвращает 20, поскольку мы используем свойство "length" строки. Затем значение "x" увеличивается на 1 посредством "++this.x". Вопрос выглядит тривиальным, но это не так. Нужно помнить о том, что "console.log(++this.x)" не будет работать, если значением "x" будет undefined при вызове за пределами объекта.<br>
+Мы получаем 21. Сначала "youtube.com/username" возвращает 20, поскольку мы используем свойство "length" строки. Затем значение "x" увеличивается на 1 посредством "++this.x". Вопрос выглядит тривиальным, но это не так. Нужно помнить о том, что "console.log(++this.x)" не будет работать, если значением "x" будет undefined при вызове за пределами объекта.<br>
 Мы можем решить эту проблему с "this" с помощью стрелочной функции: "const inner = () => {}", поскольку стрелочные функции берут "this" из внешнего (лексического) окружения.<br>
 Вторым решением является использование трюка с that/this. Нам нужно лишь объявить новую переменную "const that = this" внутри "insideMe()" и перед объявлением функции "inner". Это довольно распространенный прием.<br>
 Третьим решением является использование apply(), call() или bind(), нативных методов функций (функция - это тоже объект). В данном случае, мы реализовали "bind(this)" для связывания функции и объекта, чтобы "this" указывал на объект при выполнении функции. Обратите внимание, что "bind()" не выполняется сразу, поэтому мы добавили "()" после него. Если заменить "bind()" на "call()", то дополнительные круглые скобки не понадобятся. "inner.bind(this)()" станет "inner.call(this)". На практике, мы, как правило, создаем переменную для хранения результата связывания функции и объекта.
 `
   },
 
-  // 221
+  // 213
   {
     question: `
 function* userName() {
@@ -5313,7 +5313,7 @@ D: 15
 `
   },
 
-  // 222
+  // 214
   {
     question: `
 const a = [1, 2, "one", 3, 1, "one", "two", 3]
@@ -5336,7 +5336,7 @@ D: [1, 2, "one"]
 `
   },
 
-  // 223
+  // 215
   {
     question: `
 const one = function (p) {
@@ -5366,7 +5366,7 @@ D: 123
 `
   },
 
-  // 224
+  // 216
   {
     question: `
 class Component {
@@ -5405,7 +5405,7 @@ D: 10
 `
   },
 
-  // 225
+  // 217
   {
     question: `
 class RemoveFalse {
@@ -5441,7 +5441,7 @@ D: 3
 `
   },
 
-  // 226
+  // 218
   {
     question: `
 const coderfarm = [1, [], {}, [], 2, 3]
@@ -5464,7 +5464,7 @@ D: 4
 `
   },
 
-  // 227
+  // 219
   {
     question: `
 const converter = (arrayInput) => {
@@ -5489,13 +5489,13 @@ D: 8
     explanation: `
 Оператор "..." является очень полезным. В функции "converted" нет ничего необычного, она использует преимущества "..." (оператор rest || оператор spread) для преобразования массива в объект.<br>
 Константа "checking" имеет значение "function" из "Number(false)", что дает 0, т.е. значением "checking" является элемент массива "content" с индексом 0.<br>
-Константа "result" имеет значение true, поскольку "typeof converter(content)" возвращает "function", как и "content[1]".<br>
+Константа "result" имеет значение true, поскольку "typeof converter(content)" возвращает "object", как и "content[1]".<br>
 Таким образом, мы имеем "checking = true" и "result = true", поэтому получаем "(typeof converter).length" или "function".length, или 8.<br>
 Главный вывод здесь такой: мы можем использовать оператор распространения (spread-оператор) для преобразования массива в объект. Например: const a = ['hello', 2]; const b = {...a}, получаем b = {0: 'hello', 1: 2}. Ключами объекта в данном случае являются индексы элементов в массиве.
 `
   },
 
-  // 228
+  // 220
   {
     question: `
 function* js(length) {
@@ -5522,7 +5522,7 @@ D: 16
 `
   },
 
-  // 229
+  // 221
   {
     question: `
 var ages = [10, 15, 20, 25]
@@ -5557,7 +5557,7 @@ D: [29]
 `
   },
 
-  // 230
+  // 222
   {
     question: `
 const getString = (string, method = false) => {
@@ -5584,7 +5584,7 @@ D: 9
 `
   },
 
-  // 232
+  // 223
   {
     question: `
 class UserName {
@@ -5623,7 +5623,7 @@ split("") -> this.getSlice("") -> this.getName("") -> this.name.split(""). Зд�
 `
   },
 
-  // 233
+  // 224
   {
     question: `
 function javaScript(node) {
@@ -5654,7 +5654,7 @@ D: 25
 `
   },
 
-  // 235
+  // 225
   {
     question: `
 (function (flag) {
@@ -5677,7 +5677,7 @@ D: false
 `
   },
 
-  // 236
+  // 226
   {
     question: `
 console.log(Boolean([]))
@@ -5706,7 +5706,7 @@ Boolean(new Boolean(false)) возвращает true, несмотря на т�
 `
   },
 
-  // 237
+  // 227
   {
     question: `
 const myYoutube = {
@@ -5734,7 +5734,7 @@ D: undefined
 `
   },
 
-  // 238
+  // 228
   {
     question: `
 const myArray = [1, 2, 3]
@@ -5773,7 +5773,7 @@ D: 7
 `
   },
 
-  // 239
+  // 229
   {
     question: `
 const coderfarm = [1, 2, 3, 4, 5]
@@ -5804,7 +5804,7 @@ D: 11
 `
   },
 
-  // 240
+  // 230
   {
     question: `
 let age = { number: 10 }
@@ -5834,5 +5834,42 @@ D: 10  11  NaN  NaN
 Поскольку "delete" не может удалить объект, можно сказать, что "delete age" ничего не делает. Выражение "console.log(getAge(false))" возвращает 10 и затем увеличивает значение "age.number" на 1. Данное значение хранится в памяти, поэтому "console.log(age.number)" возвращает 11.<br>
 Когда мы присваиваем "flag" значение true, "console.log(getAge(true))" выполняет код "delete age.number", что удаляет свойство "number" объекта "age". Это означает, что "age.number" равняется undefined. Однако, поскольку мы пытаемся увеличить значение этого свойства на 1 с помощью оператора "++", возвращается NaN.
 `
-  }
+  },
+
+  // 231
+  {
+    question: `
+var f = function() {
+    this.x = 5;
+    (function() {
+        this.x = 3;
+    })();
+    console.log(this.x);
+};
+
+var obj = {
+    x: 4,
+    m: function() {
+      console.log(this.x);
+    },
+};
+
+f();
+new f();
+obj.m();
+new obj.m();
+f.call(f);
+obj.m.call(f);
+`,
+    answers: `
+A: 3 5 4 undefined 5 5
+B: 5 5 4 undefined 5 undefined
+C: 3 3 undefined 4 undefined 4
+D: 5 5 4 undefined 3 5
+`,
+    rightAnswer: `A`,
+    explanation: `
+При вызове функции f() контекст равняется window. И при выполнении самовызывающей функции контекст остается такой же, поэтому window.x становится 3. Когда функцию вызывают с ключевым словом new -- создается новый контекст, но самовызывающая функция этот контекст не получает, поэтому второй раз в консоль выводится 5. Дальше мы имеем дело с методом m() объекта obj, поэтому контекст равен этому объекту -- выводится 4. Но если вызвать тот же метод через new -- то создается свой контекст, из-за чего x остается undefined. Вызывая функцию f с помощью call(f) -- мы устанавливаем контекст равен этой же функции, т.е. this === f. Функция -- это такой же объект, которому можно определять свойства. В консоле будет 5, и f.x станет равен 5. И в конце еще раз вызываем метод m объекта obj, но уже через call(f) -- т.е. устанавливаем контекст выполнения равен f. А т.к. после последнего вызова f.x стал равен 5, то консоль снова выведет 5.
+`
+  },
 ]
