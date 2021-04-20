@@ -1652,7 +1652,7 @@ console.log(name.padStart(2))
 
 - A: "John Smith" и "John Smith"
 - B: " John Smith" и " John Smith" ("[12x whitespace]John Smith"  "[2x whitespace]John Smith")
-- C: " John Smith" и "John Smith" ("[1x whitespace]John Smith", "John Smith")
+- C: " John Smith" и "John Smith" ("[2x whitespace]John Smith", "John Smith")
 - D: "John Smith" и "Jo"
 
 <details>
@@ -1660,7 +1660,7 @@ console.log(name.padStart(2))
 <div>
 <h4>Правильный ответ: C</h4>
 <p>
-С помощью метода "padStart" мы добавляем отступы в начало строки. Значение, передаваемое этому методу, представляет собой общую длину строки вместе с отступом. Строка "John Smith" имеет длину равную 11. name.padStart(12) вставляет 1 пробел в начало строки, потому что 11 + 1 равняется 12. Если аргумент, переданный методу "padStart", меньше длины строки, заполнение не выполняется.
+С помощью метода "padStart" мы добавляем отступы в начало строки. Значение, передаваемое этому методу, представляет собой общую длину строки вместе с отступом. Строка "John Smith" имеет длину равную 10. name.padStart(12) вставляет 2 пробела в начало строки, потому что 10 + 2 равняется 12. Если аргумент, переданный методу "padStart", меньше длины строки, заполнение не выполняется.
 </p>
 </div>
 </details><div align="right">
