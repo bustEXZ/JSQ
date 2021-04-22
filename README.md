@@ -2,28 +2,20 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-Сборник практических вопросов, задач разного уровня сложности, сниппетов (утилит), паттерны проектирования, а также полезные ссылки по JavaScript
-
-## Практические вопросы в форме приложения
-
-[https://thebestcode.ru/](https://thebestcode.ru/)
+Сборник практических вопросов, сниппетов (утилит), паттерны проектирования, а также полезные ссылки по JavaScript
 
 ## Оглавление
 
 - :page_with_curl: [Вопросы](./assets/questions.md)
 - :page_with_curl: [Сниппеты](./assets/snippets.md)
-- :page_with_curl: [Задачи](./assets/tasks.md)
-- :page_with_curl: [Паттерны](./assets/patterns/README.md)
+- :page_with_curl: [Паттерны проектирования](./assets/patterns/README.md)
 - :page_with_curl: [Алгоритмы и структуры данных](./assets/algorithms.md)
 - :page_with_curl: [Web API](./assets/webapi.md)
 - :page_with_curl: [Что за черт, JavaScript?](./assets/wtfjs.md)
 
 ## Другие проекты
-
-- <a target="_blank" rel="noopener" href="https://github.com/harryheman/JavaScript-Projects">Приложения на JavaScript</a>
 - <a target="_blank" rel="noopener" href="https://github.com/harryheman/React-Total">Тотальный React</a>
 - <a target="_blank" rel="noopener" href="https://moderntemplate.site/">Современный стартовый HTML-шаблон</a>
-- <a target="_blank" rel="noopener" href="https://nodejs-guide.ru">Руководство по Node.js для начинающих</a>
 
 ## Источники
 
