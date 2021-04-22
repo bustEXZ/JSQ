@@ -14,6 +14,7 @@
 - :page_with_curl: [Что за черт, JavaScript?](./assets/wtfjs.md)
 
 ## Другие проекты
+
 - <a target="_blank" rel="noopener" href="https://github.com/harryheman/React-Total">Тотальный React</a>
 - <a target="_blank" rel="noopener" href="https://moderntemplate.site/">Современный стартовый HTML-шаблон</a>
 
@@ -21,7 +22,7 @@
 
 ### Основные
 
-- <a target="_blank" rel="noopener" href="https://thebestcode.ru/public/books/definitive_guide.pdf">"JavaScript. Подробное руководство". Дэвид Флэнаган</a>
+- <a target="_blank" rel="noopener" href="./assets/books/definitive_guide.pdf">"JavaScript. Подробное руководство". Дэвид Флэнаган</a>
 - <a target="_blank" rel="noopener" href="https://github.com/azat-io/you-dont-know-js-ru">"Вы не знаете JS". Кайл Симпсон</a>
 - <a target="_blank" rel="noopener" href="https://learn.javascript.ru/">"Современный учебник JavaScript". Илья Кантор</a>
 - <a target="_blank" rel="noopener" href="https://developer.mozilla.org/ru/">MDN Web Docs</a>

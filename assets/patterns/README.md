@@ -4,7 +4,7 @@
 
 Источники:
 
-- <a href="https://thebestcode.ru/public/books/design_patterns.pdf">"Паттерны объектно-ориентированного проектирования". Банда четырех</a>
+- <a href="../books/design_patterns.pdf">"Паттерны объектно-ориентированного проектирования". Банда четырех</a>
 - <a href="https://refactoring.guru/ru/design-patterns">"Паттерны проектирования". Refactoring Guru</a>
 - <a href="https://addyosmani.com/resources/essentialjsdesignpatterns/book/" target="_blank" rel="noopener">Learning JavaScript Design Patterns</a>
 - <a href="https://github.com/fbeline/design-patterns-JS/blob/master/docs.md" target="_blank" rel="noopener">Design Patterns JS</a>
