@@ -4,16 +4,16 @@
 
 ## Оглавление
 
-- [Число / Number](#number)
-- [Строка / String](#string)
-- [Массив / Array](#array)
-- [Объект / Object](#object)
-- [Функция / Function](#function)
+- [Число](#number)
+- [Строка](#string)
+- [Массив](#array)
+- [Объект](#object)
+- [Функция](#function)
 - [DOM](#dom)
-- [Разное / Different](#diff)
+- [Разное](#diff)
 - [Node.js](#node)
 
-## <a name="number"></a> Число / Number
+## <a name="number"></a> Число
 
 ```js
 /**
@@ -351,7 +351,7 @@ fact(5) // 120
 /**
  * Случайное целое число в заданном диапазоне
  */
-const getRandomInt = (min, max) => ~~(min + Math.random() * (max + 1 - min))
+const getRandomInt = (min, max) => ~~(min + Math.random() * (max - min + 1))
 
 
 // --- / --- / --- / --- //
@@ -359,9 +359,9 @@ const getRandomInt = (min, max) => ~~(min + Math.random() * (max + 1 - min))
  * Случайное положительное число (целое или дробное)
  * в заданном диапазоне
  */
-const getRandomNum = (min, max, precision) => {
-  if (min < 0 || min < max) throw new Error('error')
-  const n = min + Math.random() * (max + 1 - min)
+const getRandomPosiviteNum = (min, max, precision) => {
+  if (min < 0 || min <= max) throw new Error('error')
+  const n = min + Math.random() * (max - min + 1)
   return !precision ? ~~n : n.toFixed(precision)
 }
 
@@ -491,7 +491,7 @@ const binomialCoefficient = (n, k) => {
 binomialCoefficient(8, 2) // 28
 ```
 
-## <a name="string"></a> Строка / String
+## <a name="string"></a> Строка
 
 ```js
 /**
@@ -923,7 +923,7 @@ _ransomNote('lazy dog', words) // true
 _ransomNote('red fox', words) // false
 ```
 
-## <a name="array"></a> Массив / Array
+## <a name="array"></a> Массив
 
 ```js
 /**
@@ -1807,7 +1807,7 @@ orderWith(users, 'language', ['Javascript', 'Typescript', 'Java'])
 */
 ```
 
-## <a name="object"></a> Объект / Object
+## <a name="object"></a> Объект
 
 ```js
 /**
@@ -2398,7 +2398,7 @@ person.sex = 'm'
 person.age = 20 // error
 ```
 
-## <a name="function"></a> Функция / Function
+## <a name="function"></a> Функция
 
 ```js
 /**
@@ -2870,6 +2870,7 @@ throttledLog(arr)
 /**
  * Копирование строки в буфер обмена
  */
+//  1
 const copyToClip = (str) => {
   const $ = document.createElement('textarea')
   $.value = str
@@ -2877,6 +2878,17 @@ const copyToClip = (str) => {
   $.select()
   document.execCommand('copy')
   $.remove()
+}
+
+// 2
+const copy = async (text) => await navigator.clipboard.writeText(text)
+
+/**
+ * Вставка строки из буфера обмена
+ */
+const paste = async (el) => {
+  const text = await navigator.clipboard.readText()
+  el.textContent = text
 }
 
 
@@ -2961,13 +2973,15 @@ const addStyles = (el, obj) => {
 /**
  * Создание элемента с помощью шаблонных литералов
  */
-const createEl = (str) => {
-  const $ = document.createElement('div')
-  $.innerHTML = str
-  const child = $.firstChild
-  $.remove()
+//  1
+const createElFromStr = (str) => {
+  const el = document.createElement('div')
+  el.innerHTML = str
+  const child = el.fisrtElementChild
+  el.remove()
   return child
 }
+
 
 const el = createEl(
   `<div class="container">
@@ -2977,6 +2991,24 @@ const el = createEl(
 
 console.log(el.className) // container
 
+// 2
+const createElFromStr = (str) => {
+  const parser = new DOMParser()
+  const {
+    body: { children }
+  } = parser.parseFromString(str, 'text/html')
+  return children[0]
+}
+
+// 3
+const createElFromStr = (str) => {
+  const range = new Range()
+  const fragment = range.createContextualFragment(str)
+  return fragment
+}
+
+// или в одну строку
+const createElFromStr = (str) => new Range().createContextualFragment(str)
 
 // --- / --- / --- / --- //
 /**
@@ -3359,7 +3391,7 @@ unescapeHtml('&lt;a href=&quot;#&quot;&gt;React &amp; TypeScript&lt;/a&gt;')
 // '<a href="#">React & TypeScript</a>'
 ```
 
-## <a name="diff"></a> Разное / Different
+## <a name="diff"></a> Разное
 
 ```js
 /**
