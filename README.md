@@ -2,15 +2,14 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-Сборник практических вопросов, сниппетов (утилит), паттерны проектирования, а также полезные ссылки по JavaScript
+Практические вопросы, примеры кода, паттерны проектирования, структуры данных и алгоритмы, а также полезные ссылки по JavaScript
 
 ## Оглавление
 
-- :page_with_curl: [Вопросы](./assets/questions.md)
-- :page_with_curl: [Сниппеты](./assets/snippets.md)
+- :page_with_curl: [Практические вопросы](./assets/questions.md)
+- :page_with_curl: [Примеры кода](./assets/snippets.md)
 - :page_with_curl: [Паттерны проектирования](./assets/patterns/README.md)
 - :page_with_curl: [Алгоритмы и структуры данных](./assets/algorithms.md)
-- :page_with_curl: [Web API](./assets/webapi.md)
 - :page_with_curl: [Что за черт, JavaScript?](./assets/wtfjs.md)
 
 ## Другие проекты
